@@ -2,7 +2,9 @@ All icons are not products of Nomad Cafe and belong to their respected companies
 
 - Apple Pay
 - Google Pay
-- Visa
+- Vis
 - AMEX
 - Discover
 - MasterCard
+- Instagram
+- Toast
