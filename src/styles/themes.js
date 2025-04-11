@@ -9,7 +9,17 @@ Color Pallete:
 */
 export const theme  = {
   base: {
-
+    text: {
+      body: "text-lg"
+    },
+    container: {
+      wrapper: "",
+      text: "",
+      card: "",
+      nav: "",
+      footer: "",
+    },
+    
   },
   color: {
     text: {

@@ -5,7 +5,7 @@ import {theme} from '../styles/themes'
 const Home = () => {
 const numbers = [1, 2, 3, 4, 5]
   return (
-    <main>
+    <main className={`${theme.color.text.default}${theme.base.text.body}`}>
       <Header
       tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
       img={"/gallery/Tathi_espresso.jpg"}
@@ -20,15 +20,17 @@ const numbers = [1, 2, 3, 4, 5]
           </h1>
         </div>
         {/* Image Carousol */}
-        <div className='flex m-4 justify-center'>
-          <img 
-          src="products/Capuccino_heart.jpg" 
-          alt="" 
-          className='rounded-xl shadow-md shadow-black h-96'
-          />
-        </div>
-        <div>
-          <p>
+        <ul className='flex m-4 justify-center'>
+          <li>
+            <img 
+            src="products/Capuccino_heart.jpg" 
+            alt="" 
+            className='rounded-xl shadow-md shadow-black h-96'
+            />
+          </li>
+        </ul>
+        <div className='text-center'>
+          <p className={`${theme.base.text.body}`}>
             Nomad cafe is a neighborhood Restaurant in Ridgewood, New York. We provide delicious handmade food. From our customizable Traveler sandwich to our popular Chedder Smashbrowns.
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
           </p>
