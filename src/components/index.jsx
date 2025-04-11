@@ -13,7 +13,7 @@ const numbers = [1, 2, 3, 4, 5]
       <div>
       <section>
         <div className='text-center'>
-          <h1 className={theme.home}><b className='text-firebrick'>7+</b> years serving Ridgewood!</h1>
+          <h1 className={theme.color.text.default}><b className={theme.color.text.primary}>7+</b> years serving Ridgewood!</h1>
         </div>
         <div>
           <img src="products/Capuccino_heart.jpg" alt="" />
