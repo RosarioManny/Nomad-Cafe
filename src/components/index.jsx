@@ -10,14 +10,25 @@ const numbers = [1, 2, 3, 4, 5]
       tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
       img={"/gallery/Tathi_espresso.jpg"}
       />
-      <section>
-      <div>
-        <h1 className={theme.home}><b className='text-royal'>7+</b> years serving Ridgewood!</h1>
-        <p>I am a baby cafe website! :D</p>
-        {numbers.map((number, i) => (
-          <p key={i}>{number}</p>
-        ))}
+      <div className='text-center'>
+        <h1 className={theme.home}><b className='text-firebrick'>7+</b> years serving Ridgewood!</h1>
       </div>
+      <div>
+        <img src="products/Capuccino_heart.jpg" alt="" />
+      </div>
+      <section>
+        <h2>Customer Reviews</h2>
+        <div>
+          <p>John Smith</p>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>“Best cup of joe and sandwich. Love the vibe it has too! Will come back”</p>
+        </div>
+        <div>
+          <p>
+            Nomad cafe is a neighborhood Restaurant in Ridgewood, New York. We provide delicious handmade food. From our customizable Traveler sandwich to our popular Chedder Smashbrowns.
+            We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
+          </p>
+        </div>
       </section>
     </>
   )

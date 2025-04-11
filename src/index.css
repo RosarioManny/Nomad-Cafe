@@ -30,7 +30,7 @@ body::before {
   content: ""; 
   position: absolute;
   inset: 0; /* Shorthand for top/right/bottom/left: 0 */
-  background: rgba(255, 246, 231, .6);
+  background: rgba(255, 246, 231, .7);
   z-index: -1;
 }
 h1 {
