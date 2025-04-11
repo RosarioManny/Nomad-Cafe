@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  background-image: url("../public/gallery/Map.png");
+  background-image: url("../gallery/Map.png");
   background-size: cover;
   min-height: 100vh;
 }

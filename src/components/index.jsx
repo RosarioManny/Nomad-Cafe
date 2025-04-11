@@ -10,12 +10,15 @@ const numbers = [1, 2, 3, 4, 5]
       tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
       img={"/gallery/Tathi_espresso.jpg"}
       />
-      <div className='text-center'>
-        <h1 className={theme.home}><b className='text-firebrick'>7+</b> years serving Ridgewood!</h1>
-      </div>
       <div>
-        <img src="products/Capuccino_heart.jpg" alt="" />
-      </div>
+      <section>
+        <div className='text-center'>
+          <h1 className={theme.home}><b className='text-firebrick'>7+</b> years serving Ridgewood!</h1>
+        </div>
+        <div>
+          <img src="products/Capuccino_heart.jpg" alt="" />
+        </div>
+      </section>
       <section>
         <h2>Customer Reviews</h2>
         <div>
@@ -30,6 +33,7 @@ const numbers = [1, 2, 3, 4, 5]
           </p>
         </div>
       </section>
+      </div>
     </>
   )
 }
