@@ -1,7 +1,7 @@
-const Header = ({tag, img, img_alt="Header image", tag_alt="Page Title"}) => {
+const Header = ({tag, img, img_alt="Header image", tag_alt="Nomad Logo"}) => {
 
   return (
-    <header className="relative">     
+    <header className="relative mb-8 border-solid border-firebrick border-b-4">     
       <img 
         className="w-full h-full object " 
         src={img} 
@@ -11,7 +11,7 @@ const Header = ({tag, img, img_alt="Header image", tag_alt="Page Title"}) => {
         <img 
           src={tag} 
           alt={tag_alt} 
-          className="w-auto min-h-24" 
+          className="z-2 w-auto min-h-24 drop-shadow-xl drop-shadow-black" 
         />
       </div>
     </header>

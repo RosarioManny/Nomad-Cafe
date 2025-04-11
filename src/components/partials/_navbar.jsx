@@ -37,7 +37,7 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <img className="bottom-10 absolute h-40" src="icons-logos/Nomad-logo-White-Transparent.png" alt="" />
+        <img className="bottom-10 absolute h-40" src="icons-logos/Nomad-logo-White-Transparent.png" alt="Nomad Cafe & Eatery Logo with writing" />
       </div>
     </nav>
   )
