@@ -1,10 +1,20 @@
-const Header = ({tag, img}) => {
+const Header = ({tag, img, img_alt="Header image", tag_alt="Nomad Logo"}) => {
 
   return (
-    <div className="relative">     
-      <img src={img} alt="blue square" />   
-      <img src={tag} alt="red square" className="bg-red-300 drop-shadow-2xl drop-shadow-black absolute inset-x-0 bottom-10 z-1" /> 
-    </div>
+    <header className="relative mb-8 border-solid border-firebrick border-b-4">     
+      <img 
+        className="w-full h-full object " 
+        src={img} 
+        alt={img_alt} 
+      />   
+      <div className="absolute bottom-10">
+        <img 
+          src={tag} 
+          alt={tag_alt} 
+          className="z-2 w-auto min-h-24 drop-shadow-xl drop-shadow-black" 
+        />
+      </div>
+    </header>
   )
 }
 

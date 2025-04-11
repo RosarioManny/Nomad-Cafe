@@ -8,5 +8,18 @@ Color Pallete:
     Black  >  #2C2C2E    >  obscuro
 */
 export const theme  = {
-  home: "text-espresso"
+  base: {
+
+  },
+  color: {
+    text: {
+      default: "text-espresso",
+      primary: "text-firebrick",
+      secondary: "text-gamboge",
+    },
+    background: {
+      primary: "bg-firebrick",
+      secondary: "bg-oatmilk"
+    }
+  }
 }
