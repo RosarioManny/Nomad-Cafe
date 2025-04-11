@@ -26,12 +26,12 @@ const About = () => {
         </p>
       </section>
       <hr />
-      <section className={`text-center`}>
+      <section className={`flex flex-col place-items-center space-x-4 text-center`}>
         <div>
           <h1 className={`${theme.color.text.primary}`}>Visit Us!</h1>
         </div>
-        <div className="flex ">
-          <div>
+        <div className="flex space-x-4 gap-10 mr-none">
+          <div className="text-center">
             <h3>Location</h3>
             <div>
               <p>67-14 Forest Ave. <br /> Ridgewood, NY 11385</p>
