@@ -1,7 +1,7 @@
 import FaqCard from "./FaqCard"
 import Header from "./partials/_header"
 import { useState } from 'react'
-import faqQuestions from '../utils/faqQuestions'
+import faqQuestions from '../database/faqQuestions'
 
 const Faq = () => {
   const [isToggled, setIsToggled ] = useState(true)
