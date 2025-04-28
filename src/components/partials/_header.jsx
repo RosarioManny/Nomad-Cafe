@@ -11,7 +11,7 @@ const Header = ({tag, img, img_alt="Header image", tag_alt="Nomad Logo"}) => {
         <img 
           src={tag} 
           alt={tag_alt} 
-          className="fade-in z-2 w-auto min-h-24 filter-drop-shadow-lg filter-drop-shadow-black" 
+          className="title fade-in z-2 w-auto min-h-24 filter-drop-shadow-lg filter-drop-shadow-black" 
         />
       </div>
     </header>

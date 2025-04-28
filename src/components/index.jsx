@@ -1,11 +1,21 @@
 import Header from './partials/_header'
 import {theme} from '../styles/themes'
+import { useEffect, useState } from 'react' 
 
 
 const Home = () => {
-const numbers = [1, 2, 3, 4, 5]
+const [yearsInBuisness, setYearsInBuisness] = useState(0)
+const yearOfOpen = 2018
+const currentYear = new Date().getFullYear()
+// console.log(currentYear)
+
+// Automatically update years in buisness
+useEffect(() => {
+  setYearsInBuisness(currentYear - yearOfOpen)
+},[])
+
   return (
-    <main className={`${theme.color.text.default}${theme.base.text.body}`}>
+    <main className={`${theme.color.text.default}${theme.text.body}`}>
       <Header
       tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
       img={"/gallery/Tathi_espresso.jpg"}
@@ -14,9 +24,9 @@ const numbers = [1, 2, 3, 4, 5]
       <div>
         {/* Intro Section */}
       <section>
-        <div className='text-center'>
-          <h1 className={theme.color.text.default}>
-            <b className={theme.color.text.primary}>7+</b> years serving Ridgewood!
+        <div className={`${theme.container.text}`}>
+          <h1 className={`${theme.text.heading} ${theme.color.text.default}`}>
+            <b className={`${theme.color.text.primary}`}>{yearsInBuisness}+</b> years serving Ridgewood!
           </h1>
         </div>
         {/* Image Carousol */}
@@ -29,18 +39,22 @@ const numbers = [1, 2, 3, 4, 5]
             />
           </li>
         </ul>
-        <div className='text-center'>
-          <p className={`${theme.base.text.body}`}>
+        <div className='flex justify-center m-2'>
+          <hr className='w-2/3 h-1 my-4 bg-gamboge rounded'/>
+        </div>
+        <div className={`${theme.container.text}`}>
+          <p className={`${theme.text.body} ${theme.color.text.default}`}>
             Nomad cafe is a neighborhood Restaurant in Ridgewood, New York. We provide delicious handmade food. From our customizable Traveler sandwich to our popular Chedder Smashbrowns.
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
           </p>
         </div>
       </section>
-      <div className='flex justify-center m-2'>
-      <hr className='w-2/3 h-1 bg-firebrick rounded'/>
-      </div>
+      {/* TODO: USER REVEIWS */}
+      {/* <div className='flex justify-center m-2'>
+        <hr className='w-2/3 h-1 bg-firebrick rounded'/>
+      </div> */}
       {/* Customer Reviews */}
-      <section className=''>
+      {/* <section className=''>
         <h2 className='text-center text-2xl m-8'>Customer Reviews</h2>
         <div className='bg-oatmilk shadow-lg shadown-black border-gamboge border-2 border-solid max-w-2xl mx-4 p-6 rounded-lg bg-opacity-80'>
           <div>
@@ -49,7 +63,7 @@ const numbers = [1, 2, 3, 4, 5]
           </div>
           <blockquote className='italic'>“Best cup of joe and sandwich. Love the vibe it has too! Will come back”</blockquote>
         </div>
-      </section>
+      </section> */}
       </div>
     </main>
   )
