@@ -14,11 +14,12 @@ export const theme  = {
     subheading: "texl-2xl underline underline-offset-4",
     firstLetter: "text-3xl"
   },
-  container: {
-    wrapper: "",
+  layout: {
+    default: "flex justify-center m-4 items-center",
     text: "text-center",
     card: "",
     nav: "",
+    hr: "w-2/3 h-1 my-4 rounded",
     footer: {
       section: "text-center my-4",
     } 
@@ -31,7 +32,8 @@ export const theme  = {
     },
     background: {
       primary: "bg-firebrick",
-      secondary: "bg-oatmilk"
+      secondary: "bg-oatmilk",
+      accent: "bg-gamboge"
     }
   },
   hover: {

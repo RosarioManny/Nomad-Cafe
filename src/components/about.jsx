@@ -5,11 +5,11 @@ const About = () => {
   return (
     <div>
       <Header tag={'icons-logos/Nomad-White-OurJourney.webp'} img={"gallery/First_opened_C&J.jpg"}/>
-      <section className='m-4'>
+      <section className={`${theme.layout.default} flex-col`}>
         <p className={`mb-8 ${theme.text.body}`}>
           <span className={`${theme.text.body} ${theme.color.text.primary}`}>
-          <b className={`${theme.text.firstLetter} ${theme.color.text.primary} `}>N</b>
-          omad has been a proud part of Ridgewood since 2018, 
+            <b className={`${theme.text.firstLetter} ${theme.color.text.primary} `}>N</b>
+            omad has been a proud part of Ridgewood since 2018, 
           </span> and have always believed in being a place for everyone. 
           From the moment you walk in, we want you to feel at home—whether you’re stopping by for your morning coffee, 
           grabbing a hearty Eggscape NY platter, or treating yourself to a scoop of our homemade creamy gelato. 
@@ -18,17 +18,18 @@ const About = () => {
           We’re a space where people from all walks of life can come together, share a moment, and leave feeling like their day got a little brighter.
         </p>
         <p className={`mb-8 ${theme.text.body}`}>
-          <span className={`text-xl ${theme.color.text.primary} `}>
-          <b className={`${theme.text.firstLetter} ${theme.color.text.primary} `}>O</b>
-          ur team is a reflection of the vibrant neighborhood we serve,</span> providing excellent service and making you feel like you belong. Together,
+          <span className={`${theme.text.body}  ${theme.color.text.primary} `}>
+            <b className={`${theme.text.firstLetter} ${theme.color.text.primary} `}>O</b>
+            ur team is a reflection of the vibrant neighborhood we serve,
+          </span> providing excellent service and making you feel like you belong. Together,
           we’ve built a cafe that celebrates diversity, creativity, and the spirit of
           community. Located in the heart of Ridgewood—an area buzzing with energy and
           growth—we’re proud to be a gathering spot for locals, newcomers, and everyone in between. At Nomad, it’s not just about what we serve; it’s about the
           people we serve and the connections we foster. Come for the coffee, stay for the community.
         </p>
       </section>
-      <hr />
-      <section className={`flex flex-col place-items-center space-x-4 ${theme.container.text}`}>
+      {/* <hr /> */}
+      <section className={`flex flex-col items-center space-x-4 ${theme.layout.text}`}>
         <div>
           <h1 className={` ${theme.text.heading} ${theme.color.text.primary}`}>Visit Us!</h1>
         </div>

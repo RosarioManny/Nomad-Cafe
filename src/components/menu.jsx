@@ -9,13 +9,13 @@ const Menu = () => {
       img={"/products/green_traveler.jpg"}
       tag={"/public/icons-logos/Nomad-White-Breakfast.webp"}
       />
-      <div className="relative m-8 ">   
-        <div className="image-container">
-          <img className="opacity-50 bg-black w-full h-full"src="/products/2025-BREAKFAST-menu-new-price.jpg" alt="" />
-        </div>    
-        <h1 className="text-center absolute bottom-1/2 m-2">
-          <a className="title" href="/products/Large-Menu.jpg">Menu</a> 
+      <div className="relative m-8 flex justify-center align-center">
+        <h1 className="text-white z-10 absolute bottom-1/2 text-4xl m-2">
+          <a className="title hover:animate-pulse " href="/products/Large-Menu.jpg">Menu</a> 
         </h1>
+        <div className="image-container z-2">
+          <img className="rounded w-full h-full z-1"src="/products/2025-BREAKFAST-menu-new-price.jpg" alt="" />
+        </div>    
       </div>
     </>
   )
