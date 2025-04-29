@@ -10,7 +10,7 @@ const Footer = () => {
         p-4 h-fit 
         ${theme.color.background.primary}
         ${isMobile ? `flex-row-reverse flex justify-between` : `flex-col place-items-center align-content`}`}>
-          <section className={`${theme.layout.footer.section} flex flex-col gap-4 justify-center`} >
+          <section className={`${theme.layout.footer.section} flex flex-col gap-4 justify-start`} >
             <h3 className={`${theme.text.subheading} mt-0`}>We Accept:</h3>
             <div className="max-w-sm flex justify-center">
               <img 
@@ -28,22 +28,23 @@ const Footer = () => {
               <Link 
                 key={link} 
                 to={`/${link}`} 
-                className={`text-2xl hover:animate-pulse p-2`}
+                className={`text-2xl w-auto hover:animate-pulse my-2 relative group pointer-cursor `}
                 >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
+                <span className={`${theme.hover.underline}`}></span>
               </Link>
             ))}
           </div>
         </section>
-        <section className={`${theme.layout.footer.section} flex-col flex justify-center`}>
-          <h2 className={`${theme.text.subheading}`}>Contact Us!</h2>
+        <section className={`${theme.layout.footer.section} flex-col flex justify-start`}>
+          <h2 className={`${theme.text.subheading} mb-4`}>Contact Us!</h2>
           <p>(347)-227-8136</p>
           <p>nomadcafeandeatery@gmail.com</p>
           <img src="" alt="" />
         </section>
         <div className="flex flex-col justify-center">
           <Link to="/">
-            <img className="bottom-10 h-40 my-4 " src="icons-logos/Nomad-logo-White-Transparent.png" alt="Nomad Cafe & Eatery Logo with writing" />
+            <img className="bottom-10 h-40 my-4 hover:animate-pulse" src="icons-logos/Nomad-logo-White-Transparent.png" alt="Nomad Cafe & Eatery Logo with writing" />
           </Link>
         </div>
       </div>

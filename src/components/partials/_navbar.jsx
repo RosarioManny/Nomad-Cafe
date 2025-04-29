@@ -17,7 +17,7 @@ const Navbar = () => {
         p-2 shadow-white justify-between items-center flex top-0 right-0 left-0 transition-all duration-500">
         <Link to="/">
           <img 
-          className="w-24 m-2 hover:animate-pulse" 
+          className="w-24 m-2 hover:animate-pulse cursor-pointer" 
           src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
           alt="Nomad-Compass-Logo" 
           loading="lazy"
@@ -31,9 +31,10 @@ const Navbar = () => {
                 <Link 
                   key={link} 
                   to={`/${link}`} 
-                  className={`${theme.color.text.nav} pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
+                  className={`${theme.color.text.nav} relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
                   >
                   {link.charAt(0).toUpperCase() + link.slice(1)}
+                  <span className={`${theme.hover.underline}`}></span>
                 </Link>
               ))}
           </div>
@@ -58,9 +59,10 @@ const Navbar = () => {
                   key={link} 
                   to={`/${link}`} 
                   onClick={handleClick} 
-                  className={`hover:animate-pulse p-2`}
+                  className={`hover:animate-pulse p-2 relative group pointer-cursor `}
                   >
                   {link.charAt(0).toUpperCase() + link.slice(1)}
+                  <span className={`${theme.hover.underline}`}></span>
                 </Link>
               ))}
             </div>

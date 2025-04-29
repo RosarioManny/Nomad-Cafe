@@ -41,6 +41,7 @@ export const theme  = {
     text: "",
     container: "",
     button: "",
-    img: ""
+    img: "",
+    underline: "absolute left-0 -bottom-2 w-0 h-1 bg-gamboge transition-all duration-300 group-hover:w-full origin-left"
   }
 }
