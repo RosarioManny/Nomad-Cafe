@@ -1,13 +1,13 @@
 import Header from './partials/_header'
 import {theme} from '../styles/themes'
 import { useEffect, useState } from 'react' 
-
+import { useResponsive } from '../utils/responsoveProvider'
 
 const Home = () => {
 const [yearsInBuisness, setYearsInBuisness] = useState(0)
 const yearOfOpen = 2018
 const currentYear = new Date().getFullYear()
-// console.log(currentYear)
+const isMobile = useResponsive()
 
 // Automatically update years in buisness
 useEffect(() => {
@@ -18,8 +18,9 @@ useEffect(() => {
     <main className={`${theme.color.text.default}${theme.text.body}`}>
       <Header
       tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
-      img={"/gallery/Tathi_espresso.jpg"}
+      img={`${isMobile ? "/gallery/Inside_gelato.jpg" : "/gallery/Tathi_espresso.jpg"}`}
       img_alt='Barista preparing espresoo at Nomad Cafe'
+      
       />
       <div>
         {/* Intro Section */}
@@ -42,8 +43,11 @@ useEffect(() => {
         <div className={`${theme.layout.default}`}>
           <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
         </div>
-        <div className={`${theme.layout.text}`}>
-          <p className={`${theme.text.body} ${theme.color.text.default}`}>
+        <div className={`${theme.layout.text} flex justify-center`}>
+          <p className={`
+            ${isMobile ? "w-1/2" : ""}
+            ${theme.text.body} ${theme.color.text.default}
+            `}>
             Nomad cafe is a neighborhood Restaurant in Ridgewood, New York. We provide delicious handmade food. 
             From our customizable Traveler sandwich to our popular Chedder Smashbrowns.
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!

@@ -69,7 +69,7 @@ body::before {
 
 /* FAQ Container */
 .faq-container {
-  width: 350px;
+  width: auto;
   position: relative;
 }
 
@@ -90,8 +90,9 @@ body::before {
   overflow: hidden;
   max-height: 0;
   transform: translateY(0);
-  transition: all .8s ease-out;
+  transition: all .5s ease-in-out;
   border-radius: 0 0 17px 17px;
+  width: auto;
 }
 
 /* When visible */
@@ -126,7 +127,7 @@ body::before {
   width: 100%;
   height: 100%;
   left: 0; 
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, .7a);
   z-index: 1;
 }
 

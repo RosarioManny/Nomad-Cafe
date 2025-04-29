@@ -9,13 +9,13 @@ Color Pallete:
 */
 export const theme  = {
   text: {
-    body: "text-md ",
+    body: "text-lg ",
     heading: "text-5xl",
-    subheading: "texl-2xl underline underline-offset-4",
+    subheading: "text-2xl mt-8 underline underline-offset-4 ",
     firstLetter: "text-3xl"
   },
   layout: {
-    default: "flex justify-center m-4 items-center",
+    default: "flex justify-center m-4 place-items-center",
     text: "text-center",
     card: "",
     nav: "",
@@ -29,6 +29,7 @@ export const theme  = {
       default: "text-espresso",
       primary: "text-firebrick",
       secondary: "text-gamboge",
+      nav: "text-oatmilk"
     },
     background: {
       primary: "bg-firebrick",

@@ -1,15 +1,16 @@
 import { useState } from 'react'
+import { theme } from '../styles/themes'
 
 const FaqCard = ({ question, answer}) => {
   const [isToggled, setIsToggled] = useState()
 
   return (
-    <div className='faq-container flex flex-col'>
+    <div className='faq-container p-2 flex flex-col'>
       {/* Question */}
       <div className={`
-        faq-question border-solid h-auto border-firebrick border-b-2 w-[350px] p-2 flex space-x-32 
+        faq-question border-solid h-auto border-firebrick border-b-2 w-auto flex space-x-32 
         ${isToggled ? "expanded" : ""}`}>
-        <p className="pb-2">
+        <p className={`py-4 ${theme.text.body}`}>
           {question}
         </p>
         {/* X Button */}
