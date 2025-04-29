@@ -13,10 +13,15 @@ const Navbar = () => {
   return (
     <>
       <nav className="
-        bg-black/50 z-10 max-h-[15vh] absolute w-screen
+        bg-black/50 z-20 max-h-[15vh] absolute w-screen
         p-2 shadow-white justify-between items-center flex top-0 right-0 left-0 transition-all duration-500">
         <Link to="/">
-          <img className="w-24 m-2 hover:animate-pulse" src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" alt="" />
+          <img 
+          className="w-24 m-2 hover:animate-pulse" 
+          src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
+          alt="Nomad-Compass-Logo" 
+          loading="lazy"
+          />
         </Link>
         {isMobile ? 
         (
@@ -59,7 +64,12 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <img className="bottom-10 absolute h-40" src="icons-logos/Nomad-logo-White-Transparent.png" alt="Nomad Cafe & Eatery Logo with writing" />
+            <img 
+            className="bottom-10 absolute h-40"
+            src="icons-logos/Nomad-logo-White-Transparent.png" 
+            alt="Nomad Cafe & Eatery Logo with writing"
+            loading="lazy"
+            />
           </div>
         </>
         )}

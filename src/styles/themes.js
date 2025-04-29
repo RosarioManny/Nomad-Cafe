@@ -12,7 +12,7 @@ export const theme  = {
     body: "text-lg ",
     heading: "text-5xl",
     subheading: "text-2xl mt-8 underline underline-offset-4 ",
-    firstLetter: "text-3xl"
+    firstLetter: "text-3xl",
   },
   layout: {
     default: "flex justify-center m-4 place-items-center",
