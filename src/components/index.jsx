@@ -1,7 +1,8 @@
 import Header from './partials/_header'
-import {theme} from '../styles/themes'
+import { theme } from '../styles/themes'
 import { useEffect, useState } from 'react' 
 import { useResponsive } from '../utils/responsoveProvider'
+import { imageGallery }  from '../database/imageGallery'
 
 const Home = () => {
 const [yearsInBuisness, setYearsInBuisness] = useState(0)
@@ -31,14 +32,23 @@ useEffect(() => {
           </h1>
         </div>
         {/* Image Carousol */}
-        <ul className={`${theme.layout.default}`}>
-          <li>
-            <img 
-            src="products/Capuccino_heart.jpg" 
-            alt="" 
-            className='rounded-xl shadow-md shadow-black h-96'
-            />
-          </li>
+        <ul className={`${theme.layout.default} h-1/4 gap-4 overflow-hidden`}>
+          {imageGallery.map((image, i) => (
+            <li key={i} className='w-auto '>
+              {image.path ? 
+              (  
+              <img 
+                src={image.path} 
+                alt={image.alt_text || "Nomad Cafe Product"}
+                className='rounded-xl object-fill min-w-[250px] h-auto shadow-md shadow-black h-96'
+              />
+              ) : (
+                <div className="h-96 bg-oatmilk flex items-center justify-center">
+                  <span>Image unavailable</span>
+                </div>
+              )}
+            </li>
+          ))}
         </ul>
         <div className={`${theme.layout.default}`}>
           <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>

@@ -40,7 +40,7 @@ const Footer = () => {
           <h2 className={`${theme.text.subheading} mb-4`}>Contact Us!</h2>
           <p>(347)-227-8136</p>
           <p>nomadcafeandeatery@gmail.com</p>
-          <img src="" alt="" />
+          {/* <img src="" alt="" /> */}
         </section>
         <div className="flex flex-col justify-center">
           <Link to="/">
