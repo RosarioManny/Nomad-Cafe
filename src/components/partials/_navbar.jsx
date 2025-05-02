@@ -27,16 +27,16 @@ const Navbar = () => {
         (
           <>
           <div className="gap-8">
-          {["about", "menu", "faq"].map((link) => (
-                <Link 
-                  key={link} 
-                  to={`/${link}`} 
-                  className={`${theme.color.text.nav} relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
-                  >
-                  {link.charAt(0).toUpperCase() + link.slice(1)}
-                  <span className={`${theme.hover.underline}`}></span>
-                </Link>
-              ))}
+            {["about", "menu", "faq"].map((link) => (
+              <Link 
+                key={link} 
+                to={`/${link}`} 
+                className={`${theme.color.text.nav} relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
+                >
+                {link.charAt(0).toUpperCase() + link.slice(1)}
+                <span className={`${theme.hover.underline}`}></span>
+              </Link>
+            ))}
           </div>
           </>
         ) : (

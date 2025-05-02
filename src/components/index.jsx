@@ -5,6 +5,7 @@ import { useResponsive } from '../utils/responsoveProvider'
 import { imageGallery }  from '../database/imageGallery'
 import { onlineReviews } from '../database/onlineReviews'
 import ReviewCard from './ReviewCard'
+import Carousol from './Carousel'
 
 const Home = () => {
 const [yearsInBuisness, setYearsInBuisness] = useState(0)
@@ -65,6 +66,7 @@ useEffect(() => {
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
           </p>
         </div>
+        {/* <Carousol></Carousol> */}
       </section>
       {/* TODO: USER REVEIWS */}
       <div className='flex justify-center m-2'>
@@ -73,18 +75,8 @@ useEffect(() => {
       <section>
         <h2 className='text-center text-2xl m-8'>Customer Reviews</h2>
         {/* Customer Reviews */}
-        <ul className='flex overflow-hidden'>
-          {onlineReviews.map((reviewer, i) => (
-            <ReviewCard 
-            key={i}
-            name={reviewer.name}
-            review={reviewer.review}
-            rating={reviewer.rating}
-            link={reviewer.path}
-            source={reviewer.source}
-            />
-          ))}
-        </ul>
+        <Carousol />
+      
     </section>
       </div>
     </main>
