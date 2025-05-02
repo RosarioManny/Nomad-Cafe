@@ -3,6 +3,8 @@ import { theme } from '../styles/themes'
 import { useEffect, useState } from 'react' 
 import { useResponsive } from '../utils/responsoveProvider'
 import { imageGallery }  from '../database/imageGallery'
+import { onlineReviews } from '../database/onlineReviews'
+import ReviewCard from './ReviewCard'
 
 const Home = () => {
 const [yearsInBuisness, setYearsInBuisness] = useState(0)
@@ -50,12 +52,12 @@ useEffect(() => {
             </li>
           ))}
         </ul>
-        <div className={`${theme.layout.default}`}>
-          <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
+        <div className={`flex justify-center `}>
+          <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
         </div>
         <div className={`${theme.layout.text} flex justify-center`}>
           <p className={`
-            ${isMobile ? "w-1/2" : ""}
+            ${isMobile ? "w-2/3" : ""}
             ${theme.text.body} ${theme.color.text.default}
             `}>
             Nomad cafe is a neighborhood Restaurant in Ridgewood, New York. We provide delicious handmade food. 
@@ -65,20 +67,25 @@ useEffect(() => {
         </div>
       </section>
       {/* TODO: USER REVEIWS */}
-      {/* <div className='flex justify-center m-2'>
+      <div className='flex justify-center m-2'>
         <hr className='w-2/3 h-1 bg-firebrick rounded'/>
-      </div> */}
-      {/* Customer Reviews */}
-      {/* <section className=''>
+      </div>
+      <section>
         <h2 className='text-center text-2xl m-8'>Customer Reviews</h2>
-        <div className='bg-oatmilk shadow-lg shadown-black border-gamboge border-2 border-solid max-w-2xl mx-4 p-6 rounded-lg bg-opacity-80'>
-          <div>
-            <p>John Smith</p>
-            <p className='flex justify-end'>⭐⭐⭐⭐⭐</p>
-          </div>
-          <blockquote className='italic'>“Best cup of joe and sandwich. Love the vibe it has too! Will come back”</blockquote>
-        </div>
-      </section> */}
+        {/* Customer Reviews */}
+        <ul className='flex overflow-hidden'>
+          {onlineReviews.map((reviewer, i) => (
+            <ReviewCard 
+            key={i}
+            name={reviewer.name}
+            review={reviewer.review}
+            rating={reviewer.rating}
+            link={reviewer.path}
+            source={reviewer.source}
+            />
+          ))}
+        </ul>
+    </section>
       </div>
     </main>
   )

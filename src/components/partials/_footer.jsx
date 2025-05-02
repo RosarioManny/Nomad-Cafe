@@ -36,7 +36,7 @@ const Footer = () => {
             ))}
           </div>
         </section>
-        <section className={`${theme.layout.footer.section} flex-col flex justify-start`}>
+        <section className={`${theme.layout.footer.section} mx-4 flex-col flex justify-start`}>
           <h2 className={`${theme.text.subheading} mb-4`}>Contact Us!</h2>
           <p>(347)-227-8136</p>
           <p>nomadcafeandeatery@gmail.com</p>
@@ -44,7 +44,7 @@ const Footer = () => {
         </section>
         <div className="flex flex-col justify-center">
           <Link to="/">
-            <img className="bottom-10 h-40 my-4 hover:animate-pulse" src="icons-logos/Nomad-logo-White-Transparent.png" alt="Nomad Cafe & Eatery Logo with writing" />
+            <img className="bottom-10 min-w-[166px] h-40 my-4 hover:animate-pulse" src="icons-logos/Nomad-logo-White-Transparent.png" alt="Nomad Cafe & Eatery Logo with writing" />
           </Link>
         </div>
       </div>

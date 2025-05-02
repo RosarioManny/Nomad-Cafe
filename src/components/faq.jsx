@@ -15,13 +15,13 @@ const Faq = () => {
     img={"/gallery/Cafe-inside-Redshirt.jpg"}
     tag={"/icons-logos/Nomad-White-FAQ.webp"} />
     <section className="flex justify-center">
-      <div className={`flex  flex-col align-center ${isMobile ? `w-3/4g` : `w-[90%]`}`}>
+      <div className={`flex  flex-col align-center ${isMobile ? `w-1/2` : `w-[90%]`}`}>
         {faqQuestions.map((faq, i) => (
           <FaqCard
             key={i}
-            question={faqQuestions[i].que}
+            question={faq.que}
             isToggled={isToggled}
-            answer={faqQuestions[i].ans}
+            answer={faq.ans}
           />
           ))}
       </div>
