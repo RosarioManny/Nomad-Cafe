@@ -19,7 +19,7 @@ export const theme  = {
     text: "text-center",
     card: "",
     nav: "",
-    hr: "w-2/3 h-1 my-4 rounded",
+    hr: "w-1/2 h-[5px] my-4 rounded",
     footer: {
       section: "text-center my-4",
     } 
