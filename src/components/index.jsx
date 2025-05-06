@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useResponsive } from '../utils/responsoveProvider'
 import { imageGallery }  from '../database/imageGallery'
 import Carousol from './Carousel'
+import InfiniteGallery from './partials/InfiniteCarousel'
 
 const Home = () => {
 const [yearsInBuisness, setYearsInBuisness] = useState(0)
@@ -32,8 +33,14 @@ useEffect(() => {
             <b className={`${theme.color.text.primary}`}>{yearsInBuisness}+</b> years serving Ridgewood!
           </h1>
         </div>
+        <InfiniteGallery 
+        images={imageGallery}
+        /> 
         {/* Image Carousol */}
-        <ul className={`${theme.layout.default} h-1/4 gap-4 overflow-hidden`}>
+        {/* <ul className={`
+          ${theme.layout.default}
+          carousel
+          h-1/4 gap-4 overflow-hidden`}>
           {imageGallery.map((image, i) => (
             <li key={i} className='w-auto '>
               {image.path ? 
@@ -50,12 +57,13 @@ useEffect(() => {
               )}
             </li>
           ))}
-        </ul>
+        </ul> */}
         <div className={`flex justify-center `}>
           <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
         </div>
         <div className={`${theme.layout.text} flex justify-center`}>
           <p className={`
+            my-10
             ${isMobile ? "w-2/3" : ""}
             ${theme.text.body} ${theme.color.text.default}
             `}>
