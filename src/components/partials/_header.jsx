@@ -1,18 +1,26 @@
+import { useResponsive } from "../../utils/responsoveProvider"
+import { useState, useEffect } from "react";
+
 const Header = ({tag, img, img_alt="Header image", tag_alt="Nomad Logo"}) => {
+  const isMobile = useResponsive();
 
   return (
     <header className="relative mb-8 border-solid border-firebrick border-b-4">     
-      <img 
-        className="w-full h-full object " 
-        src={img} 
-        alt={img_alt} 
-      />   
-      <div className="absolute bottom-10">
+      <div className="relative">
         <img 
-          src={tag} 
-          alt={tag_alt} 
-          className="z-2 w-auto min-h-24 drop-shadow-xl drop-shadow-black" 
-        />
+          className={`w-full ${isMobile ? "h-[700px] object-cover" : "h-full object" }`}
+          src={img} 
+          alt={img_alt} 
+          loading="lazy"
+        />   
+        <div className="absolute inset-0 flex justify-center items-end z-10">
+          <img 
+            src={tag} 
+            alt={tag_alt} 
+            className="title fade-in z-10 w-auto min-w-28 min-h-28 " 
+            loading="lazy"
+          />
+        </div>
       </div>
     </header>
   )

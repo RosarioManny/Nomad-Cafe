@@ -8,18 +8,40 @@ Color Pallete:
     Black  >  #2C2C2E    >  obscuro
 */
 export const theme  = {
-  base: {
-
+  text: {
+    body: "text-lg ",
+    heading: "text-5xl",
+    subheading: "text-2xl mt-8 underline underline-offset-4 ",
+    firstLetter: "text-3xl",
   },
+  layout: {
+    default: "flex justify-center m-4 place-items-center",
+    text: "text-center",
+    card: "",
+    nav: "",
+    hr: "w-1/2 h-[5px] my-4 rounded",
+    footer: {
+      section: "text-center my-4",
+    } 
+    },
   color: {
     text: {
       default: "text-espresso",
       primary: "text-firebrick",
       secondary: "text-gamboge",
+      nav: "text-oatmilk"
     },
     background: {
       primary: "bg-firebrick",
-      secondary: "bg-oatmilk"
+      secondary: "bg-oatmilk",
+      accent: "bg-gamboge"
     }
+  },
+  hover: {
+    text: "",
+    container: "",
+    button: "",
+    img: "",
+    underline: "absolute left-0 -bottom-2 w-0 h-1 bg-gamboge transition-all duration-300 group-hover:w-full origin-left"
   }
 }
