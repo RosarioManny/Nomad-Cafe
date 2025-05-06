@@ -3,15 +3,17 @@ import Header from "./partials/_header"
 import { useState } from 'react'
 import faqQuestions from '../database/faqQuestions'
 import { useResponsive } from "../utils/responsoveProvider"
+import ScrollToAnchor from "../utils/scrollToAnchor"
 
 const Faq = () => {
   const [isToggled, setIsToggled ] = useState(true);
   const isMobile = useResponsive()
-  console.log("POINT", faqQuestions[0].que)
-  console.log("BRACK", faqQuestions[0]['que'])
+
+
   return (
     <>
-    <Header 
+    <ScrollToAnchor/>
+    <Header
     img={"/gallery/Cafe-inside-Redshirt.jpg"}
     tag={"/icons-logos/Nomad-White-FAQ.webp"} />
     <section className="flex justify-center">
@@ -30,5 +32,4 @@ const Faq = () => {
   )
 }
 
-// Note: Error handling if FAQs can't load. 
 export default Faq 

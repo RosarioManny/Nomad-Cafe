@@ -8,7 +8,7 @@ const Carousol = () => {
   const [currentIdx, setCurrentIdx] = useState(1)
   const isMobile = useResponsive()
   const length = onlineReviews.length
-  const reviewsToShow = isMobile ? 2 : 1;
+  const reviewsToShow = isMobile ? 3 : 1;
   const itemWidth = 250
   const gap = 24
 
@@ -23,15 +23,13 @@ const Carousol = () => {
     );
   };
 
-  console.log(length - reviewsToShow, currentIdx)
   const offset = -(currentIdx * (itemWidth + gap));
-  console.log(offset)
   return (
     <div className="flex items-center w-full justify-center relative">
       {/* Navigation buttons */}
       <button 
         onClick={handlePrevious}
-        className="absolute left-0 z-10 bg-gamboge text-espresso font-black p-2 ml-6 rounded shadow-md"
+        className="absolute left-0 z-10 bg-gamboge text-espresso hover:bg-firebrick hover:text-oatmilk transition-color duration-300 font-black p-2 ml-6 rounded shadow-md"
       >
         &lt;
       </button>
@@ -56,7 +54,7 @@ const Carousol = () => {
       </div>
       <button 
         onClick={handleNext}
-        className="absolute right-0 z-10 bg-gamboge text-espresso hover:bg-firebrick hover:text-oatmilk transition-color duration-300 p-2 mr-2 rounded shadow-md"
+        className="absolute right-0 z-10 bg-gamboge text-espresso hover:bg-firebrick hover:text-oatmilk transition-color duration-300 p-2 mr-4 rounded shadow-md"
         >
         &gt;
       </button>

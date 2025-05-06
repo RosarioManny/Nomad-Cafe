@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { theme } from "../styles/themes"
 import { useResponsive } from "../utils/responsoveProvider"
 import { AnimatePresence, motion } from "framer-motion"
+import ScrollToAnchor from "../utils/scrollToAnchor"
 
 const Menu = () => {
   const isMobile = useResponsive();
@@ -10,12 +11,14 @@ const Menu = () => {
 
   return (
     <>
+      <ScrollToAnchor/>
       <Header
+      id="Header"
       img={"/products/green_traveler.jpg"}
       tag={"/public/icons-logos/Nomad-White-Breakfast.webp"}
       />
       <div className="flex justify-center items-center">
-        <div className={`
+        <div  className={`
           ${isMobile ? "" : "w-2/3"} 
           relative flex h-xl overflow-hidden align-center items-center rounded`}>
           {/* Mobile View */}
@@ -50,6 +53,7 @@ const Menu = () => {
               className="relative w-1/2"
               onHoverStart={() => setShowOverlay(true)}
               onHoverEnd={() => setShowOverlay(false)}>
+                
                 <AnimatePresence>
                   {showOverlay && (
                     <motion.a 

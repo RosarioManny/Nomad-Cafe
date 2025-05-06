@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom"
 import { theme } from "../../styles/themes"
 import { useResponsive } from "../../utils/responsoveProvider"
+import { socialMedias } from "../../database/socialMedias"
 
 const Footer = () => {
   const isMobile = useResponsive()
+  
   return (
     <footer className="mt-10 bottom-0 w-screen text-white ">
       <div className={`
         p-4 h-fit 
         ${theme.color.background.primary}
-        ${isMobile ? `flex-row-reverse flex justify-between` : `flex-col place-items-center align-content`}`}>
+        ${isMobile ? 
+        `flex-row-reverse flex justify-between` 
+        : 
+        `flex-col place-items-center align-content`}`
+        }>
           <section className={`${theme.layout.footer.section} flex flex-col gap-4 justify-start`} >
             <h3 className={`${theme.text.subheading} mt-0`}>We Accept:</h3>
             <div className="max-w-sm flex justify-center">
@@ -27,7 +33,7 @@ const Footer = () => {
             {["about", "menu", "faq"].map((link) => (
               <Link 
                 key={link} 
-                to={`/${link}`} 
+                to={`/${link}#Header`} 
                 className={`text-2xl w-auto hover:animate-pulse my-2 relative group pointer-cursor `}
                 >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
@@ -40,11 +46,25 @@ const Footer = () => {
           <h2 className={`${theme.text.subheading} mb-4`}>Contact Us!</h2>
           <p>(347)-227-8136</p>
           <p>nomadcafeandeatery@gmail.com</p>
-          {/* <img src="" alt="" /> */}
+          <div className="flex justify-center">
+          {socialMedias.map((media, i) => (
+            <Link 
+              key={i}
+              to={media.link}>
+              <img 
+              className="bottom-10 w-10 m-8 hover:animate-pulse"
+              src={media.path}
+              alt={media.alt_text}/>
+            </Link>
+          ))}
+          </div>
         </section>
         <div className="flex flex-col justify-center">
           <Link to="/">
-            <img className="bottom-10 min-w-[166px] h-40 my-4 hover:animate-pulse" src="icons-logos/Nomad-logo-White-Transparent.png" alt="Nomad Cafe & Eatery Logo with writing" />
+            <img 
+            className="bottom-10 min-w-[166px] h-40 my-4 hover:animate-pulse" 
+            src="icons-logos/Nomad-logo-White-Transparent.png" 
+            alt="Nomad Cafe & Eatery Logo with writing" />
           </Link>
         </div>
       </div>
