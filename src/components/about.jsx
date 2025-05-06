@@ -34,7 +34,7 @@ const About = () => {
             But more than just great food and drinks, Nomad is about community. 
             We’re a space where people from all walks of life can come together, share a moment, and leave feeling like their day got a little brighter.
           </p>
-          <p className={` ${isMobile ? "w-2/3" : "w-auto"} ${theme.text.body}`}>
+          <p className={` ${isMobile ? "w-2/3" : "w-auto"} mb-8 ${theme.text.body}`}>
             <span className={`${theme.text.body}  ${theme.color.text.primary} `}>
               <b className={`${theme.text.firstLetter} ${theme.color.text.primary} `}>O</b>
               ur team is a reflection of the vibrant neighborhood we serve,

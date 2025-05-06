@@ -17,18 +17,18 @@ const Footer = () => {
         `flex-col place-items-center align-content`}`
         }>
           <section className={`${theme.layout.footer.section} flex flex-col gap-4 justify-start`} >
-            <h3 className={`${theme.text.subheading} mt-0`}>We Accept:</h3>
+            <h3 className={`${theme.text.subheading} ${theme.text.underline}`}>We Accept:</h3>
             <div className="max-w-sm flex justify-center">
               <img 
               className="w-2/3" 
-              src="icons-logos/All-acceptance-Marker-VISA-DISC-AMEX-MC.webp" 
+              src="/icons-logos/All-acceptance-Marker-VISA-DISC-AMEX-MC.webp" 
               alt="Accepted Payment Logos - Visa, American Express, Discover, Google Pay, Apple Pay & Mastercard"
               loading="lazy"
               />
             </div>
         </section>
         <section className={`${theme.layout.footer.section}`}>
-          <h2 className={`${theme.text.subheading}`}> Quick Links </h2>
+          <h2 className={`${theme.text.subheading} ${theme.text.underline}`}> Quick Links </h2>
           <div className="flex flex-col h-fit ">
             {["about", "menu", "faq"].map((link) => (
               <Link 
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </section>
         <section className={`${theme.layout.footer.section} mx-4 flex-col flex justify-start`}>
-          <h2 className={`${theme.text.subheading} mb-4`}>Contact Us!</h2>
+          <h2 className={`${theme.text.subheading} ${theme.text.underline} mb-4`}>Contact Us!</h2>
           <p>(347)-227-8136</p>
           <p>nomadcafeandeatery@gmail.com</p>
           <div className="flex justify-center">
@@ -63,7 +63,7 @@ const Footer = () => {
           <Link to="/">
             <img 
             className="bottom-10 min-w-[166px] h-40 my-4 hover:animate-pulse" 
-            src="icons-logos/Nomad-logo-White-Transparent.png" 
+            src="/icons-logos/Nomad-logo-White-Transparent.png" 
             alt="Nomad Cafe & Eatery Logo with writing" />
           </Link>
         </div>
