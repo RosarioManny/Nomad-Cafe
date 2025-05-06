@@ -34,7 +34,7 @@ const Navbar = () => {
                 className={`${theme.color.text.nav} relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
                 >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
-                <span className={`${theme.hover.underline}`}></span>
+                <span className={`${theme.animation.hover.underline}`}></span>
               </Link>
             ))}
           </div>
@@ -50,8 +50,8 @@ const Navbar = () => {
           {/* Off-screen Menu */}
           <div 
             className={`
-              h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[700ms] bg-firebrick
-            ${isToggled ? 'right-0' : '-right-[450px]'}`}
+              h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
+            ${isToggled ? 'right-0' : '-right-[800px]'}`}
             >
             <div className="flex flex-col h-fit text-white">
               {["about", "menu", "faq"].map((link) => (
@@ -62,7 +62,7 @@ const Navbar = () => {
                   className={`hover:animate-pulse p-2 relative group pointer-cursor `}
                   >
                   {link.charAt(0).toUpperCase() + link.slice(1)}
-                  <span className={`${theme.hover.underline}`}></span>
+                  <span className={`${theme.animation.hover.underline}`}></span>
                 </Link>
               ))}
             </div>

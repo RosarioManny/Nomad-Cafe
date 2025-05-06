@@ -11,18 +11,22 @@ export const theme  = {
   text: {
     body: "text-lg ",
     heading: "text-5xl",
-    subheading: "text-2xl mt-8 underline underline-offset-4 ",
+    subheading: "text-2xl",
     firstLetter: "text-3xl",
+    underline: "underline underline-offset-4"
   },
   layout: {
     default: "flex justify-center m-4 place-items-center",
     text: "text-center",
     card: "",
     nav: "",
-    hr: "w-1/2 h-[5px] my-4 rounded",
+    hr: "w-2/3 h-[5px] my-4 rounded",
+    para_spacing: "my-10",
+    column: "flex flex-col align-center items-center",
+    row: "flex justify-center",
     footer: {
       section: "text-center my-4",
-    } 
+      }
     },
   color: {
     text: {
@@ -37,11 +41,14 @@ export const theme  = {
       accent: "bg-gamboge"
     }
   },
-  hover: {
-    text: "",
-    container: "",
-    button: "",
-    img: "",
-    underline: "absolute left-0 -bottom-2 w-0 h-1 bg-gamboge transition-all duration-300 group-hover:w-full origin-left"
+  animation: {
+    default_duration: "",
+    hover: {
+      text: "",
+      container: "",
+      button: "",
+      img: "",
+      underline: "absolute left-0 -bottom-2 w-0 h-1 bg-gamboge transition-all duration-300 group-hover:w-full origin-left"
+    },
   }
 }

@@ -15,14 +15,14 @@ const About = () => {
       <Header 
       tag={'icons-logos/Nomad-White-OurJourney.webp'} 
       img={"gallery/First_opened_C&J.jpg"}/>
-      <div className='flex flex-col align-center items-center'>
+      <div className={`${theme.layout.column}`}>
         <section className={`
           flex-col 
           ${theme.layout.default} 
           `}>
           <p className={`
             ${isMobile ? "w-2/3" : "w-auto"}
-            mb-8 
+            ${theme.layout.para_spacing}
             ${theme.text.body}`}>
             <span className={`${theme.text.body} ${theme.color.text.primary}`}>
               <b className={`${theme.text.firstLetter} ${theme.color.text.primary} `}>N</b>
@@ -34,7 +34,7 @@ const About = () => {
             But more than just great food and drinks, Nomad is about community. 
             We’re a space where people from all walks of life can come together, share a moment, and leave feeling like their day got a little brighter.
           </p>
-          <p className={` ${isMobile ? "w-2/3" : "w-auto"} mb-8 ${theme.text.body}`}>
+          <p className={` ${isMobile ? "w-2/3" : "w-auto"} ${theme.text.body}`}>
             <span className={`${theme.text.body}  ${theme.color.text.primary} `}>
               <b className={`${theme.text.firstLetter} ${theme.color.text.primary} `}>O</b>
               ur team is a reflection of the vibrant neighborhood we serve,
@@ -46,18 +46,22 @@ const About = () => {
           </p>
         </section>
           <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/> 
-        <section className={`flex flex-col ${theme.layout.text}`}>
-            <h1 className={`underline underline-offset-4 mt-10 ${theme.text.heading} ${theme.color.text.primary}`}>Visit Us!</h1>
+        <section className={`${theme.layout.text}`}>
+            <h1 className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary} ${theme.layout.para_spacing}`}>Visit Us!</h1>
           <div className={`${isMobile ? "grid grid-rows-[1fr_3fr]}" : ""}`}>
-            <div className='flex flex-col justify-center'>
-              <h2 className={`${theme.text.subheading} ${theme.color.text.primary}`}> Hours</h2>
-              <div className={` ${theme.text.body} `}>
-                <p>7am - 4pm</p>
-                <p>Monday - Friday</p>
-                <p>8am - 4pm</p>
-                <p>Saturday & Sunday</p>
+            <section>
+              <h2 className={`${theme.text.subheading}`}> Hours</h2>
+              <div className={` ${theme.text.body} ${theme.layout.row}`}>
+                <div className='m-6'>
+                  <p>Monday - Friday</p>
+                  <p className={`${theme.color.text.primary} ${theme.text.underline}`} >7am - 4pm</p>
+                </div>
+                <div className='m-6'>
+                  <p>Saturday & Sunday</p>
+                  <p className={`${theme.color.text.primary} ${theme.text.underline}`}>8am - 4pm</p>
+                </div>
               </div>
-            </div>
+            </section>
             <GoogleMaps className="w-2/3"/>
           </div>
         </section>

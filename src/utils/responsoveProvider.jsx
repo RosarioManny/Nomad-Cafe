@@ -3,10 +3,10 @@ import { createContext, useContext, useState, useEffect } from "react";
 const ResponsiveContext = createContext();
 
 export const ResponsiveProvider = ({ children }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth >= 760);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 760);
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth >= 760)
+    setIsDesktop(window.innerWidth >= 760)
   };
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export const ResponsiveProvider = ({ children }) => {
   }, []);
 
   return (
-    <ResponsiveContext.Provider value={isMobile}>
+    <ResponsiveContext.Provider value={isDesktop}>
       {children}
     </ResponsiveContext.Provider>
   );

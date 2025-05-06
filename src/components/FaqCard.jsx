@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { theme } from '../styles/themes'
+import { motion } from 'framer-motion'
 
 const FaqCard = ({ question, answer}) => {
   const [isToggled, setIsToggled] = useState()
@@ -16,26 +17,36 @@ const FaqCard = ({ question, answer}) => {
         {/* X Button */}
         <button 
           onClick={() => setIsToggled(!isToggled)}
-          className="relative flex flex-col justify-center items-center space-y-[-2px] p-2 z-10 transition-transform duration-300 ease-in-out"
+          className="relative flex flex-col justify-center items-center space-y-[-2px] p-2 z-10"
+          aria-label={isToggled ? "Collapse answer" : "Expand answer"}
           >
           <span className={`
-            rounded bg-espresso block h-[2px] w-4 transitiontransform duration-500 ease-in-out 
-            ${isToggled ? 'rotate-[135deg]' : "rotate-90"}`}>
+            rounded block h-[2px] w-4 transition-all duration-200 ease-linear
+            ${isToggled ? `rotate-45 ${theme.color.background.primary}` : `rotate-90 ${theme.color.background.accent}`}`}>
           </span>
           <span className={`
-            rounded bg-espresso block h-[2px] w-4 transitiontransform duration-500 ease-in-out 
-            ${isToggled ? 'rotate-[45deg]' : ""}`}>
+            rounded block h-[2px] w-4 transition-all duration-200 ease-linear
+            ${isToggled ? `-rotate-45 ${theme.color.background.primary}` : `${theme.color.background.accent}`}`}>
           </span>
         </button>
       </div>
       {/* Hidden Answer */}
-      <div className={`
-        faq-answer w-[350px] bg-firebrick tranisition-height duration-100 ease-in-out 
-        visibility: ${isToggled ? "visible" : ""}`}>
-        <p className={`answer-text text-oatmilk p-4`}>
+      <motion.div 
+        className={`w-full rounded-b-2xl bg-firebrick overflow-hidden `}
+        initial={false}
+        animate={{
+          height: isToggled ? 'auto' : 0,
+        }}
+        transition={{
+          duration: 0.35,
+          ease: "easeInOut",
+          delay: isToggled ? 0.15 : 0
+        }}
+        >
+        <p className={`${theme.color.text.nav} p-4`}>
           {answer}
         </p>
-      </div>
+      </motion.div>
     </div>
   )
 }

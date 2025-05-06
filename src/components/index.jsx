@@ -22,17 +22,16 @@ useEffect(() => {
     <main className={`${theme.color.text.default}${theme.text.body}`}>
       <ScrollToAnchor/>
       <Header
-      tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
-      img={`${isMobile ? "/gallery/Inside_gelato.jpg" : "/gallery/Tathi_espresso.jpg"}`}
-      img_alt='Barista preparing espresoo at Nomad Cafe'
-      
+        tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
+        img={`${isMobile ? "/gallery/Inside_gelato.jpg" : "/gallery/Tathi_espresso.jpg"}`}
+        img_alt='Barista preparing espresoo at Nomad Cafe'
       />
       <div >
         {/* Intro Section */}
       <section>
         <div className={`${theme.layout.text}`}>
           <h1 className={`${theme.text.heading} ${theme.color.text.default}`}>
-            <b className={`${theme.color.text.primary}`}>{yearsInBuisness}+</b> years serving Ridgewood!
+            <b className={`${theme.color.text.primary} text-6xl`}>{yearsInBuisness}+</b> years serving Ridgewood!
           </h1>
         </div>
         <InfiniteGallery 
@@ -43,7 +42,7 @@ useEffect(() => {
         </div>
         <div className={`${theme.layout.text} flex justify-center`}>
           <p className={`
-            my-10
+            ${theme.layout.para_spacing}
             ${isMobile ? "w-2/3" : ""}
             ${theme.text.body} ${theme.color.text.default}
             `}>
@@ -54,11 +53,11 @@ useEffect(() => {
         </div>
       </section>
       <div className='flex justify-center m-2'>
-        <hr className='w-2/3 h-1 bg-firebrick rounded'/>
+        <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.primary}`}/>
       </div>
         {/* Customer Reviews */}
       <section>
-        <h2 className='text-center text-2xl m-8'>Customer Reviews</h2>
+        <h2 className={`${theme.layout.para_spacing} ${theme.text.firstLetter} ${theme.color.text.default} text-center`}>Customer Reviews</h2>
         <Carousol className={`overflow-hidden`} />
     </section>
       </div>

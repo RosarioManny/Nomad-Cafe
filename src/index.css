@@ -67,57 +67,17 @@ body::before {
   }
 }
 
-/* FAQ Container */
 .faq-container {
   width: auto;
   position: relative;
 }
 
-/* Question Row */
 .faq-question {
   border-bottom: 2px solid firebrick;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-/* Answer - Initially hidden */
-.faq-answer {
-  position: relative;
-  overflow: hidden;
-  max-height: 0;
-  transform: translateY(0);
-  transition: all .5s ease-in-out;
-  border-radius: 0 0 17px 17px;
-  width: auto;
-}
-
-/* When visible */
-.faq-answer.visible {
-  max-height: 500px; /* Adjust based on content */
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Bottom border that will "drop" */
-.faq-question::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: firebrick;
-  transition: all 0.5s ease-in;
-  z-index: 1;
-}
-
-/* When expanded, move the border down */
-.faq-container.expanded .faq-question::after {
-  transform: translateY(100%);
 }
 
 .image-container::before { 

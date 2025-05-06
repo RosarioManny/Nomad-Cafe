@@ -4,14 +4,14 @@ import { useResponsive } from "../../utils/responsoveProvider"
 import { socialMedias } from "../../database/socialMedias"
 
 const Footer = () => {
-  const isMobile = useResponsive()
+  const isDesktop = useResponsive()
   
   return (
     <footer className="mt-10 bottom-0 w-screen text-white ">
       <div className={`
         p-4 h-fit 
         ${theme.color.background.primary}
-        ${isMobile ? 
+        ${isDesktop ? 
         `flex-row-reverse flex justify-between` 
         : 
         `flex-col place-items-center align-content`}`
@@ -37,7 +37,7 @@ const Footer = () => {
                 className={`text-2xl w-auto hover:animate-pulse my-2 relative group pointer-cursor `}
                 >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
-                <span className={`${theme.hover.underline}`}></span>
+                <span className={`${theme.animation.hover.underline}`}></span>
               </Link>
             ))}
           </div>
