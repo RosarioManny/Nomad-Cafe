@@ -2,7 +2,7 @@ export const onlineReviews = [
   { 
     name: "Rocco G.",
     rating: 5, 
-    review: "Food is unbelievable very good quality Excellent place for a 5 star cup of coffee I had the Cappuccino with an extra shot . And Avocado Toast can't go wrong Run there ",
+    review: "Food is unbelievable very good quality Excellent place for a 5 star cup of coffee I had the Cappuccino with an extra shot. And Avocado Toast can't go wrong Run there ",
     date: "Dec 27, 2024",
     source: "Yelp",
     path: "https://www.yelp.com/biz/nomad-cafe-and-eatery-ridgewood?hrid=ynPA9-bAY3RtyaIhW9TOYQ&utm_campaign=www_review_share_popup&utm_medium=copy_path&utm_source=(direct)"

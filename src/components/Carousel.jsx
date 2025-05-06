@@ -2,62 +2,63 @@ import { useState } from 'react'
 import { onlineReviews } from '../database/onlineReviews'
 import ReviewCard from './ReviewCard'
 import { useResponsive } from '../utils/responsoveProvider'
+import { motion, AnimatePresence } from 'framer-motion'
 
-const Carousol = ({i, component}) => {
-  const [currentIdx, setCurrentIdx] = useState(0)
-  const length = onlineReviews.length;
+const Carousol = () => {
+  const [currentIdx, setCurrentIdx] = useState(1)
   const isMobile = useResponsive()
-  const reviewsToShow = isMobile ? 3 : 1;
-  
-  const getVisibleReviews = () => {
-    let visibleReviews = [];
-    for (let i = 0; i < reviewsToShow; i++) {
-      const index = (currentIdx + i) % length;
-      visibleReviews.push(onlineReviews[index]);
-    }
-    return visibleReviews;
-  }
-
-  // console.log(getVisibleReviews())
+  const length = onlineReviews.length
+  const reviewsToShow = isMobile ? 2 : 1;
+  const itemWidth = 250
+  const gap = 24
 
   const handlePrevious = () => {
-    const newIndex = (currentIdx - 1 + length) % length;
-    // loops back to the end
-    setCurrentIdx(newIndex)
+    setCurrentIdx(prev =>  
+      prev <= 1 ? length - reviewsToShow : prev - 1);
   };
   
   const handleNext = () => {
-    const newIndex = (currentIdx + 1) % length;
-    setCurrentIdx(newIndex >= length ? 0 : newIndex)
+    setCurrentIdx(prev => 
+      prev >= length - reviewsToShow ? 1 : prev + 1
+    );
   };
 
+  console.log(length - reviewsToShow, currentIdx)
+  const offset = -(currentIdx * (itemWidth + gap));
+  console.log(offset)
   return (
-    <div className="flex justify-center relative">
+    <div className="flex overflow-hidden justify-center relative">
       {/* Navigation buttons */}
       <button 
         onClick={handlePrevious}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gamboge text-espresso font-black p-2 mx-8 rounded shadow-md"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gamboge text-espresso font-black p-2 ml-2 rounded shadow-md"
       >
         &lt;
       </button>
       {/* Reviews container */}
-      <div className="w-2/3 flex justify-center">
-        {getVisibleReviews().map((review, index) => (
-          <div key={`${review.name}-${index}`} className="">
-            <ReviewCard
-              name={review.name}
-              review={review.review}
-              rating={review.rating}
-              path={review.path}
-              source={review.source}
-            />
-          </div>
-        ))}
+      <div className="w-[80vw] pl-4 flex justify-center items-center overflow-hidden">
+        <motion.div 
+          className='flex'
+          style={{ width: `${(itemWidth + gap)}px` }}
+          animate={{
+            x: offset,
+            transition: { type: 'spring', stiffness: 300, damping: 30 }
+          }}>
+          {onlineReviews.map((review, index) => (
+            <div 
+              key={review.name + index}
+              className="flex-shrink-0" 
+              // style={{ width: `${itemWidth}px`, marginRight: `${gap}px` }}
+            >
+              <ReviewCard {...review} />
+            </div>
+          ))}
+        </motion.div>
       </div>
       <button 
         onClick={handleNext}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gamboge text-espresso hover:bg-firebrick hover:text-oatmilk transition-color duration-300 p-2 mx-8 rounded shadow-md"
-      >
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gamboge text-espresso hover:bg-firebrick hover:text-oatmilk transition-color duration-300 p-2 mr-2 rounded shadow-md"
+        >
         &gt;
       </button>
     </div>
