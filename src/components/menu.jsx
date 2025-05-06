@@ -15,7 +15,7 @@ const Menu = () => {
       <Header
       id="Header"
       img={"/products/green_traveler.jpg"}
-      tag={"/public/icons-logos/Nomad-White-Breakfast.webp"}
+      tag={"/icons-logos/Nomad-White-Breakfast.webp"}
       />
       <div className="flex justify-center items-center">
         <div  className={`
