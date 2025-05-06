@@ -2,6 +2,7 @@ import Header from './partials/_header'
 import { theme } from '../styles/themes'
 import { useResponsive } from '../utils/responsoveProvider'
 import  GoogleMaps  from './GoogleMaps'
+import ScrollToAnchor from '../utils/scrollToAnchor'
 
 const About = () => {
   const isMobile = useResponsive()
@@ -10,7 +11,10 @@ const About = () => {
   // console.log("key >>", GOOGLE_MAPS_API_KEY)
   return (
     <>
-      <Header tag={'icons-logos/Nomad-White-OurJourney.webp'} img={"gallery/First_opened_C&J.jpg"}/>
+      <ScrollToAnchor/>
+      <Header 
+      tag={'icons-logos/Nomad-White-OurJourney.webp'} 
+      img={"gallery/First_opened_C&J.jpg"}/>
       <div className='flex flex-col align-center items-center'>
         <section className={`
           flex-col 
@@ -44,7 +48,7 @@ const About = () => {
           <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/> 
         <section className={`flex flex-col ${theme.layout.text}`}>
             <h1 className={`underline underline-offset-4 mt-10 ${theme.text.heading} ${theme.color.text.primary}`}>Visit Us!</h1>
-          <div classNam={`${isMobile ? "grid grid-rows-[1fr_3fr]}" : ""}`}>
+          <div className={`${isMobile ? "grid grid-rows-[1fr_3fr]}" : ""}`}>
             <div className='flex flex-col justify-center'>
               <h2 className={`${theme.text.subheading} ${theme.color.text.primary}`}> Hours</h2>
               <div className={` ${theme.text.body} `}>

@@ -5,7 +5,7 @@ const Header = ({tag, img, img_alt="Header image", tag_alt="Nomad Logo"}) => {
   const isMobile = useResponsive();
 
   return (
-    <header className="relative mb-8 border-solid border-firebrick border-b-4">     
+    <header id="Header" className="relative mb-8 border-solid border-firebrick border-b-4">     
       <div className="relative">
         <img 
           className={`w-full ${isMobile ? "h-[700px] object-cover" : "h-full object" }`}

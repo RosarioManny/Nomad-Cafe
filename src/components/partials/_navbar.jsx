@@ -50,7 +50,7 @@ const Navbar = () => {
           {/* Off-screen Menu */}
           <div 
             className={`
-              h-screen w-full max-w-[350px] fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
+              h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[700ms] bg-firebrick
             ${isToggled ? 'right-0' : '-right-[450px]'}`}
             >
             <div className="flex flex-col h-fit text-white">
