@@ -5,39 +5,41 @@ const menuItems = [
     price: 2.75,
     variants: ["Plain", "Whole Wheat", "Sesame", "Everything", "Cinnamon Raisin"],
     addOns: [
+      { name: "Tofu scallion cream cheese (v)", price: 3 },
       { name: "Scallion cream cheese | Plain tofu cream cheese (v)", price: 2.5 },
       { name: "Plain cream cheese", price: 2 },
-      { name: "Tofu scallion cream cheese (v)", price: 3 },
       { name: "Butter, Peanut butter or Jam", price: 1 }
     ]
   },
   {
     category: "The Traveler Sandwich",
-    items: [
+    description: "Two eggs with cheese (sub avocado for vegan)",
+    price: 5.75,
+    options:[ 
       {
-        name: "Two Egg Sandwich",
-        price: 5.75,
-        description: "2 eggs with cheese (sub avocado (v)",
-        options: {
-          Bread: {
-            base: ["Bagel (v)", "Ciabatta (v)", "Croissant", "Whole wheat toast"],
-            premium: { name: "Gluten-free bread (v)", price: 3 }
-          },
-          Cheese: {
-            base: ["Cheddar", "Swiss", "Provolone", "Pepperjack"],
-            premium: { name: "Vegan cheese", price: 1 }
-          },
-          Proteins: {
-            base: [ "Bacon", "Ham", "Turkey", ],
-            premium: { name: "each", price: 3}
-          },
-          Veggies: {
-            base: ["Spinach", "Onion", "Tomato", "Alfalfa sprouts", "Roasted red peppers"],
-            premium:{ name: "each", price: .75}
-          }
+        Bread: {
+          base: ["Bagel (v)", "Ciabatta (v)", "Croissant", "Whole wheat toast"],
+          premium: { name: "Gluten-free bread (v)", price: 3 }
+        },
+        Cheese: {
+          base: ["Cheddar", "Swiss", "Provolone", "Pepperjack"],
+          premium: { name: "Vegan cheese", price: 1 }
+        },
+        Proteins: {
+          base: [ "Bacon", "Ham", "Turkey", ],
+          price: 3
+        },
+        Veggies: {
+          base: ["Alfalfa sprouts", "Roasted red peppers", "Spinach", "Onion", "Tomato"],
+          price: .75,
+          premium:{ name: "Avocado", price: 3}
+        },
+        Condiments: {
+          base: ["Mayo", "Ketchup", "Red Cholula", "Green Cholula", "Sriracha", "Vegan Mayo", "Chipotle Aioli", "Salt & Pepper"],
+          price: .50
         }
       }
-    ]
+    ]    
   },
   {
     category: "Signature Dishes",

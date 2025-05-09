@@ -13,7 +13,8 @@ export const theme  = {
     heading: "text-5xl",
     subheading: "text-2xl",
     firstLetter: "text-3xl",
-    underline: "underline underline-offset-4"
+    underline: "underline underline-offset-4",
+    menuHeading: "text-xl"
   },
   layout: {
     default: "flex justify-center m-4 place-items-center",
