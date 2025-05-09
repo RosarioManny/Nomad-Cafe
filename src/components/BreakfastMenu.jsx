@@ -1,13 +1,21 @@
 import Header from "./partials/_header";
-import { useState } from 'react';
 import { theme } from "../styles/themes";
 import { useResponsive } from "../utils/responsoveProvider";
-import { AnimatePresence, motion } from "framer-motion";
+// import { AnimatePresence, motion } from "framer-motion";
 import ScrollToAnchor from "../utils/scrollToAnchor";
-
+import menuItems from "../database/menuItems";
+import { getBagels, getSandwiches, getSides, getSignatureDishes, getTravelerSandwich} from "../utils/getMenuItemCategory";
 const BreakfastMenu = () => {
   const isMobile = useResponsive();
-  const Bagels = [ "Plain", "Everything", "Whole Wheat", "Sesame", "Cinnamon Raisin"]
+  
+  const bagels = getBagels()
+  console.log(bagels)
+  const sandwiches = getSandwiches()
+  const sides = getSides()
+  const signatureDishes = getSignatureDishes()
+  const travelerSandwich = getTravelerSandwich()
+
+    
   return (
     <>
       <ScrollToAnchor/>
@@ -19,15 +27,15 @@ const BreakfastMenu = () => {
       {/* Mini Nav */}
       <section className={`${theme.layout.column}`}>
         <div className={`${theme.layout.row} space-x-10`}>
-          <h1>
+          <p>
             Foods
-          </h1>
-          <h1>
+          </p>
+          <p>
             Drinks
-          </h1>
-          <h1>
+          </p>
+          <p>
             Sweets
-          </h1>
+          </p>
         </div>
         <a href="">
           Download Menus
@@ -36,24 +44,9 @@ const BreakfastMenu = () => {
         <h1>
           Breakfast
         </h1>
-      <section className={`grid grid-cols-2`}>
-        <div  className={`${theme.layout.column} space-x-10`}> 
-          <div className={`${theme.layout.row}`}>
-          <h2>Bagels - All are Vegan (v)</h2>
-          <p> - 2.75</p>
-          </div>
-          <ul className="grid grid-cols-2">
-          {Bagels.map((flavor, i) => (
-            <li
-            key={i}
-            >
-              {flavor}
-            </li>
-          ))}
-          </ul> 
-
-        </div>
-      </section>
+      <section className={`${isMobile ? "" : "flex flex-col align-center items-center"}`}>
+      
+    </section>
     </>
   );
 };

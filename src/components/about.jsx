@@ -48,7 +48,7 @@ const About = () => {
           <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/> 
         <section className={`${theme.layout.text}`}>
             <h1 className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary} ${theme.layout.para_spacing}`}>Visit Us!</h1>
-          <div className={`${isMobile ? "grid grid-rows-[1fr_3fr]}" : ""}`}>
+          <div >
             <section>
               <h2 className={`${theme.text.subheading}`}> Hours</h2>
               <div className={` ${theme.text.body} ${theme.layout.row}`}>

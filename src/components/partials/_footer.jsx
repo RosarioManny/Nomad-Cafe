@@ -20,7 +20,7 @@ const Footer = () => {
             <h3 className={`${theme.text.subheading} ${theme.text.underline}`}>We Accept:</h3>
             <div className="max-w-sm flex justify-center">
               <img 
-              className="w-2/3" 
+              className="w-2/3 rounded-md" 
               src="/icons-logos/All-acceptance-Marker-VISA-DISC-AMEX-MC.webp" 
               alt="Accepted Payment Logos - Visa, American Express, Discover, Google Pay, Apple Pay & Mastercard"
               loading="lazy"
