@@ -62,7 +62,7 @@ const menuItems = [
         price: 8,
         description: "2 tortillas, eggs, pico de gallo, avocado, cheddar",
         modifiers: [
-          { name: "Add meat", price: 3 }
+          { name: "Add protein: Bacon, Ham or Turkey", price: 3 }
         ]
       },
       {

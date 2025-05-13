@@ -4,7 +4,7 @@ import { useResponsive } from "../utils/responsoveProvider";
 import ScrollToAnchor from "../utils/scrollToAnchor";
 import  MenuNav  from "./partials/_menuNav";
 
-const SweetsMenu = () => {
+const MenuSweets = () => {
   const isMobile = useResponsive();
   
 
@@ -29,4 +29,4 @@ const SweetsMenu = () => {
   );
 };
 
-export default SweetsMenu;
+export default MenuSweets;

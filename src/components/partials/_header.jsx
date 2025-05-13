@@ -3,15 +3,22 @@ import { useState, useEffect } from "react";
 
 const Header = ({tag, img, img_alt="Header image", tag_alt="Nomad Logo"}) => {
   const isMobile = useResponsive();
+  const [imageError, setImageError] = useState(false)
 
+  const defaultImage = "/gallery/Shop_sign.jpg"
+
+  const handleImageError = () => {
+    setImageError(true)
+  }
   return (
     <header id="Header" className="relative mb-8 border-solid border-firebrick border-b-4">     
       <div className="relative">
         <img 
           className={`w-full ${isMobile ? "h-[700px] object-cover" : "h-full object" }`}
-          src={img} 
+          src={imageError ? defaultImage : img}
           alt={img_alt} 
           loading="lazy"
+          onError={handleImageError}
         />   
         <div className="absolute inset-0 flex justify-center items-end z-10">
           <img 

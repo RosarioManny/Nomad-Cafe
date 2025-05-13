@@ -37,24 +37,37 @@ useEffect(() => {
         <InfiniteGallery 
         images={imageGallery}
         /> 
-        <div className={`flex justify-center `}>
-          <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
-        </div>
         <div className={`${theme.layout.text} flex justify-center`}>
           <p className={`
             ${theme.layout.para_spacing}
             ${isMobile ? "w-2/3" : ""}
             ${theme.text.body} ${theme.color.text.default}
             `}>
-            Nomad cafe is a neighborhood Restaurant in Ridgewood, New York. We provide delicious handmade food. 
+            Nomad cafe is a neighborhood restaurant in Ridgewood, New York. We provide delicious handmade food. 
             From our customizable Traveler sandwich to our popular Chedder Smashbrowns.
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
           </p>
         </div>
+
+        {/* <div className={`flex justify-center `}>
+          <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
+        </div>
+
+        <div className={`${theme.layout.text} flex justify-center`}>
+          <h1> NOW SERVING GELATO</h1>
+          <p className={`
+            ${theme.layout.para_spacing}
+            ${isMobile ? "w-2/3" : ""}
+            ${theme.text.body} ${theme.color.text.default}
+            `}>
+              
+          </p>
+        </div> */}
       </section>
       <div className='flex justify-center m-2'>
         <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.primary}`}/>
       </div>
+      
         {/* Customer Reviews */}
       <section>
         <h2 className={`overflow-x-auto flex-shrink-0 ${theme.layout.para_spacing} ${theme.text.firstLetter} ${theme.color.text.default} text-center`}>Customer Reviews</h2>
