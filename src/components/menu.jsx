@@ -85,7 +85,7 @@ const Menu = () => {
           </div>
         ) : (
           /* Mobile View - Carousel Style */
-          <div className={`flex overflow-x-auto w-full p-4 space-x-4 ${theme.layout.para_spacing}`}>
+          <div className={`flex overflow-x-auto w-full p-4 space-x-4 no-scrollbar ${theme.layout.para_spacing}`}>
             {menuCategories.map((category) => (
               <div key={category.id} className="flex-shrink-0 w-3/4">
                 <a href={category.link}>

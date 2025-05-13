@@ -59,14 +59,12 @@ const Footer = () => {
           ))}
           </div>
         </section>
-        <div className="flex flex-col justify-center">
-          <Link to="/">
-            <img 
-            className="bottom-10 min-w-[166px] h-40 my-4 hover:animate-pulse" 
-            src="/icons-logos/Nomad-logo-White-Transparent.png" 
-            alt="Nomad Cafe & Eatery Logo with writing" />
-          </Link>
-        </div>
+        <Link className="flex flex-col justify-center" to="/">
+          <img 
+          className="bottom-10 min-w-[166px] h-40 my-4 hover:animate-pulse" 
+          src="/icons-logos/Nomad-logo-White-Transparent.png" 
+          alt="Nomad Cafe & Eatery Logo with writing" />
+        </Link>
       </div>
     </footer>
   )

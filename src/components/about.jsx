@@ -48,8 +48,7 @@ const About = () => {
           <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/> 
         <section className={`${theme.layout.text}`}>
             <h1 className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary} ${theme.layout.para_spacing}`}>Visit Us!</h1>
-          <div >
-            <section>
+            <div>
               <h2 className={`${theme.text.subheading}`}> Hours</h2>
               <div className={` ${theme.text.body} ${theme.layout.row}`}>
                 <div className='m-6'>
@@ -61,9 +60,8 @@ const About = () => {
                   <p className={`${theme.color.text.primary} ${theme.text.underline}`}>8am - 4pm</p>
                 </div>
               </div>
-            </section>
-            <GoogleMaps className="w-2/3"/>
-          </div>
+            </div>
+            <GoogleMaps className=" w-2/3"/>
         </section>
       </div>
     </>

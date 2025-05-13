@@ -57,9 +57,9 @@ useEffect(() => {
       </div>
         {/* Customer Reviews */}
       <section>
-        <h2 className={`${theme.layout.para_spacing} ${theme.text.firstLetter} ${theme.color.text.default} text-center`}>Customer Reviews</h2>
+        <h2 className={`overflow-x-auto flex-shrink-0 ${theme.layout.para_spacing} ${theme.text.firstLetter} ${theme.color.text.default} text-center`}>Customer Reviews</h2>
         <Carousol className={`overflow-hidden`} />
-    </section>
+      </section>
       </div>
     </main>
   )
