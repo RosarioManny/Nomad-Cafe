@@ -49,7 +49,7 @@ const menuItems = [
         price: 14,
         description: "2 eggs, rosemary parmesan hashbrowns, ham, berries, wheat toast",
         modifiers: [
-          { name: "Sub bacon/turkey/avocado", price: 1 }
+          { name: "Sub ham for bacon/turkey/avocado", price: 1 }
         ]
       },
       {
@@ -71,7 +71,7 @@ const menuItems = [
         description: "Smashed avocado, pico de gallo, sprouts",
         modifiers: [
           { name: "Add egg", price: 2 },
-          { name: "GF bread", price: 3 }
+          { name: "Sub GF bread", price: 3 }
         ]
       },
       {

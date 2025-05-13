@@ -9,6 +9,8 @@ import About from './components/about.jsx'
 import Faq from './components/faq.jsx'
 import BreakfastMenu from './components/BreakfastMenu.jsx'
 import { ResponsiveProvider } from './utils/responsoveProvider.jsx'
+import DrinksMenu from './components/DrinksMenu.jsx'
+import SweetsMenu from './components/SweetsMenu.jsx'
 
 
 function App() {
@@ -22,8 +24,8 @@ function App() {
           <Route path="/menu" element={<Menu/>}/>
           <Route path="/faq" element={<Faq/>}/>
           <Route path="/menu/breakfast" element={<BreakfastMenu/>}/>
-          <Route path="/menu/beverages" element={<Home/>}/>
-          <Route path="/menu/sweets" element={<Home/>}/>
+          <Route path="/menu/beverages" element={<DrinksMenu/>}/>
+          <Route path="/menu/sweets" element={<SweetsMenu/>}/>
         </Routes>
       <Footer />
     </ResponsiveProvider>
