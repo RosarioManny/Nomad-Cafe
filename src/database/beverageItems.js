@@ -43,7 +43,7 @@ const beverageItems = [
     ]
   },
   {
-    "category": "Hot",
+    "category": "Hot Drinks",
     "sizes": {
       "Small": "12oz",
       "Medium": "16oz",
@@ -67,18 +67,27 @@ const beverageItems = [
       },
       {
         "name": "Standard Hot Drinks",
-        "description": "Americano, Au Lait, Machiatto, Cappuccino, Cortado, Flat White, Latte, Chai Latte, Matcha Latte, Mocha Latte, Tea",
+        "selection": ["Americano", "Au Lait", "Machiatto", "Cappuccino", "Cortado", "Flat White", "Latte", "Chai Latte", "Matcha Latte", "Mocha Latte"],
+        "price": {
+          "Small": 2.75,
+          "Medium": 3,
+          "Large": 3.25
+        },
+        
+      },
+      {
+        "name": "Tea",
         "price": {
           "Small": 2.75,
           "Medium": 3,
           "Large": 3.25
         },
         "teaVarieties": "English Breakfast, Lemon Ginger, Peppermint, Chamomile, Green Tea, Black Tea, Earl grey, Chai"
-      }
+      },
     ]
   },
   {
-    "category": "Iced",
+    "category": "Iced Drinks",
     "sizes": {
       "Small": "16oz",
       "Medium": "20oz",

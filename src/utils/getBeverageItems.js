@@ -5,6 +5,6 @@ export const getMenuByCategory = (category) => {
 };
 
 export const signatureLattes = () => getMenuByCategory("Signatures Lattes")
-export const icedDrinks = () => getMenuByCategory("Iced")
-export const hotDrinks = () => getMenuByCategory("Hot")
+export const icedDrinks = () => getMenuByCategory("Iced Drinks")
+export const hotDrinks = () => getMenuByCategory("Hot Drinks")
 export const drinkExtras = () => getMenuByCategory("Extras")
