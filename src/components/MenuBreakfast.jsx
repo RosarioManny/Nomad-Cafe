@@ -78,7 +78,7 @@ const MenuBreakfast = () => {
             </div>
             {/* Traveler Ingredients */}
             {Object.entries(travelerOptions).map(([category, options]) => (
-              <div key={category} className="option-category">
+              <div key={category} className="flex flex-col items-center">
                 {/* Paid Add-ons */}
                 {options.price ? (
                   <div className="flex space-x-2 items-center">
@@ -89,7 +89,7 @@ const MenuBreakfast = () => {
                       `}>
                         {category}
                     </h3>
-                    <p className="text-xs"> ({options.price} each) </p>
+                    <p className="text-xs"> (+{options.price} each) </p>
                   </div>
                 ) : (
                   // Non-paid add-ons
@@ -97,15 +97,16 @@ const MenuBreakfast = () => {
                     ${theme.color.text.secondary} 
                     ${theme.text.underline}
                     ${theme.text.menuHeading}
+                    
                     `}>
                       {category}
                   </h3>
                 )}
               
                 <div className="base-options">
-                  <ul className="flex flex-wrap items-center h-max">
+                  <ul className="flex flex-wrap justify-center text-center">
                     {options.base.map((item, index) => (
-                      <li className="mx-[4px] " key={`${category}-base-${index}`}>{item} |</li>
+                      <li className="mx-[4px] " key={`${category}-base-${index}`}>{item} </li>
                     ))}
                   </ul> 
                 </div>
@@ -167,7 +168,7 @@ const MenuBreakfast = () => {
               {sandwiches.category}
             </h2>
             {sandwiches.items.map((dish, i) => (
-              <div key={i} className="m-2 ">
+              <div key={i} className="m-2">
                 <h1 className={`
                   ${theme.color.text.primary} 
                   ${theme.text.underline}
@@ -177,10 +178,10 @@ const MenuBreakfast = () => {
                 <p> {dish.description}</p>
               </div>
             ))}
-            <div className="flex mx-2 gap-[5px]">
+            <div className="flex gap-[5px]">
             <p className={`${theme.color.text.secondary}`}> Add-Ons: </p>
               {sandwichAddOns.map((item, i) => (
-                <div key={i}>
+                <div className="flex" key={i}>
                   <h3> {item.name} -</h3>
                   <p className={`${theme.color.text.primary}`}>{item.price} </p>
                 </div>
@@ -190,7 +191,7 @@ const MenuBreakfast = () => {
 
             <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
           {/* Sides  */}
-          <section>
+          <section className="w-full">
             <h2 className={`
               ${theme.text.subheading} 
               ${theme.color.text.secondary} 
@@ -198,10 +199,15 @@ const MenuBreakfast = () => {
                 {sides.category}
             </h2>
             {sides.items.map((dish, i) => (
-              <div key={i} className="flex gap-[5px]">
-                <h3>{dish.name} - </h3>            
-                <p className={`${theme.color.text.primary}`}> {dish.price}</p>
-              </div>
+              <section key={i} className="flex justify-between border-b border-gamboge m-2 p-2">
+                <h3 className={`
+                  ${theme.color.text.primary} 
+                  ${theme.text.body}
+                  `}>
+                    {dish.name} 
+                </h3>            
+                <p className={`${theme.color.text.default} text-right`}> {dish.price}</p>
+              </section>
             ))}
           </section>
       </section>

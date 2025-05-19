@@ -6,7 +6,7 @@ const menuItems = [
     variants: ["Plain", "Whole Wheat", "Sesame", "Everything", "Cinnamon Raisin"],
     addOns: [
       { name: "Tofu scallion cream cheese (v)", price: 3 },
-      { name: "Scallion cream cheese | Plain tofu cream cheese (v)", price: 2.5 },
+      { name: "Scallion cream cheese | Tofu cream cheese (v)", price: 2.5 },
       { name: "Plain cream cheese", price: 2 },
       { name: "Butter, Peanut butter or Jam", price: 1 }
     ]
@@ -117,7 +117,7 @@ const menuItems = [
     items: [
       { name: "Greek yogurt + berries + honey", price: 6 },
       { 
-        name: "Rosemary parmesan hashbrowns", 
+        name: "Rosemary parmesan hashbrown", 
         variants: ["Vegan (v)"],
         price: 6.5 
       },

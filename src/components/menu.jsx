@@ -22,7 +22,7 @@ const Menu = () => {
       title: '/icons-logos/Nomad-White-Sweets.webp',
       image: '/products/Nomad-Danishes-Full.jpg',
       alt: 'Fresh Pastries and Baked Goods',
-      link: '/menu/pastries'
+      link: '/menu/sweets'
     },
     {
       id: 'beverages',

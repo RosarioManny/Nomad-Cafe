@@ -1,10 +1,10 @@
 const beverageItems = [
   {
     "category": "Signatures Lattes",
-    "sizePrices": {
-      "Small": 2.75,
-      "Medium": 3,
-      "Large": 3.25
+    "prices": {
+      "Sm": 5,
+      "Md": 5.5,
+      "Lg": 6.25
     },
     "icedPremium": 0.5,
     "flavors": [
@@ -45,17 +45,17 @@ const beverageItems = [
   {
     "category": "Hot Drinks",
     "sizes": {
-      "Small": "12oz",
-      "Medium": "16oz",
-      "Large": "20oz"
+      "Sm": "12oz",
+      "Md": "16oz",
+      "Lg": "20oz"
     },
     "items": [
       {
         "name": "Drip Coffee",
         "price": {
-          "Small": 2.75,
-          "Medium": 3,
-          "Large": 3.25
+          "Sm": 2.75,
+          "Md": 3.25,
+          "Lg": 3.75
         }
       },
       {
@@ -66,49 +66,146 @@ const beverageItems = [
         }
       },
       {
-        "name": "Standard Hot Drinks",
-        "selection": ["Americano", "Au Lait", "Machiatto", "Cappuccino", "Cortado", "Flat White", "Latte", "Chai Latte", "Matcha Latte", "Mocha Latte"],
+        "name": "Americano",
         "price": {
-          "Small": 2.75,
-          "Medium": 3,
-          "Large": 3.25
-        },
-        
+          "Sm": 3.5,
+          "Md": 4.5,
+          "Lg": 5.5
+        }
+      },
+      {
+        "name": "Macchiato",
+        "price": {
+          "Standard": 3.75
+        }
+      },
+      {
+        "name": "Cortado",
+        "price": {
+          "Standard:": 4
+        }
+      },
+      {
+        "name": "Cappucino",
+        "price": {
+          "Sm": 4.25,
+          "Md": 4.75,
+          "Lg": 5.5
+        }
+      },
+      {
+        "name": "Latte",
+        "price": {
+          "Sm": 4.25,
+          "Md": 4.75,
+          "Lg": 5.5
+        }
+      },
+      {
+        "name": "Chai Latte",
+        "price": {
+          "Sm": 4.5,
+          "Md": 5,
+          "Lg": 5.5
+        }
+      },
+      {
+        "name": "Mocha Latte",
+        "price": {
+          "Sm": 5,
+          "Md": 5.5,
+          "Lg": 6.25
+        }
+      },
+      {
+        "name": "Matcha Latte",
+        "price": {
+          "Sm": 5,
+          "Md": 5.5,
+          "Lg": 6
+        }
       },
       {
         "name": "Tea",
         "price": {
-          "Small": 2.75,
-          "Medium": 3,
-          "Large": 3.25
+          "Sm": 2.75,
+          "Md": 3,
+          "Lg": 3.25
         },
-        "teaVarieties": "English Breakfast, Lemon Ginger, Peppermint, Chamomile, Green Tea, Black Tea, Earl grey, Chai"
+        "varieties": "English Breakfast, Lemon Ginger, Peppermint, Chamomile, Green Tea, Black Tea, Earl grey, Chai"
       },
     ]
   },
   {
     "category": "Iced Drinks",
     "sizes": {
-      "Small": "16oz",
-      "Medium": "20oz",
-      "Large": "24oz"
+      "Sm": "16oz",
+      "Md": "20oz",
+      "Lg": "24oz"
     },
     "items": [
       {
-        "name": "Standard Iced Drinks",
-        "description": "Iced Coffee, Cold Brew, Iced Americano, Iced Latte, Iced Chai, Iced Mocha, Iced Matcha",
-        "price": {
-          "Small": 2.75,
-          "Medium": 3,
-          "Large": 3.25
+        "name": "Iced Coffee",
+        "sizes": {
+          "Sm": 4.25,
+          "Md": 4.75,
+          "Lg": 5.25
+        }
+      },
+      {
+        "name": "Cold Brew",
+        "sizes": {
+          "Sm": 4.75,
+          "Md": 5.25,
+          "Lg": 5.75
+        }
+      },
+      {
+        "name": "Iced Americano",
+        "sizes": {
+          "Sm": 4.25,
+          "Md": 5.25,
+          "Lg": 6.25
+        }
+      },
+      {
+        "name": "Iced Latte",
+        "sizes": {
+          "Sm": 4.75,
+          "Md": 5.25,
+          "Lg": 6
+        }
+      },
+      {
+        "name": "Iced Chai",
+        "sizes": {
+          "Sm": 5,
+          "Md": 5.5,
+          "Lg": 6
+        }
+      },
+      {
+        "name": "Iced Mocha",
+        "sizes": {
+          "Sm": 5.5,
+          "Md": 6,
+          "Lg": 6.75
+        }
+      },
+      {
+        "name": "Iced Matcha",
+        "sizes": {
+          "Sm": 5.5,
+          "Md": 6,
+          "Lg": 6.5
         }
       },
       {
         "name": "Iced Tea",
         "price": {
-          "Small": 3.25,
-          "Medium": 3.75,
-          "Large": 4.25
+          "Sm": 3.75,
+          "Md": 4.25,
+          "Lg": 4.75
         },
         "varieties": "Raspberry Hibiscus, Peach, Moroccan Mint, Black"
       }
