@@ -25,7 +25,7 @@ const MenuSweets = () => {
         <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
       </div>
       {/* Menu Items */}
-      <section className={`${isMobile ? "" : "m-2 flex flex-col align-center items-center"}`}>
+      <section className={`flex flex-col align-center items-center ${isMobile ? "" : "m-2 "}`}>
         {/* Pastries Section */}
         <section>
           <div className="mb-6">
@@ -37,17 +37,20 @@ const MenuSweets = () => {
                 `}>
               {pastries.category}
             </h2>
+            <p className={`${theme.text.advisoryText} flex justify-center`}>
+              (All pastries are 'first-come, first-serve' and may sell out)
+            </p>
           </div>
 
-          <div className="grid gap-3">
+          <div className="grid divide-y-2 divide-gamboge gap-3">
             {pastries.items.map((item, index) => (
-              <div key={index} className="border-b border-gamboge pb-2">
+              <div key={index} className="py-4">
               
                 <div className="flex justify-between items-baseline">
                   <h3 className={`
                     ${theme.color.text.primary} 
                     ${theme.text.menuHeading}
-                    font-medium
+                    
                     `}>
                     {item.name}
                   </h3>

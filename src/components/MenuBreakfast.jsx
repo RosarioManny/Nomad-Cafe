@@ -41,7 +41,7 @@ const MenuBreakfast = () => {
       </div>
       
       {/* Menu Items */}
-      <section className={` ${theme.color.text.default} ${isMobile ? "" : "m-2 flex flex-col align-center items-center"}`}>
+      <section className={`flex flex-col items-center  ${theme.color.text.default}`}>
         {/* Bagels */}
           <h2 className={`
             ${theme.color.text.primary} 
@@ -50,10 +50,16 @@ const MenuBreakfast = () => {
             ${theme.layout.text}`}> 
             {bagels.category} - (All Vegan)
           </h2>
-          <ul className="flex align-center items-center">
+          <ul className="flex items-center">
             {bagels.variants.map((variant, i )=> (
-              <li className="flex align-center w-min mx-2"key={i}>
-                {variant}
+              <li 
+              className={`
+                flex flex-col items-center mx-2
+
+                ${isMobile ? `${theme.text.body}` : "space-x-10 bg-blue-500"} 
+                `} 
+              key={i}>
+                {variant} 
               </li>
             ))}
           </ul>

@@ -77,7 +77,7 @@ const MenuBeverages = () => {
 
         {/* Hot Beverages */}
         <section>
-          <div className="mb-6">
+          <div className="my-2 flex flex-col items-center">
             <h2 className={`
                 ${theme.color.text.primary} 
                 ${theme.text.underline} 
@@ -90,7 +90,7 @@ const MenuBeverages = () => {
                   <li key={size}>{size} - {price}</li>
                 ))}
               </ul>
-              <p className="italic text-xs flex justify-center">
+              <p className={`${theme.text.advisoryText} flex justify-center`}>
                 (Alternate Milks +50<span>&cent;</span>)
               </p>
           </div>
@@ -130,7 +130,7 @@ const MenuBeverages = () => {
         </div>
         {/* Iced Beverages */}
         <section>
-          <div className="mb-6">
+          <div className="my-2 flex flex-col items-center">
             <h2 className={`
                 ${theme.color.text.primary} 
                 ${theme.text.underline} 
@@ -183,7 +183,7 @@ const MenuBeverages = () => {
         </div>
         {/* Beverage Extras */}
         <section>
-          <div className="mb-6">
+          <div className="my-2 flex flex-col items-center">
             <h2 className={`
                 ${theme.color.text.primary} 
                 ${theme.text.underline} 
@@ -214,9 +214,15 @@ const MenuBeverages = () => {
 
                 {/* Varieties (if exists) */}
                 {item.varieties && (
-                  <div className="text-sm mt-1">
+                  <div className={`${theme.text.advisoryText} flex flex-col items-center`}>
                     <span className="font-semibold">Flavors: </span>
-                    {item.varieties}
+                    <ul className={`${theme.text.body} text-center flex grid grid-cols-3 md:grid-cols-4`}>
+                      {item.varieties.map((flavor, i) => (
+                        <li className="m-2 h-min ">
+                          {flavor}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </div>

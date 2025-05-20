@@ -31,7 +31,7 @@ useEffect(() => {
       <section>
         <div className={`${theme.layout.text}`}>
           <h1 className={`${theme.text.heading} ${theme.color.text.default}`}>
-            <b className={`${theme.color.text.primary} text-6xl`}>{yearsInBuisness}+</b> years serving Ridgewood!
+            <b className={`${theme.color.text.primary}`}>{yearsInBuisness}+</b> years serving Ridgewood!
           </h1>
         </div>
         <InfiniteGallery 
@@ -48,29 +48,33 @@ useEffect(() => {
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
           </p>
         </div>
+      </section>
 
-        {/* <div className={`flex justify-center `}>
-          <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
-        </div>
-
-        <div className={`${theme.layout.text} flex justify-center`}>
-          <h1> NOW SERVING GELATO</h1>
-          <p className={`
-            ${theme.layout.para_spacing}
-            ${isMobile ? "w-2/3" : ""}
-            ${theme.text.body} ${theme.color.text.default}
-            `}>
-              
-          </p>
-        </div> */}
+      <div className='flex justify-center m-2'>
+        <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
+      </div>
+      {/* New Section
+      <section className='flex flex-col items-center'>
+        <h1>Now Serving Gelato</h1>
+        <p>Variety of flavors, New flavor(s) every other week</p>
+        <ul>
+          <li> Chocolate Hazelnut</li>
+          <li> Chai Salted Caramel</li>
+          <li> Strawberries and Cream</li>
+        </ul>
       </section>
       <div className='flex justify-center m-2'>
         <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.primary}`}/>
-      </div>
-      
-        {/* Customer Reviews */}
+      </div> */}
+      {/* Customer Reviews */}
       <section>
-        <h2 className={`overflow-x-auto flex-shrink-0 ${theme.layout.para_spacing} ${theme.text.firstLetter} ${theme.color.text.default} text-center`}>Customer Reviews</h2>
+        <h2 className={`
+          overflow-x-auto flex-shrink-0 text-center
+          ${theme.layout.para_spacing} 
+          ${theme.text.firstLetter} 
+          ${theme.color.text.default} `}>
+            Customer Reviews
+        </h2>
         <Carousol className={`overflow-hidden`} />
       </section>
       </div>

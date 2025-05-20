@@ -14,7 +14,7 @@ const Header = ({tag, img, img_alt="Header image", tag_alt="Nomad Logo"}) => {
     <header id="Header" className="relative mb-8 border-solid border-firebrick border-b-4">     
       <div className="relative">
         <img 
-          className={`w-full ${isMobile ? "h-[700px] object-cover" : "h-full object" }`}
+          className={`w-full ${isMobile ? "h-[700px] object-[63%_37%] object-cover" : "h-full object" }`}
           src={imageError ? defaultImage : img}
           alt={img_alt} 
           loading="lazy"

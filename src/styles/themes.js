@@ -9,11 +9,12 @@ Color Pallete:
 */
 export const theme  = {
   text: {
-    heading: "text-5xl",
-    firstLetter: "text-3xl",
-    subheading: "text-2xl",
-    menuHeading: "text-xl",
-    body: "text-md ",
+    heading: "text-4xl md:text-6xl",
+    firstLetter: "text-2xl md:text-4xl",
+    subheading: "text-xl md:text-3xl",
+    menuHeading: "text-lg md:text-2xl",
+    body: "text-base md:text-xl ",
+    advisoryText: "text-xs italic md:text-base",
     underline: "underline underline-offset-4",
   },
   layout: {

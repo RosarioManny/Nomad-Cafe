@@ -30,8 +30,9 @@ const sweetsItems = [
       "description": "Chocolate Chip & Oatmeal Raisin",
       },
       {
-      "name": "Strawberry Financier (GF & V)",
-      "price": 3.5
+      "name": "Strawberry Financier",
+      "price": 3.5,
+      "description": "Gluten Free & Vegan",
       },
       {
       "name": "Danish",
@@ -47,7 +48,6 @@ const sweetsItems = [
       "2 Scoop": 5.50,
       "3 Scoop": 6.75,
     }
-  }
-    
+  },
 ]
 export default sweetsItems

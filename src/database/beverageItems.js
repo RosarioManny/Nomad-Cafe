@@ -226,7 +226,7 @@ const beverageItems = [
       {
         "name": "Syrups",
         "price": 0.5,
-        "varieties": "Salted Caramel, Vanilla, Almond, Coconut, Honey, Lavender, Hazelnut, Chocolate, Toffee Nut, Peanut Butter, Spiced Brown Sugar, Sugar-Free Vanilla"
+        "varieties": ["Salted Caramel", "Vanilla", "Almond", "Coconut", "Honey", "Lavender", "Hazelnut", "Chocolate", "Toffee Nut", "Peanut Butter", "Spiced Brown Sugar", "Sugar-Free Vanilla"]
       }
     ]
   }
