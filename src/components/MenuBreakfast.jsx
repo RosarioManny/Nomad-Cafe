@@ -7,7 +7,6 @@ import  MenuNav  from "./partials/_menuNav";
 
 const MenuBreakfast = () => {
   const isMobile = useResponsive();
-  
   const bagels = getBagels()
 
   const sandwiches = getSandwiches()
@@ -18,11 +17,8 @@ const MenuBreakfast = () => {
   ]
 
   const sides = getSides()
-  
   const signatureDishes = getSignatureDishes()
-
   const travelerSandwich = getTravelerSandwich()
-  const travelerTitle = travelerSandwich.category
   const travelerOptions = travelerSandwich.options[0]
 
 
@@ -55,8 +51,7 @@ const MenuBreakfast = () => {
               <li 
               className={`
                 flex flex-col items-center mx-2
-
-                ${isMobile ? `${theme.text.body}` : "space-x-10 bg-blue-500"} 
+                ${isMobile ? `${theme.text.body}` : "space-x-10"} 
                 `} 
               key={i}>
                 {variant} 

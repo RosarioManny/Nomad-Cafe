@@ -76,8 +76,8 @@ const Navbar = () => {
             </div>
             <img 
             className="bottom-10 absolute h-40"
-            src="icons-logos/Nomad-logo-White-Transparent.png" 
-            alt="Nomad Cafe & Eatery Logo with writing"
+            src="/icons-logos/Nomad-logo-White-Transparent.png" 
+            alt="Nomad cafe & eatery logo with writing"
             loading="lazy"
             />
           </div>

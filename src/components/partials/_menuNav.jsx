@@ -47,8 +47,8 @@ const MenuNav = () => {
           </p>
         </a>
       </div>
-      <a className="italic text-sm m-2" href="/NomadCafe-Site/public/products/Large-Menu.jpg" download="Large-Menu.jpg">
-       (Download Menus)
+      <a className="italic text-sm m-2" href="/products/Large-Menu.jpg" download="Large-Menu.jpg">
+        (Download Menus)
       </a>
     </section>
   )
