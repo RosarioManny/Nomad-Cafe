@@ -23,19 +23,16 @@ useEffect(() => {
       <ScrollToAnchor/>
       <Header
         tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
-        img={`${isMobile ? "/gallery/Inside_gelato.jpg" : "/gallery/Tathi_espresso.jpg"}`}
+        img={`${isMobile ? "/gallery/Inside_gelato.webp" : "/gallery/Tathi_espresso.webp"}`}
         img_alt='Barista preparing espresoo at Nomad Cafe'
       />
-      <div >
         {/* Intro Section */}
       <section>
-        <div className={`${theme.layout.text}`}>
-          <h1 className={`${theme.text.heading} ${theme.color.text.default}`}>
+          <h1 className={`flex items-center justify-center ${theme.text.heading} ${theme.color.text.default}`}>
             <b className={`${theme.color.text.primary}`}>{yearsInBuisness}+</b> years serving Ridgewood!
           </h1>
-        </div>
         <InfiniteGallery 
-        images={imageGallery}
+          images={imageGallery}
         /> 
         <div className={`${theme.layout.text} flex justify-center`}>
           <p className={`
@@ -77,7 +74,6 @@ useEffect(() => {
         </h2>
         <Carousol className={`overflow-hidden`} />
       </section>
-      </div>
     </main>
   )
 }

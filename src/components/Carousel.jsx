@@ -47,12 +47,12 @@ const Carousol = () => {
             transition: { type: 'spring', stiffness: 300, damping: 30 }
           }}>
           {onlineReviews.map((review, index) => (
-            <div 
+            <ul 
               key={review.name + index}
               className="flex-shrink-0" 
             >
               <ReviewCard {...review} />
-            </div>
+            </ul>
           ))}
         </motion.div>
       </div>

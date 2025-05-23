@@ -1,6 +1,5 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
-import { theme } from '../../styles/themes';
 
 const InfiniteGallery = ({ images }) => {
   const controls = useAnimation();
@@ -9,14 +8,14 @@ const InfiniteGallery = ({ images }) => {
   const duration = 40; // Seconds for one full loop / Smaller > faster | Large > Slower
 
   // Duplicate images for seamless looping
-  const duplicatedImages = [...images, ...images];
+  const duplicatedImages = [...images, ...images.slice(0,3)];
 
   useEffect(() => {
     const containerWidth = (itemWidth + gap) * images.length;
     
     const sequence = async () => {
       await controls.start({
-        x: -containerWidth,
+        translateX: -containerWidth,
         transition: { 
           duration, 
           ease: "linear", 
@@ -30,9 +29,9 @@ const InfiniteGallery = ({ images }) => {
   }, [images.length, controls]);
 
   return (
-    <div className={`${theme.layout.default} overflow-hidden w-90 h-1/4`}>
+    <div className={`overflow-hidden `}>
       <motion.ul 
-        className="flex gap-4 h-80" // Using flex instead of your layout class
+        className="flex w-screen gap-4 h-1/4 h-80" // Using flex instead of your layout class
         animate={controls}
         style={{ width: 'max-content' }} // Allows horizontal expansion
       >
@@ -46,7 +45,11 @@ const InfiniteGallery = ({ images }) => {
               <img 
                 src={image.path} 
                 alt={image.alt_text || "Nomad Cafe Product"}
-                className='rounded-xl object-fill h-[300px] shadow-md shadow-black'
+                className='rounded-xl object-fill min-w-[250px] w-[250px] h-[300px] shadow-md shadow-black'
+                loading={i > 3 ? 'lazy' : 'eager'}
+                width={250}
+                height={300}
+                decoding='async'
               />
             ) : (
               <div className="h-96 bg-oatmilk flex items-center justify-center">

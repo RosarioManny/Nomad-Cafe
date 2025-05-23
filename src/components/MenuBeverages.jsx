@@ -4,7 +4,7 @@ import { useResponsive } from "../utils/responsoveProvider";
 import ScrollToAnchor from "../utils/scrollToAnchor";
 import  MenuNav  from "./partials/_menuNav";
 import { hotDrinks, icedDrinks, drinkExtras, signatureLattes} from "../utils/getBeverageItems";
-import { div, li, p } from "framer-motion/client";
+
 
 const MenuBeverages = () => {
   const isMobile = useResponsive();
@@ -28,7 +28,7 @@ const MenuBeverages = () => {
       <ScrollToAnchor/>
       <Header
         id="Header"
-        img={"/products/Capuccino_heart.jpg"}
+        img={"/products/Capuccino_heart.webp"}
         tag={"/icons-logos/Nomad-White-Beverages.webp"}
       />
       {/* Mini Nav */}
@@ -57,12 +57,13 @@ const MenuBeverages = () => {
             (Available hot or iced +50<span>&cent;</span>)
           </p>
         </div>
-        <section className="flex flex-col items-center m-2">
+        <section className="flex flex-col divide-y-2 divide-gamboge items-center m-2">
           {signatures.flavors.map((flavor, i) => (
-            <div key={i} className="flex flex-col w-3/4 items-center border-b border-gamboge p-2">
+            <div key={i} className="flex flex-col w-3/4 items-center py-2 mb-2 ">
               <h1 className={`
                 ${theme.color.text.primary}
                 ${theme.text.menuHeading} 
+                ${theme.text.underline}
                 `}>
                   {flavor.name}
               </h1>
@@ -94,9 +95,9 @@ const MenuBeverages = () => {
                 (Alternate Milks +50<span>&cent;</span>)
               </p>
           </div>
-          <div className="flex flex-col items-center m-2">
+          <div className="flex flex-col items-center m-2 divide-y-2 divide-gamboge ">
             {hotBevsItems.map((item, i) => (
-              <div key={i} className="flex flex-col w-3/4 items-center border-b border-gamboge p-2">
+              <div key={i} className="flex flex-col w-3/4 items-center py-2 mb-2">
                 <h2 className={`
                   ${theme.color.text.primary}
                   ${theme.text.underline}
@@ -147,9 +148,9 @@ const MenuBeverages = () => {
               (Alternate Milks +50<span>&cent;</span>)
             </p>
           </div>
-          <div className="flex flex-col items-center m-2">
+          <div className="flex flex-col items-center m-2 divide-y-2 divide-gamboge">
             {icedBevs.items.map((item, i) => (
-              <div key={i} className="flex flex-col w-3/4 items-center border-b border-gamboge p-2">
+              <div key={i} className="flex flex-col w-3/4 items-center py-2 mb-2">
                 <h2 className={`
                   ${theme.color.text.primary}
                   ${theme.text.underline}
@@ -192,7 +193,7 @@ const MenuBeverages = () => {
               {bevExtras.category}
             </h2>
           </div>
-          <div className="my-2">
+          <div className="my-2 ">
             {bevExtras.items.map((item, i) => (
               <div key={i} className="my-2 flex flex-col items-center">
                 {/* Name + Price (always shown) */}

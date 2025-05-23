@@ -14,7 +14,7 @@ const About = () => {
       <ScrollToAnchor/>
       <Header 
       tag={'icons-logos/Nomad-White-OurJourney.webp'} 
-      img={"gallery/First_opened_C&J.jpg"}/>
+      img={"gallery/First_opened_C&J.webp"}/>
       <div className={`${theme.layout.column}`}>
         <section className={`
           flex-col 

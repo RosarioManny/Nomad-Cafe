@@ -15,11 +15,13 @@ const Navbar = () => {
       <nav className="
         bg-black/50 z-20 max-h-[15vh] absolute w-screen
         p-2 shadow-white justify-between items-center flex top-0 right-0 left-0 transition-all duration-500">
-        <Link to="/">
+        <Link className="w-24" to="/">
           <img 
-          className="w-24 m-2 hover:animate-pulse cursor-pointer" 
+          className="m-2 hover:animate-pulse cursor-pointer" 
           src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
           alt="Nomad-Compass-Logo" 
+          width={150}
+          height={100}
           loading="lazy"
           />
         </Link>
@@ -42,7 +44,13 @@ const Navbar = () => {
         ) : (
         <>
             {/* Burger Icon */}
-          <button onClick={handleClick} className="relative flex flex-col justify-center items-center space-y-1 p-2 z-10">
+          <button 
+          onClick={handleClick} 
+          className="relative w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-10"
+          width={50}
+          height={40}
+          aria-label="Mobile navigation menu - Three lined burger icon"
+          >
             <BurgerLine isToggled={isToggled} index={1} />
             <BurgerLine isToggled={isToggled} index={2} />
             <BurgerLine isToggled={isToggled} index={3} />
@@ -86,7 +94,8 @@ const BurgerLine = ({ isToggled, index }) => {
     isToggled ? "opacity-0" : "opacity-100",
     isToggled ? "-rotate-45 -translate-y-2" : "",
   ];
-  return <span className={`${lineClass} ${transforms[index - 1]}`} />;
+  return <span aria-label={`Mobile burger line ${index}`} className={`${lineClass} ${transforms[index - 1]}`} />;
+  
 };
 
 export default Navbar

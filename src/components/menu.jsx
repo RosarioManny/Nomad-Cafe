@@ -20,14 +20,14 @@ const Menu = () => {
     {
       id: 'pastries',
       title: '/icons-logos/Nomad-White-Sweets.webp',
-      image: '/products/Nomad-Danishes-Full.jpg',
+      image: '/products/Nomad-Danishes-Adjusted.webp',
       alt: 'Fresh Pastries and Baked Goods',
       link: '/menu/sweets'
     },
     {
       id: 'beverages',
       title: '/icons-logos/Nomad-White-Beverages.webp',
-      image: '/products/Latte-Many-petals-art.jpg',
+      image: '/products/Latte-Many-petals-art.webp',
       alt: 'Coffee and Drink Menu',
       link: '/menu/beverages'
     }
@@ -38,11 +38,11 @@ const Menu = () => {
       <ScrollToAnchor/>
       <Header
         id="Header"
-        img={"/products/green_traveler.jpg"}
+        img={"/products/green_traveler.webp"}
         tag={"/icons-logos/Nomad-White-Cafe.webp"}
       />
       
-      <div className="flex flex-col items-center">
+      <div className="w-[100vw] flex justify-center items-center" width={"100vw"}>
         {/* Desktop View - Grid Layout */}
         {isMobile ? (
           <div className={`grid grid-cols-3 gap-8 w-4/5 ${theme.layout.para_spacing}`}>

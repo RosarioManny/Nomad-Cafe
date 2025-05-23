@@ -5,4 +5,4 @@ export const getMenuByCategory = (category) => {
 };
 
 export const pastrySweets = () => getMenuByCategory("Pastries")
-export const gelatoSweets = () => getMenuByCategory("Gelato")
+export const gelatoSweets = () => getMenuByCategory("Gelatos")

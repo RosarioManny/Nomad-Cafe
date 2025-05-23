@@ -9,23 +9,19 @@ const Footer = () => {
   return (
     <footer className="mt-10 bottom-0 w-screen text-white ">
       <div className={`
-        p-4 h-fit 
+        p-4 h-fit flex flex-col place-items-center align-content
+        md:flex-row-reverse  md:justify-between
         ${theme.color.background.primary}
-        ${isDesktop ? 
-        `flex-row-reverse flex justify-between` 
-        : 
-        `flex-col place-items-center align-content`}`
+        `
         }>
-          <section className={`${theme.layout.footer.section} flex flex-col gap-4 justify-start`} >
+          <section className={`${theme.layout.footer.section} flex flex-col gap-4 items-center`} >
             <h3 className={`${theme.text.subheading} ${theme.text.underline}`}>We Accept:</h3>
-            <div className="max-w-sm flex justify-center">
               <img 
-              className="w-2/3 rounded-md" 
+              className="min-w-[250px] max-w-[450px] w-2/3 rounded-md" 
               src="/icons-logos/All-acceptance-Marker-VISA-DISC-AMEX-MC.webp" 
               alt="Accepted Payment Logos - Visa, American Express, Discover, Google Pay, Apple Pay & Mastercard"
               loading="lazy"
               />
-            </div>
         </section>
         <section className={`${theme.layout.footer.section}`}>
           <h2 className={`${theme.text.subheading} ${theme.text.underline}`}> Quick Links </h2>

@@ -4,19 +4,20 @@ import { useResponsive } from "../utils/responsoveProvider";
 import ScrollToAnchor from "../utils/scrollToAnchor";
 import  MenuNav  from "./partials/_menuNav";
 import { pastrySweets, gelatoSweets } from "../utils/getSweetsItems";
+import { li } from "framer-motion/client";
 
 const MenuSweets = () => {
   const isMobile = useResponsive();
   const pastries = pastrySweets()
   const gelato = gelatoSweets()
-  console.log("GEL>>", gelato)
+  console.log("GEL>>", gelato.items)
   console.log("PAS>>",pastries)
   return (
     <>
       <ScrollToAnchor/>
       <Header
         id="Header"
-        img={"/products/Nomad-Danishes-Full.jpg"}
+        img={"/products/Nomad-Danishes-Adjusted.webp"}
         tag={"/icons-logos/Nomad-White-Sweets.webp"}
       />
       {/* Mini Nav */}
@@ -25,10 +26,11 @@ const MenuSweets = () => {
         <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
       </div>
       {/* Menu Items */}
-      <section className={`flex flex-col align-center items-center ${isMobile ? "" : "m-2 "}`}>
+      <section className={`flex flex-col align-center items-center`}>
+
         {/* Pastries Section */}
-        <section>
-          <div className="mb-6">
+        <section className="items-center flex flex-col justify-center">
+          <div className=" mb-6">
             <h2 className={`
                 ${theme.color.text.primary} 
                 ${theme.text.underline} 
@@ -42,7 +44,7 @@ const MenuSweets = () => {
             </p>
           </div>
 
-          <div className="grid divide-y-2 divide-gamboge gap-3">
+          <div className="w-3/4 grid divide-y-2 divide-gamboge gap-3">
             {pastries.items.map((item, index) => (
               <div key={index} className="py-4">
               
@@ -75,7 +77,7 @@ const MenuSweets = () => {
         <hr className={`${theme.layout.hr}  ${theme.color.background.primary}`}/>
 
         {/* Gelato Section */}
-        <section className="mb-8">
+        <section className="mb-8 flex flex-col">
           <h2 className={`
             ${theme.color.text.primary} 
             ${theme.text.underline} 
@@ -85,22 +87,30 @@ const MenuSweets = () => {
             {gelato.category}
           </h2>
           {/* Scoop Sizes */}
-          <div className="flex flex-col items-center mb-2">
-            <h3 className={`
-              ${theme.color.text.primary}
-              ${theme.text.menuHeading}
-              font-medium
-            `}>
-              Scoops
-            </h3>
-            <div className="flex space-x-4">
-              {Object.entries(gelato.price).map(([size, price]) => (
-                <div key={size} className="text-right">
-                  <span className="block ${theme.color.text.secondary} text-sm">{size}</span>
-                  <span className="block font-medium">${price.toFixed(2)}</span>
-                </div>
-              ))}
-            </div>
+          <div className="w-max grid divide-y-2 divide-gamboge gap-3">
+            {gelato.items.map((item, i ) => (
+              <div key={`${gelato.category}-${item}-${i}`} className="flex flex-col items-center py-2">
+                <span className={`
+                  flex justify-center items-baseline items-center 
+                  ${theme.text.underline} 
+                  ${theme.text.menuHeading} 
+                  ${theme.color.text.primary}`}>
+                    {item.name}
+                  </span>
+                <ul className="flex text-center gap-x-10 my-6">
+                {Object.entries(item.price).map(([size, price]) => (
+                  <li>
+                    <h3>
+                      {size}
+                    </h3>
+                    <span>
+                      {price}
+                    </span>
+                  </li>
+                ))}
+                </ul>
+              </div>
+            ))}
           </div>
           {/* Optional Flavor List */}
         </section>

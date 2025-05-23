@@ -31,7 +31,7 @@ const MenuBreakfast = () => {
       <ScrollToAnchor/>
       <Header
         id="Header"
-        img={"/products/Cheddarsmash_4.jpg.jpg"}
+        img={"/products/Cheddarsmash_4.webp"}
         tag={"/icons-logos/Nomad-White-Breakfast.webp"}
       />
       {/* Mini Nav */}

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,9 +14,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  background-image: url("../gallery/grunge-paper-background.jpg");
-  background-position: center;
-  background-size: contain;
+  /* background-image: url("../gallery/grunge-paper-background.jpg"); */
+  /* background-position: center; */
+  /* background-size: contain; */
+  /* width: 200px;
+  height: 200px; */
+  background-color: firebrick;
+  background-image:
+    radial-gradient(
+      #EAA000,
+      #FFF6E7
+    );
+    z-index: -2;
   min-height: 100vh;
 }
 
@@ -36,19 +43,6 @@ body::before {
   z-index: -1;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    /* color: #213547; */
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 .fade-in {
   animation: fade-in 1.5s ease-in-out;
 }
@@ -62,10 +56,6 @@ body::before {
   }
 }
 
-.faq-container {
-  width: auto;
-  position: relative;
-}
 
 .faq-question {
   border-bottom: 2px solid firebrick;

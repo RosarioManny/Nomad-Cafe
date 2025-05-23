@@ -15,7 +15,7 @@ const Faq = () => {
     <>
     <ScrollToAnchor/>
     <Header
-    img={"/gallery/Cafe-inside-Redshirt.jpg"}
+    img={"/gallery/Cafe-inside-Redshirt.webp"}
     tag={"/icons-logos/Nomad-White-FAQ.webp"} />
     <section className={`${isMobile ? "grid grid-cols-[1fr_3fr]" : "flex flex-col justify-center items-center"} `}>
       <div className="flex flex-col h-full m-6 p-2">

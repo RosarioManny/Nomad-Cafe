@@ -9,15 +9,15 @@ const sweetsItems = [
       },
       {
       "name": "Chocolate Croissant",
-      "price": 4
+      "price": 3.5
       },
       {
       "name": "Almond Croissant",
-      "price": 4.5
+      "price": 4.25
       },
       {
       "name": "Ham & Cheese Croissant",
-      "price": 4.5
+      "price": 4.25
       },
       {
       "name": "Muffins",
@@ -26,28 +26,46 @@ const sweetsItems = [
       },
       {
       "name": "Cookies",
-      "price": 3,
+      "price": 2.5,
       "description": "Chocolate Chip & Oatmeal Raisin",
       },
       {
       "name": "Strawberry Financier",
-      "price": 3.5,
+      "price": 3,
       "description": "Gluten Free & Vegan",
       },
       {
       "name": "Danish",
-      "price": 4,
+      "price": 3.25,
       "description": "Blueberry, Cheese, Pear, Apple Cinnamon",
       },
+      {
+        "name": "Sans Bakery, Vegan / Gluten-free pastries",
+        "price": 5,
+        "description": "Brownies, Banana Bread,  Zucchini Bread, Chai Chocolate Chip Cookies, Blueberry Muffins",
+      }
     ],
   },
   {
-    "category": "Gelato",
-    "price": {
-      "1 Scoop": 4,
-      "2 Scoop": 5.50,
-      "3 Scoop": 6.75,
-    }
+    "category": "Gelatos",
+    "items": [
+      {
+        "name": "Cup of gelato",
+        "price": {
+          "1 Scoop": 4.25,
+          "2 Scoops": 6.25,
+          "3 Scoops": 8.00,
+          "4 Scoops": 9.25
+        }
+      },
+      {
+        "name": "Affogato",
+        "price": {
+          "Single": 6,
+          "Double": 7
+        }
+      },
+    ]
   },
 ]
 export default sweetsItems
