@@ -15,11 +15,13 @@ const Navbar = () => {
       <nav className="
         bg-black/50 z-20 max-h-[15vh] absolute w-screen
         p-2 shadow-white justify-between items-center flex top-0 right-0 left-0 transition-all duration-500">
-        <Link to="/">
+        <Link className="w-24" to="/">
           <img 
-          className="w-24 m-2 hover:animate-pulse cursor-pointer" 
+          className="m-2 hover:animate-pulse cursor-pointer" 
           src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
           alt="Nomad-Compass-Logo" 
+          width={150}
+          height={100}
           loading="lazy"
           />
         </Link>
@@ -34,7 +36,7 @@ const Navbar = () => {
                 className={`${theme.color.text.nav} relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
                 >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
-                <span className={`${theme.hover.underline}`}></span>
+                <span className={`${theme.animation.hover.underline}`}></span>
               </Link>
             ))}
           </div>
@@ -42,7 +44,13 @@ const Navbar = () => {
         ) : (
         <>
             {/* Burger Icon */}
-          <button onClick={handleClick} className="relative flex flex-col justify-center items-center space-y-1 p-2 z-10">
+          <button 
+          onClick={handleClick} 
+          className="relative w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-10"
+          width={50}
+          height={40}
+          aria-label="Mobile navigation menu - Three lined burger icon"
+          >
             <BurgerLine isToggled={isToggled} index={1} />
             <BurgerLine isToggled={isToggled} index={2} />
             <BurgerLine isToggled={isToggled} index={3} />
@@ -50,8 +58,8 @@ const Navbar = () => {
           {/* Off-screen Menu */}
           <div 
             className={`
-              h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[700ms] bg-firebrick
-            ${isToggled ? 'right-0' : '-right-[450px]'}`}
+              h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
+            ${isToggled ? 'right-0' : '-right-[800px]'}`}
             >
             <div className="flex flex-col h-fit text-white">
               {["about", "menu", "faq"].map((link) => (
@@ -62,7 +70,7 @@ const Navbar = () => {
                   className={`hover:animate-pulse p-2 relative group pointer-cursor `}
                   >
                   {link.charAt(0).toUpperCase() + link.slice(1)}
-                  <span className={`${theme.hover.underline}`}></span>
+                  <span className={`${theme.animation.hover.underline}`}></span>
                 </Link>
               ))}
             </div>
@@ -86,7 +94,8 @@ const BurgerLine = ({ isToggled, index }) => {
     isToggled ? "opacity-0" : "opacity-100",
     isToggled ? "-rotate-45 -translate-y-2" : "",
   ];
-  return <span className={`${lineClass} ${transforms[index - 1]}`} />;
+  return <span aria-label={`Mobile burger line ${index}`} className={`${lineClass} ${transforms[index - 1]}`} />;
+  
 };
 
 export default Navbar

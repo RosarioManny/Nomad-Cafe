@@ -22,46 +22,58 @@ useEffect(() => {
     <main className={`${theme.color.text.default}${theme.text.body}`}>
       <ScrollToAnchor/>
       <Header
-      tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
-      img={`${isMobile ? "/gallery/Inside_gelato.jpg" : "/gallery/Tathi_espresso.jpg"}`}
-      img_alt='Barista preparing espresoo at Nomad Cafe'
-      
+        tag={"/icons-logos/Nomad-logo-name-transparent-White.png"}
+        img={`${isMobile ? "/gallery/Inside_gelato.webp" : "/gallery/Tathi_espresso.webp"}`}
+        img_alt='Barista preparing espresoo at Nomad Cafe'
       />
-      <div >
         {/* Intro Section */}
       <section>
-        <div className={`${theme.layout.text}`}>
-          <h1 className={`${theme.text.heading} ${theme.color.text.default}`}>
+          <h1 className={`flex items-center justify-center ${theme.text.heading} ${theme.color.text.default}`}>
             <b className={`${theme.color.text.primary}`}>{yearsInBuisness}+</b> years serving Ridgewood!
           </h1>
-        </div>
         <InfiniteGallery 
-        images={imageGallery}
+          images={imageGallery}
         /> 
-        <div className={`flex justify-center `}>
-          <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
-        </div>
         <div className={`${theme.layout.text} flex justify-center`}>
           <p className={`
-            my-10
+            ${theme.layout.para_spacing}
             ${isMobile ? "w-2/3" : ""}
             ${theme.text.body} ${theme.color.text.default}
             `}>
-            Nomad cafe is a neighborhood Restaurant in Ridgewood, New York. We provide delicious handmade food. 
+            Nomad cafe is a neighborhood restaurant in Ridgewood, New York. We provide delicious handmade food. 
             From our customizable Traveler sandwich to our popular Chedder Smashbrowns.
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
           </p>
         </div>
       </section>
+
       <div className='flex justify-center m-2'>
-        <hr className='w-2/3 h-1 bg-firebrick rounded'/>
+        <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
       </div>
-        {/* Customer Reviews */}
+      {/* New Section
+      <section className='flex flex-col items-center'>
+        <h1>Now Serving Gelato</h1>
+        <p>Variety of flavors, New flavor(s) every other week</p>
+        <ul>
+          <li> Chocolate Hazelnut</li>
+          <li> Chai Salted Caramel</li>
+          <li> Strawberries and Cream</li>
+        </ul>
+      </section>
+      <div className='flex justify-center m-2'>
+        <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.primary}`}/>
+      </div> */}
+      {/* Customer Reviews */}
       <section>
-        <h2 className='text-center text-2xl m-8'>Customer Reviews</h2>
+        <h2 className={`
+          overflow-x-auto flex-shrink-0 text-center
+          ${theme.layout.para_spacing} 
+          ${theme.text.firstLetter} 
+          ${theme.color.text.default} `}>
+            Customer Reviews
+        </h2>
         <Carousol className={`overflow-hidden`} />
-    </section>
-      </div>
+      </section>
     </main>
   )
 }

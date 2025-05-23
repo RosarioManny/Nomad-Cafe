@@ -1,22 +1,21 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
-import { theme } from '../../styles/themes';
 
 const InfiniteGallery = ({ images }) => {
   const controls = useAnimation();
   const itemWidth = 250; // Matches your min-w-[250px]
   const gap = 16; // Matches your gap-4 (assuming 1rem = 16px)
-  const duration = 40; // Seconds for one full loop
+  const duration = 40; // Seconds for one full loop / Smaller > faster | Large > Slower
 
   // Duplicate images for seamless looping
-  const duplicatedImages = [...images, ...images];
+  const duplicatedImages = [...images, ...images.slice(0,3)];
 
   useEffect(() => {
     const containerWidth = (itemWidth + gap) * images.length;
     
     const sequence = async () => {
       await controls.start({
-        x: -containerWidth,
+        translateX: -containerWidth,
         transition: { 
           duration, 
           ease: "linear", 
@@ -30,23 +29,27 @@ const InfiniteGallery = ({ images }) => {
   }, [images.length, controls]);
 
   return (
-    <div className={`${theme.layout.default} overflow-hidden h-1/4`}>
+    <div className={`overflow-hidden `}>
       <motion.ul 
-        className="flex gap-4" // Using flex instead of your layout class
+        className="flex w-screen gap-4 h-1/4 h-80" // Using flex instead of your layout class
         animate={controls}
         style={{ width: 'max-content' }} // Allows horizontal expansion
       >
         {duplicatedImages.map((image, i) => (
           <motion.li 
             key={`${image.path}-${i}`}
-            className="flex-shrink-0"
-            style={{ }}
+            className="flex-shrink-0 flex items-center"
+            
           >
             {image.path ? (
               <img 
                 src={image.path} 
                 alt={image.alt_text || "Nomad Cafe Product"}
-                className='rounded-xl object-fill max-h-80 shadow-md shadow-black'
+                className='rounded-xl object-fill min-w-[250px] w-[250px] h-[300px] shadow-md shadow-black'
+                loading={i > 3 ? 'lazy' : 'eager'}
+                width={250}
+                height={300}
+                decoding='async'
               />
             ) : (
               <div className="h-96 bg-oatmilk flex items-center justify-center">

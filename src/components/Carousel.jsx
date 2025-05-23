@@ -3,6 +3,7 @@ import { onlineReviews } from '../database/onlineReviews'
 import ReviewCard from './ReviewCard'
 import { useResponsive } from '../utils/responsoveProvider'
 import { motion } from 'framer-motion'
+import { theme } from '../styles/themes'
 
 const Carousol = () => {
   const [currentIdx, setCurrentIdx] = useState(1)
@@ -28,13 +29,16 @@ const Carousol = () => {
     <div className="flex items-center w-full justify-center relative">
       {/* Navigation buttons */}
       <button 
+  
         onClick={handlePrevious}
-        className="absolute left-0 z-10 bg-gamboge text-espresso hover:bg-firebrick hover:text-oatmilk transition-color duration-300 font-black p-2 ml-6 rounded shadow-md"
+        className={`
+          ${theme.color.background.accent} ${theme.text.body}
+          absolute left-0 z-10 hover:bg-firebrick hover:text-oatmilk transition-color duration-300 p-2 ml-6 rounded shadow-md`}
       >
         &lt;
       </button>
       {/* Reviews container */}
-      <div className="w-[80vw] pl-4 overflow-hidden">
+      <div className="w-full pl-4 overflow-x-auto flex-shrink-0 no-scrollbar">
         <motion.div 
           className='flex'
           style={{ width: `${(itemWidth + gap)}px` }}
@@ -43,12 +47,12 @@ const Carousol = () => {
             transition: { type: 'spring', stiffness: 300, damping: 30 }
           }}>
           {onlineReviews.map((review, index) => (
-            <div 
+            <ul 
               key={review.name + index}
               className="flex-shrink-0" 
             >
               <ReviewCard {...review} />
-            </div>
+            </ul>
           ))}
         </motion.div>
       </div>
