@@ -20,8 +20,6 @@ export const theme  = {
   layout: {
     default: "flex justify-center m-4 place-items-center",
     text: "text-center",
-    card: "",
-    nav: "",
     hr: "w-2/3 h-[5px] my-4 rounded",
     para_spacing: "my-10",
     column: "flex flex-col align-center items-center",
@@ -44,12 +42,7 @@ export const theme  = {
     }
   },
   animation: {
-    default_duration: "",
     hover: {
-      text: "",
-      container: "",
-      button: "",
-      img: "",
       underline: "absolute left-0 -bottom-2 w-0 h-1 bg-gamboge transition-all duration-300 group-hover:w-full origin-left"
     },
   }
