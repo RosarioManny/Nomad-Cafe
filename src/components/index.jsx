@@ -28,8 +28,8 @@ useEffect(() => {
       />
         {/* Intro Section */}
       <section>
-          <h1 className={`flex items-center justify-center ${theme.text.heading} ${theme.color.text.default}`}>
-            <b className={`${theme.color.text.primary}`}>{yearsInBuisness}+</b> years serving Ridgewood!
+          <h1 className={`flex gap-2 items-center justify-center ${theme.text.heading} ${theme.color.text.default}`}>
+            <span className={`${theme.color.text.primary} `}>{yearsInBuisness}+</span> Years serving Ridgewood!
           </h1>
         <InfiniteGallery 
           images={imageGallery}

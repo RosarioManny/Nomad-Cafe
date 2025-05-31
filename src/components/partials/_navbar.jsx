@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav className="
         bg-black/50 z-20 max-h-[15vh] absolute w-screen
         p-2 shadow-white justify-between items-center flex top-0 right-0 left-0 transition-all duration-500">
-        <Link className="w-24" to="/">
+        <Link className="w-16" to="/">
           <img 
           className="m-2 hover:animate-pulse cursor-pointer" 
           src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 

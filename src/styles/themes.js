@@ -9,7 +9,7 @@ Color Pallete:
 */
 export const theme  = {
   text: {
-    heading: "text-3xl md:text-5xl",
+    heading: "text-[1.6rem] md:text-5xl",
     firstLetter: "text-2xl md:text-4xl",
     subheading: "text-xl md:text-3xl",
     menuHeading: "text-lg md:text-2xl",
