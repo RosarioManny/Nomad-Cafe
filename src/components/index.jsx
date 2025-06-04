@@ -26,7 +26,6 @@ const gelatoFlavors =
 ]
 
 function gelatoSelection() {
-  const shuffled = [...gelatoFlavors].sort(() => .5 - Math.random())
   const selectedGelato = shuffled.slice(0, 4);
   return (
       <ul className={`md:grid-cols-2 md:grid flex text-espresso items-center ${theme.text.body}`}>
