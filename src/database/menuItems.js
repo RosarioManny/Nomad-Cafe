@@ -71,7 +71,7 @@ const menuItems = [
         description: "Smashed avocado, pico de gallo, sprouts",
         modifiers: [
           { name: "Add egg", price: 3 },
-          { name: "Sub GF bread", price: 3 }
+          { name: "Sub Gluten Free bread", price: 3 }
         ]
       },
       {
@@ -115,7 +115,7 @@ const menuItems = [
   {
     category: "Sides",
     items: [
-      { name: "Greek yogurt + berries + honey", price: 7 },
+      { name: "Greek yogurt, berries & honey", price: 7 },
       { 
         name: "Rosemary parmesan hashbrown", 
         variants: ["Vegan (v)"],

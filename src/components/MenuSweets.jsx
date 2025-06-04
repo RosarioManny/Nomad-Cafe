@@ -77,7 +77,7 @@ const MenuSweets = () => {
         <hr className={`${theme.layout.hr}  ${theme.color.background.primary}`}/>
 
         {/* Gelato Section */}
-        <section className="mb-8 flex flex-col">
+        <section id="Gelatos"className="mb-8 flex flex-col">
           <h2 className={`
             ${theme.color.text.primary} 
             ${theme.text.underline} 

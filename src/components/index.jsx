@@ -12,7 +12,33 @@ const [yearsInBuisness, setYearsInBuisness] = useState(0)
 const yearOfOpen = 2018
 const currentYear = new Date().getFullYear()
 const isMobile = useResponsive()
+const gelatoFlavors = 
+[
+  "Chocolate Hazelnut",
+  "Strawberries & Creme",
+  "Cold Brew",
+  "Vegan Matcha Cococnut",
+  "Lemon Sorbet",
+  "Hazelnut",
+  "Vanilla Miso",
+  "Chai Salted Caramel",
+  "Passion Fruit Sorbet",
+]
 
+function gelatoSelection() {
+  const shuffled = [...gelatoFlavors].sort(() => .5 - Math.random())
+  const selectedGelato = shuffled.slice(0, 4);
+  return (
+      <ul className={`md:grid-cols-2 md:grid flex text-espresso items-center ${theme.text.body}`}>
+        {selectedGelato.map((flavor, i ) => (
+          <li 
+          className='text-center px-4'
+          key={i}> {flavor} </li>
+          ))
+        }
+      </ul>
+  )
+}
 // Automatically update years in buisness
 useEffect(() => {
   setYearsInBuisness(currentYear - yearOfOpen)
@@ -50,19 +76,45 @@ useEffect(() => {
       <div className='flex justify-center m-2'>
         <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent}`}/>
       </div>
-      {/* New Section
-      <section className='flex flex-col items-center'>
-        <h1>Now Serving Gelato</h1>
-        <p>Variety of flavors, New flavor(s) every other week</p>
-        <ul>
-          <li> Chocolate Hazelnut</li>
-          <li> Chai Salted Caramel</li>
-          <li> Strawberries and Cream</li>
-        </ul>
+      {/* New Section */}
+      <section className={`
+        my-4 flex flex-col items-center
+        ${theme.color.text.default} 
+        `}>
+        <h1 className={`
+          ${theme.color.text.primary} 
+          ${theme.text.heading}
+          `}>
+            Now Serving Gelato
+        </h1>
+        <div className='w-3/4 my-4 flex flex-col md:flex-row md:justify-center items-center'>
+          <img 
+            className='w-[300px] rounded-xl object-fill min-w-[250px] shadow-md shadow-black my-4'
+            src="/products/Nomad_cafe_Gelato.webp" 
+            alt="Customer holding two scoop Matcha Coconut and Chocolate Hazelnut gelato"
+          />
+          <div className='mx-2 flex flex-col items-center'>
+            <div className={`text-center`}>
+              <p className={`${theme.text.firstLetter}  ${theme.text.underline}`}>Try our new <span className={`${theme.color.text.primary}`}> Gelatos!</span> </p>
+              <p className='md:text-md'>New flavor(s) every other week. <br/>Some flavors we have...</p>
+            </div>
+            <hr className={`${theme.color.background.accent} ${theme.layout.hr}`}/>
+            {gelatoSelection()}
+            <a 
+            href='/menu/sweets#Gelatos'
+            className={`
+              ${theme.color.background.accent} 
+              hover:bg-firebrick hover:text-oatmilk cursor-pointer transition-color duration-300 p-2 my-6 rounded shadow-md
+              `}>
+                View Price
+            </a>
+          </div>
+        </div>
+        
       </section>
       <div className='flex justify-center m-2'>
         <hr className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.primary}`}/>
-      </div> */}
+      </div>
       {/* Customer Reviews */}
       <section>
         <h2 className={`
