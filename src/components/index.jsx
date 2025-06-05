@@ -6,27 +6,18 @@ import { imageGallery }  from '../database/imageGallery'
 import Carousol from './Carousel'
 import InfiniteGallery from './partials/InfiniteCarousel'
 import ScrollToAnchor from '../utils/scrollToAnchor'
+import sweetsItems from '../database/sweetsItems'
 
 const Home = () => {
 const [yearsInBuisness, setYearsInBuisness] = useState(0)
 const yearOfOpen = 2018
 const currentYear = new Date().getFullYear()
 const isMobile = useResponsive()
-const gelatoFlavors = 
-[
-  "Chocolate Hazelnut",
-  "Strawberries & Creme",
-  "Cold Brew",
-  "Vegan Matcha Cococnut",
-  "Lemon Sorbet",
-  "Hazelnut",
-  "Vanilla Miso",
-  "Chai Salted Caramel",
-  "Passion Fruit Sorbet",
-]
+const gelatos = sweetsItems[1]['gelatoFlavors']
+console.log(gelatos)
 
 function gelatoSelection() {
-  const selectedGelato = shuffled.slice(0, 4);
+  const selectedGelato = gelatos.slice(0, 4);
   return (
       <ul className={`md:grid-cols-2 md:grid flex text-espresso items-center ${theme.text.body}`}>
         {selectedGelato.map((flavor, i ) => (
@@ -105,7 +96,7 @@ useEffect(() => {
               ${theme.color.background.accent} 
               hover:bg-firebrick hover:text-oatmilk cursor-pointer transition-color duration-300 p-2 my-6 rounded shadow-md
               `}>
-                View Price
+                View Price & Past Flavors
             </a>
           </div>
         </div>

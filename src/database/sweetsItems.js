@@ -48,6 +48,18 @@ const sweetsItems = [
   },
   {
     "category": "Gelatos",
+    "gelatoFlavors": 
+    [
+      "Chocolate Hazelnut",
+      "Strawberries & Creme",
+      "Cold Brew",
+      "Vegan Matcha Cococnut",
+      "Lemon Sorbet",
+      "Hazelnut",
+      "Vanilla Miso",
+      "Chai Salted Caramel",
+      "Passion Fruit Sorbet",
+    ], 
     "items": [
       {
         "name": "Cup of gelato",
