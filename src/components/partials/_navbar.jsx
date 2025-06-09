@@ -30,7 +30,7 @@ const Navbar = () => {
         (
           <>
           <div className="gap-8 ">
-            {["about", "menu", "faq"].map((link) => (
+            {["menu", "about", "faq"].map((link) => (
               <Link 
                 key={link} 
                 to={`/${link}`} 
