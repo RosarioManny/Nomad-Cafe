@@ -51,12 +51,13 @@ const sweetsItems = [
     "gelatoFlavors": 
     [
       "Chocolate Hazelnut",
-      "Strawberries & Creme",
+      "Vanilla Miso",
       "Cold Brew",
       "Vegan Matcha Cococnut",
+      "Strawberries & Creme",
+      "Bees Knees",
       "Lemon Sorbet",
       "Hazelnut",
-      "Vanilla Miso",
       "Chai Salted Caramel",
       "Passion Fruit Sorbet",
     ], 
@@ -72,6 +73,7 @@ const sweetsItems = [
       },
       {
         "name": "Affogato",
+        "description": "Espresso with a scoop of your choice",
         "price": {
           "Single": 6,
           "Double": 7

@@ -19,11 +19,11 @@ console.log(gelatos)
 function gelatoSelection() {
   const selectedGelato = gelatos.slice(0, 4);
   return (
-      <ul className={`md:grid-cols-2 md:grid flex text-espresso items-center ${theme.text.body}`}>
+      <ul className={`md:grid-cols-2 md:grid flex text-espresso justify-center items-center text-sm`}>
         {selectedGelato.map((flavor, i ) => (
           <li 
-          className='text-center px-4'
-          key={i}> {flavor} </li>
+          className='m-[2px] items-center flex justify-center text-center'
+          key={i}>- {flavor}</li>
           ))
         }
       </ul>
@@ -52,11 +52,11 @@ useEffect(() => {
         /> 
         <div className={`${theme.layout.text} flex justify-center`}>
           <p className={`
-            ${theme.layout.para_spacing}
-            ${isMobile ? "w-2/3" : ""}
+            my-6
+            ${isMobile ? "w-2/3" : "w-5/6"}
             ${theme.text.body} ${theme.color.text.default}
             `}>
-            Nomad cafe is a neighborhood restaurant in Ridgewood, New York. We provide delicious handmade food. 
+            <span className={`${theme.text.firstLetter} ${theme.color.text.primary}`}>N</span>omad cafe is a neighborhood restaurant in Ridgewood, New York. We provide delicious handmade food. 
             From our customizable Traveler sandwich to our popular Chedder Smashbrowns.
             We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
           </p>
@@ -77,10 +77,10 @@ useEffect(() => {
           `}>
             Now Serving Gelato
         </h1>
-        <div className='w-3/4 my-4 flex flex-col md:flex-row md:justify-center items-center'>
+        <div className='w-3/4 my-4 flex flex-col md:justify-evenly md:flex-row md:justify-center items-center'>
           <img 
             className='w-[300px] rounded-xl object-fill min-w-[250px] shadow-md shadow-black my-4'
-            src="/products/Nomad_cafe_Gelato.webp" 
+            src="products/Nomad_Choc_Matcha_Gelato.webp" 
             alt="Customer holding two scoop Matcha Coconut and Chocolate Hazelnut gelato"
           />
           <div className='mx-2 flex flex-col items-center'>

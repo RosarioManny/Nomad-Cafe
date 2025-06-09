@@ -13,11 +13,12 @@ const Navbar = () => {
   return (
     <>
       <nav className="
-        bg-black/50 z-20 max-h-[15vh] absolute w-screen
-        p-2 shadow-white justify-between items-center flex top-0 right-0 left-0 transition-all duration-500">
-        <Link className="w-16" to="/">
+        bg-black/65 z-20 max-h-[15vh] absolute w-screen
+        p-2 justify-between items-center flex-row-reverse flex 
+        top-0  left-0 transition-all duration-500">
+        <Link className="w-16 md:w-24 " to="/">
           <img 
-          className="m-2 hover:animate-pulse cursor-pointer" 
+          className="mr-6 hover:animate-pulse cursor-pointer" 
           src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
           alt="Nomad-Compass-Logo" 
           width={150}
@@ -28,12 +29,14 @@ const Navbar = () => {
         {isMobile ? 
         (
           <>
-          <div className="gap-8">
+          <div className="gap-8 ">
             {["about", "menu", "faq"].map((link) => (
               <Link 
                 key={link} 
                 to={`/${link}`} 
-                className={`${theme.color.text.nav} relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
+                className={`
+                  ${theme.color.text.nav} 
+                  text-shadow-2xs text-shadow-sky-300 relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
                 >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
                 <span className={`${theme.animation.hover.underline}`}></span>
@@ -46,7 +49,7 @@ const Navbar = () => {
             {/* Burger Icon */}
           <button 
           onClick={handleClick} 
-          className="relative w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-10"
+          className="relative  w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-10"
           width={50}
           height={40}
           aria-label="Mobile navigation menu - Three lined burger icon"
@@ -58,7 +61,7 @@ const Navbar = () => {
           {/* Off-screen Menu */}
           <div 
             className={`
-              h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
+              overflow-hidden h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
             ${isToggled ? 'right-0' : '-right-[800px]'}`}
             >
             <div className="flex flex-col h-fit text-white">

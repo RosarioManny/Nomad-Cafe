@@ -47,7 +47,7 @@ const menuItems = [
       {
         name: "Eggscape from NY",
         price: 15.5,
-        description: "2 eggs, rosemary parmesan hashbrowns, ham, berries, wheat toast",
+        description: "2 eggs any style, rosemary parmesan hashbrowns, ham, fruits, wheat toast & butter",
         modifiers: [
           { name: "Sub ham for bacon/turkey/avocado", price: 1 }
         ]
@@ -68,7 +68,7 @@ const menuItems = [
       {
         name: "Loaded Avocado Toast (v)",
         price: 11,
-        description: "Smashed avocado, pico de gallo, sprouts",
+        description: "Smashed avocado, pico de gallo, sprouts on thick cut toast",
         modifiers: [
           { name: "Add egg", price: 3 },
           { name: "Sub Gluten Free bread", price: 3 }
@@ -87,27 +87,27 @@ const menuItems = [
       {
         name: "Launchpad",
         price: 13.5,
-        description: "Turkey, chipotle aioli, spinach, tomato, cheddar, ciabatta"
+        description: "Turkey, chipotle aioli, spinach, tomato, cheddar on ciabatta"
       },
       {
         name: "Runway",
         price: 13.5,
-        description: "Turkey, pesto, mozzarella, roasted peppers, ciabatta"
+        description: "Turkey, pesto, mozzarella, roasted peppers on ciabatta"
       },
       {
         name: "Layover",
         price: 14,
-        description: "6-cheese grilled cheese (asiago, fontina, cheddar, Swiss, mozzarella)"
+        description: "6-cheese grilled cheese on rosemary parmesan wheat toast (Asiago, Parmesan, Fontina, Cheddar, Swiss, Mozzarella)"
       },
       {
         name: "First Class",
         price: 15,
-        description: "Roast beef, tomatoes, sprouts, mozzarella, truffle glaze, baguette"
+        description: "Roast beef, tomatoes, sprouts,  mozzarella, olive oil, truffle glaze on baguette"
       },
       {
         name: "Take It Caprese",
         price: 13.5,
-        description: "Tomatoes, basil, mozzarella, balsamic glaze, baguette",
+        description: "Tomatoes, basil, mozzarella, olive oil, balsamic glaze on baguette",
         note: "Sub avocado for meat (v)"
       }
     ]

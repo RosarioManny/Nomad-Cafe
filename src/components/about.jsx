@@ -52,12 +52,12 @@ const About = () => {
               <h2 className={`${theme.text.subheading}`}> Hours</h2>
               <div className={` ${theme.text.body} ${theme.layout.row}`}>
                 <div className='m-6'>
-                  <p>Monday - Friday</p>
+                  <p>Sunday-Wednesday</p>
                   <p className={`${theme.color.text.primary} ${theme.text.underline}`} >7am - 4pm</p>
                 </div>
                 <div className='m-6'>
-                  <p>Saturday & Sunday</p>
-                  <p className={`${theme.color.text.primary} ${theme.text.underline}`}>8am - 4pm</p>
+                  <p>Thursday - Saturday</p>
+                  <p className={`${theme.color.text.primary} ${theme.text.underline}`}>7am - 8pm</p>
                 </div>
               </div>
             </div>

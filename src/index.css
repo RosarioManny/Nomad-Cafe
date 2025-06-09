@@ -14,11 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  /* background-image: url("../gallery/grunge-paper-background.jpg"); */
-  /* background-position: center; */
-  /* background-size: contain; */
-  /* width: 200px;
-  height: 200px; */
   background-color: firebrick;
   background-image:
     radial-gradient(
@@ -30,7 +25,7 @@ html {
 }
 
 body {
-  position: relative; /* Required for absolute children */
+  position: relative; 
   min-height: 100vh;
   margin: 0;
 }
@@ -38,7 +33,7 @@ body {
 body::before {
   content: ""; 
   position: absolute;
-  inset: 0; /* Shorthand for top/right/bottom/left: 0 */
+  inset: 0; 
   background: rgba(255, 246, 231, .82);
   z-index: -1;
 }
@@ -55,6 +50,7 @@ body::before {
     opacity: 1
   }
 }
+
 
 
 .faq-question {
@@ -78,3 +74,32 @@ body::before {
 .title {
   filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 1));
 }
+
+/* Loading sequence if needed */
+/* 
+.loading-fade {
+  animation: fade-in-out .5s ease-out;
+}
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(186, 52, 44, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999
+} */

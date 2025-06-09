@@ -96,7 +96,7 @@ const MenuSweets = () => {
               ${theme.text.subheading}`}>Flavors</h2>
             <ul className="grid grid-cols-3 my-4">
             {gelatos.map((flavor, i) => (
-              <li className="mx-2 text-center" key={`${flavor}-${i}`}> {flavor}</li>
+              <li className="m-[2px] items-center flex justify-center text-center" key={`${flavor}-${i}`}>- {flavor}</li>
             ))}
             </ul>
           </div>
@@ -111,6 +111,9 @@ const MenuSweets = () => {
                   ${theme.color.text.primary}`}>
                     {item.name}
                 </span>
+                {item.description && (
+                  <p className={`${theme.text.advisoryText}`}>({item.description})</p>
+                )}
                 <ul className="flex text-center gap-x-10 my-6">
                 {Object.entries(item.price).map(([size, price]) => (
                   <li>

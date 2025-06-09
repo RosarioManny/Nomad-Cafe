@@ -44,13 +44,15 @@ const MenuBreakfast = () => {
             ${theme.text.underline} 
             ${theme.text.subheading} 
             ${theme.layout.text}`}> 
-            {bagels.category} - (All Vegan)
+            {bagels.category} - {bagels.price}
           </h2>
+          <p className={`${theme.text.advisoryText}`}>(All Vegan)</p>
           <ul className="flex items-center">
             {bagels.variants.map((variant, i )=> (
               <li 
               className={`
                 flex flex-col items-center mx-2
+
                 ${isMobile ? `${theme.text.body}` : "space-x-10"} 
                 `} 
               key={i}>
@@ -73,7 +75,7 @@ const MenuBreakfast = () => {
                 ${theme.text.underline} 
                 ${theme.text.subheading} 
                 ${theme.layout.text}`}>
-                  {travelerSandwich.category}
+                  {travelerSandwich.category} - {travelerSandwich.price}
               </h2>
               <p>{travelerSandwich.description}</p>
             </div>
@@ -180,11 +182,13 @@ const MenuBreakfast = () => {
               </div>
             ))}
             <div className="flex gap-[5px]">
-            <p className={`${theme.color.text.secondary}`}> Add-Ons: </p>
+              {sandwichAddOns && (
+                <p className={`${theme.color.text.secondary}`}> Add-Ons: </p>
+              )}
               {sandwichAddOns.map((item, i) => (
-                <div className="flex" key={i}>
-                  <h3> {item.name} -</h3>
-                  <p className={`${theme.color.text.primary}`}>{item.price} </p>
+                <div className="flex gap-2" key={i}>
+                  <h3> {item.name} </h3>
+                  <p className={`${theme.color.text.primary}`}> + {item.price} </p>
                 </div>
               ))}
             </div>
@@ -192,7 +196,7 @@ const MenuBreakfast = () => {
 
             <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
           {/* Sides  */}
-          <section className="w-full">
+          <section className="w-2/3 flex flex-col justify-center">
             <h2 className={`
               ${theme.text.subheading} 
               ${theme.color.text.secondary} 

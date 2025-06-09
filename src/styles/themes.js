@@ -21,7 +21,7 @@ export const theme  = {
     default: "flex justify-center m-4 place-items-center",
     text: "text-center",
     hr: "w-2/3 h-[5px] my-4 rounded",
-    para_spacing: "my-10",
+    para_spacing: "mb-10",
     column: "flex flex-col align-center items-center",
     row: "flex justify-center",
     footer: {
