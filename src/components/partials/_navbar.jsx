@@ -65,7 +65,7 @@ const Navbar = () => {
             ${isToggled ? 'right-0' : '-right-[800px]'}`}
             >
             <div className="flex flex-col h-fit text-white">
-              {["about", "menu", "faq"].map((link) => (
+              {["menu", "about", "faq"].map((link) => (
                 <Link 
                   key={link} 
                   to={`/${link}`} 
