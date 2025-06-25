@@ -13,7 +13,6 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo" }) 
         rel="preload" 
         as="image" 
         href={img} 
-        imageSrcSet={`${img} 1920w, ${img.replace('.webp', '-mobile.webp')} 800w`}
         imageSizes="100vw"
       />
       

@@ -6,15 +6,24 @@ import ScrollToAnchor from '../utils/scrollToAnchor'
 
 const About = () => {
   const isMobile = useResponsive()
-  const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAP_API_KEY
+  const hoursOfOperation = [
+    {"day": "Monday - Wednesday", "hours": "7am - 4pm"},
+    {"day": "Thursday", "hours": "7am - 7pm"},
+    {"day": "Friday", "hours": "7am - 8pm"},
+    {"day": "Saturday", "hours": "8am - 8pm"},
+    {"day": "Sunday", "hours": "8am - 4pm"},
+  ]
 
-  // console.log("key >>", GOOGLE_MAPS_API_KEY)
+  const isSameHours = () => {
+    let result = [];
+    
+  }
   return (
     <>
       <ScrollToAnchor/>
       <Header 
       tag={'icons-logos/Nomad-White-OurJourney.webp'} 
-      img={"gallery/First_opened_C&J.webp"}/>
+      img={"/gallery/First_opened_C&J.webp"}/>
       <div className={`${theme.layout.column}`}>
         <section className={`
           flex-col 
@@ -50,16 +59,11 @@ const About = () => {
             <h1 className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary} ${theme.layout.para_spacing}`}>Visit Us!</h1>
             <div>
               <h2 className={`${theme.text.subheading}`}> Hours</h2>
-              <div className={` ${theme.text.body} ${theme.layout.row}`}>
-                <div className='m-6'>
-                  <p>Sunday-Wednesday</p>
-                  <p className={`${theme.color.text.primary} ${theme.text.underline}`} >7am - 4pm</p>
-                </div>
-                <div className='m-6'>
-                  <p>Thursday - Saturday</p>
-                  <p className={`${theme.color.text.primary} ${theme.text.underline}`}>7am - 8pm</p>
-                </div>
-              </div>
+              <ul className={`${theme.text.body}`}>
+                {hoursOfOperation.map((date, i) => (
+                  <li key={i}> {date.day} - <span className={`${theme.color.text.primary}`}> {date.hours} </span> </li>
+                ))}
+              </ul>
             </div>
             <GoogleMaps className=" w-2/3"/>
         </section>

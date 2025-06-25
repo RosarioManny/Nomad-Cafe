@@ -10,7 +10,6 @@ const Faq = () => {
   const [isToggled, setIsToggled ] = useState(true);
   const isMobile = useResponsive()
 
-
   return (
     <>
     <ScrollToAnchor/>
