@@ -1,9 +1,9 @@
-import Header from "./partials/_header";
-import { theme } from "../styles/themes";
-import { useResponsive } from "../utils/responsoveProvider";
-import ScrollToAnchor from "../utils/scrollToAnchor";
-import  MenuNav  from "./partials/_menuNav";
-import { hotDrinks, icedDrinks, drinkExtras, signatureLattes} from "../utils/getBeverageItems";
+import Header from "../partials/_header";
+import { theme } from "../../styles/themes";
+import { useResponsive } from "../../utils/responsoveProvider";
+import ScrollToAnchor from "../../utils/scrollToAnchor";
+import  MenuNav  from "../partials/_menuNav";
+import { hotDrinks, icedDrinks, drinkExtras, signatureLattes} from "../../utils/getBeverageItems";
 
 
 const MenuBeverages = () => {

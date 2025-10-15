@@ -1,9 +1,9 @@
-import Header from "./partials/_header";
-import { theme } from "../styles/themes";
-import { useResponsive } from "../utils/responsoveProvider";
-import ScrollToAnchor from "../utils/scrollToAnchor";
-import { getBagels, getSandwiches, getSides, getSignatureDishes, getTravelerSandwich} from "../utils/getMenuItemCategory";
-import  MenuNav  from "./partials/_menuNav";
+import Header from "../partials/_header";
+import { theme } from "../../styles/themes";
+import { useResponsive } from "../../utils/responsoveProvider";
+import ScrollToAnchor from "../../utils/scrollToAnchor";
+import { getBagels, getSandwiches, getSides, getSignatureDishes, getTravelerSandwich} from "../../utils/getMenuItemCategory";
+import  MenuNav  from "../partials/_menuNav";
 
 const MenuBreakfast = () => {
   const isMobile = useResponsive();

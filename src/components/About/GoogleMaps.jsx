@@ -1,6 +1,6 @@
 import React from "react";
-import { theme } from '../styles/themes'
-import { useResponsive } from '../utils/responsoveProvider'
+import { theme } from '../../styles/themes'
+import { useResponsive } from '../../utils/responsoveProvider'
 
 const GoogleMaps = () => {
   const isMobile = useResponsive()

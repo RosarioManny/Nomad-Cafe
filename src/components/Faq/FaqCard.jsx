@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { theme } from '../styles/themes'
+import { theme } from '../../styles/themes'
 import { motion } from 'framer-motion'
 
 const FaqCard = ({ question, answer}) => {

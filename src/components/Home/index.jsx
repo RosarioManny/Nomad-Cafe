@@ -1,11 +1,11 @@
-import Header from './partials/_header'
-import { theme } from '../styles/themes'
+import Header from '../partials/_header'
+import { theme } from '../../styles/themes'
 import { useEffect, useState } from 'react' 
-import { useResponsive } from '../utils/responsoveProvider'
-import { imageGallery }  from '../database/imageGallery'
+import { useResponsive } from '../../utils/responsoveProvider'
+import { imageGallery }  from '../../database/imageGallery'
 import Carousol from './Carousel'
-import InfiniteGallery from './partials/InfiniteCarousel'
-import ScrollToAnchor from '../utils/scrollToAnchor'
+import InfiniteGallery from '../partials/InfiniteCarousel'
+import ScrollToAnchor from '../../utils/scrollToAnchor'
 
 const Home = () => {
 const [yearsInBuisness, setYearsInBuisness] = useState(0)

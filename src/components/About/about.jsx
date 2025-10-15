@@ -1,14 +1,12 @@
-import Header from './partials/_header'
-import { theme } from '../styles/themes'
-import { useResponsive } from '../utils/responsoveProvider'
+import Header from '../partials/_header'
+import { theme } from '../../styles/themes'
+import { useResponsive } from '../../utils/responsoveProvider'
 import  GoogleMaps  from './GoogleMaps'
-import ScrollToAnchor from '../utils/scrollToAnchor'
+import ScrollToAnchor from '../../utils/scrollToAnchor'
 
 const About = () => {
   const isMobile = useResponsive()
-  const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAP_API_KEY
 
-  // console.log("key >>", GOOGLE_MAPS_API_KEY)
   return (
     <>
       <ScrollToAnchor/>

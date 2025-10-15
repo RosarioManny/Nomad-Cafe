@@ -1,10 +1,10 @@
 import FaqCard from "./FaqCard"
-import Header from "./partials/_header"
+import Header from "../partials/_header"
 import { useState } from 'react'
-import faqQuestions from '../database/faqQuestions'
-import { useResponsive } from "../utils/responsoveProvider"
-import ScrollToAnchor from "../utils/scrollToAnchor"
-import { theme } from "../styles/themes"
+import faqQuestions from '../../database/faqQuestions'
+import { useResponsive } from "../../utils/responsoveProvider"
+import ScrollToAnchor from "../../utils/scrollToAnchor"
+import { theme } from "../../styles/themes"
 
 const Faq = () => {
   const [isToggled, setIsToggled ] = useState(true);

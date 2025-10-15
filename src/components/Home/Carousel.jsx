@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { onlineReviews } from '../database/onlineReviews'
+import { onlineReviews } from '../../database/onlineReviews'
 import ReviewCard from './ReviewCard'
-import { useResponsive } from '../utils/responsoveProvider'
+import { useResponsive } from '../../utils/responsoveProvider'
 import { motion } from 'framer-motion'
-import { theme } from '../styles/themes'
+import { theme } from '../../styles/themes'
 
 const Carousol = () => {
   const [currentIdx, setCurrentIdx] = useState(1)

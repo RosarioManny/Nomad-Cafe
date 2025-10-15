@@ -1,5 +1,5 @@
-import { theme } from "../styles/themes"
-import { useResponsive } from "../utils/responsoveProvider";
+import { theme } from "../../styles/themes"
+import { useResponsive } from "../../utils/responsoveProvider";
 
 const ReviewCard = ({name, review, rating, path, key, source}) => {
   const maxStars = 5;
