@@ -60,6 +60,9 @@ const sweetsItems = [
       "Hazelnut",
       "Chai Salted Caramel",
       "Passion Fruit Sorbet",
+      "Cereal Milk",
+      "Blueberry Ginger Sorbet",
+      "Cookies and Cream",
     ], 
     "items": [
       {
