@@ -1,12 +1,14 @@
-import Header from "./partials/_header";
+import Header from "../partials/_header";
 import { useState } from 'react';
-import { theme } from "../styles/themes";
-import { useResponsive } from "../utils/responsoveProvider";
+import { theme } from "../../styles/themes";
+import { useResponsive } from "../../utils/responsoveProvider";
 import { AnimatePresence, motion } from "framer-motion";
-import ScrollToAnchor from "../utils/scrollToAnchor";
+import { MenuBreakfast, MenuBeverages, MenuSweets} from './submenu/index'
+import ScrollToAnchor from "../../utils/scrollToAnchor";
 
 const Menu = () => {
   const isMobile = useResponsive();
+  const [category, setCategory] = useState<'breakfast' | 'drinks' | 'sweets'>('breakfast')
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const menuCategories = [

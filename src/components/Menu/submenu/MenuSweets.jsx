@@ -1,12 +1,12 @@
-import Header from "../partials/_header";
-import { theme } from "../../styles/themes";
-import { useResponsive } from "../../utils/responsoveProvider";
-import ScrollToAnchor from "../../utils/scrollToAnchor";
-import  MenuNav  from "../partials/_menuNav";
-import { pastrySweets, gelatoSweets } from "../../utils/getSweetsItems";
-import { li } from "framer-motion/client";
+import Header from "../../partials/_header";
+import { theme } from "../../../styles/themes";
+import { useResponsive } from "../../../utils/responsoveProvider";
+import ScrollToAnchor from "../../../utils/scrollToAnchor";
+import  MenuNav  from "../../partials/_menuNav";
+import { pastrySweets, gelatoSweets } from "../../../utils/getSweetsItems";
 
-const MenuSweets = () => {
+
+export const MenuSweets = () => {
   const isMobile = useResponsive();
   const pastries = pastrySweets()
   const gelato = gelatoSweets()
@@ -119,4 +119,3 @@ const MenuSweets = () => {
   );
 };
 
-export default MenuSweets;
