@@ -1,16 +1,22 @@
 import Header from "../partials/_header";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { theme } from "../../styles/themes";
 import { useResponsive } from "../../utils/responsoveProvider";
 import { AnimatePresence, motion } from "framer-motion";
 import { MenuBreakfast, MenuBeverages, MenuSweets} from './submenu/index'
 import ScrollToAnchor from "../../utils/scrollToAnchor";
+import { p } from "framer-motion/client";
 
 const Menu = () => {
   const isMobile = useResponsive();
-  const [category, setCategory] = useState<'breakfast' | 'drinks' | 'sweets'>('breakfast')
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [category, setCategory] = useState('breakfast')
+  // const [hoveredItem, setHoveredItem] = useState(null);
 
+  // useEffect(()=> {
+  //   const handleChange = () => {
+      
+  //   }
+  // }, [category])  
   const menuCategories = [
     {
       id: 'breakfast',
@@ -35,6 +41,10 @@ const Menu = () => {
     }
   ];
 
+  useEffect(() => {
+    console.log(category)
+  }, [category])
+  
   return (
     <>
       <ScrollToAnchor/>
@@ -43,73 +53,50 @@ const Menu = () => {
         img={"/products/green_traveler.webp"}
         tag={"/icons-logos/Nomad-White-Cafe.webp"}
       />
-      
-      <div className="w-[100vw] flex justify-center items-center" width={"100vw"}>
-        {/* Desktop View - Grid Layout */}
-        {isMobile ? (
-          <div className={`grid grid-cols-3 gap-8 w-4/5 ${theme.layout.para_spacing}`}>
-            {menuCategories.map((category) => (
-              <motion.div
-                key={category.id}
-                className="relative rounded-2xl overflow-hidden"
-                whileHover={{ scale: 1.03 }}
-                onHoverStart={() => setHoveredItem(category.id)}
-                onHoverEnd={() => setHoveredItem(null)}
-              >
-                <a href={category.link}>
-                  <AnimatePresence>
-                    {hoveredItem === category.id && (
-                      <motion.div
-                        className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      >
-                        <motion.h2 
-                          initial={{ y: 34 }}
-                          animate={{ y: 0 }}
-                          exit={{ y: 34 }}
-                        >
-                          <img src={category.title} alt={category.id} />
-                        </motion.h2>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                  <img
-                    src={category.image}
-                    alt={category.alt}
-                    className="w-full h-96 object-cover rounded-2xl border-4 border-gamboge"
-                    loading="lazy"
-                  />
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          /* Mobile View - Carousel Style */
-          <div className={`flex overflow-x-auto w-full p-4 space-x-4 no-scrollbar ${theme.layout.para_spacing}`}>
-            {menuCategories.map((category) => (
-              <div key={category.id} className="flex-shrink-0 w-3/4">
-                <a href={category.link}>
-                  <div className="relative rounded-2xl overflow-hidden">
-                    <img
-                      src={category.image}
-                      alt={category.alt}
-                      className="w-full h-64 object-cover rounded-2xl border-4 border-firebrick"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                      <h2 className="text-oatmilk text-3xl font-bold">
-                        <img src={category.title} alt={category.id} />
-                      </h2>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <ul className="flex justify-between mx-7 bg-amber-50 p-4 rounded-xl my-8">
+  <li>
+    <button 
+      onClick={() => setCategory('breakfast')}
+      className={`px-6 py-2 rounded-lg transition-color duration-500 ease-in-out ${
+        category === 'breakfast' ? 'bg-amber-400 text-gray-900' : 'bg-amber-100 text-gray-700 hover:bg-amber-200'
+      }`}
+    >
+      Breakfast
+    </button>
+  </li>
+  <li>
+    <button 
+      onClick={() => setCategory('drinks')}
+      className={`px-6 py-2 rounded-lg transition-color duration-500 ease-in-out ${
+        category === 'drinks' ? 'bg-amber-400 text-gray-900' : 'bg-amber-100 text-gray-700 hover:bg-amber-200'
+      }`}
+    >
+      Drinks
+    </button>
+  </li>
+  <li>
+    <button 
+      onClick={() => setCategory('sweets')}
+      className={`px-6 py-2 rounded-lg transition-color duration-500 ease-in-out ${
+        category === 'sweets' ? 'bg-amber-400 text-gray-900' : 'bg-amber-100 text-gray-700 hover:bg-amber-200'
+      }`}
+    >
+      Sweets
+    </button>
+  </li>
+  <a className="italic text-sm m-2" href="/NomadCafe-Site/public/products/Large-Menu.jpg" download="Large-Menu.jpg">
+    (Download Menus)
+  </a>
+</ul>
+      {category === 'breakfast' && (
+        <MenuBreakfast />
+      )}
+      {category === 'drinks' && (
+        <MenuBeverages />
+      )}
+      {category === 'sweets' && (
+        <MenuSweets />
+      )}
     </>
   );
 };

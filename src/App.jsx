@@ -7,14 +7,12 @@ import Home from './components/Home/index.jsx'
 import Menu from './components/Menu/menu.jsx'
 import About from './components/About/about.jsx'
 import Faq from './components/Faq/faq.jsx'
-import { ResponsiveProvider } from './utils/responsoveProvider.jsx'
-
 
 
 function App() {
 
   return (
-    <ResponsiveProvider>
+    <>
       <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -26,7 +24,7 @@ function App() {
           <Route path="/menu/sweets" element={<MenuSweets/>}/> */}
         </Routes>
       <Footer />
-    </ResponsiveProvider>
+    </>
   )
 }
 

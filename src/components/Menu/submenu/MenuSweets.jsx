@@ -1,8 +1,8 @@
-import Header from "../../partials/_header";
+
 import { theme } from "../../../styles/themes";
 import { useResponsive } from "../../../utils/responsoveProvider";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
-import  MenuNav  from "../../partials/_menuNav";
+
 import { pastrySweets, gelatoSweets } from "../../../utils/getSweetsItems";
 
 
@@ -14,17 +14,7 @@ export const MenuSweets = () => {
   console.log("PAS>>",pastries)
   return (
     <>
-      <ScrollToAnchor/>
-      <Header
-        id="Header"
-        img={"/products/Nomad-Danishes-Adjusted.webp"}
-        tag={"/icons-logos/Nomad-White-Sweets.webp"}
-      />
-      {/* Mini Nav */}
-      <MenuNav />
-      <div className="flex justify-center "> 
-        <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
-      </div>
+      <ScrollToAnchor />
       {/* Menu Items */}
       <section className={`flex flex-col align-center items-center`}>
 

@@ -1,42 +1,22 @@
-import Header from "../../partials/_header";
+
 import { theme } from "../../../styles/themes";
 import { useResponsive } from "../../../utils/responsoveProvider";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
-import  MenuNav  from "../../partials/_menuNav";
+
 import { hotDrinks, icedDrinks, drinkExtras, signatureLattes} from "../../../utils/getBeverageItems";
 
 
 export const MenuBeverages = () => {
   const isMobile = useResponsive();
-  
   const signatures = signatureLattes()
-  console.log("Sigs >>", signatures)
-  
   const icedBevs = icedDrinks()
-  console.log("Ice >>", icedBevs)
-  
   const hotBevs = hotDrinks()
   const hotBevsItems = hotBevs.items
-  console.log("Hot >>", hotBevsItems)
-  
   const bevExtras = drinkExtras()
-  console.log("Extras >>", bevExtras)
-  
   
   return (
     <>
       <ScrollToAnchor/>
-      <Header
-        id="Header"
-        img={"/products/Capuccino_heart.webp"}
-        tag={"/icons-logos/Nomad-White-Beverages.webp"}
-      />
-      {/* Mini Nav */}
-        <MenuNav />
-      <div className="flex justify-center "> 
-        <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
-      </div>
-
       {/* Menu Items */}
       <section className={`${isMobile ? "" : "m-2 text-center"}`}>
         {/* Signature Beverages */}

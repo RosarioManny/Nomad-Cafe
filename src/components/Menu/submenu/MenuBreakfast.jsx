@@ -1,12 +1,12 @@
-import Header from "../../partials/_header";
+
 import { theme } from "../../../styles/themes";
 import { useResponsive } from "../../../utils/responsoveProvider";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
 import { getBagels, getSandwiches, getSides, getSignatureDishes, getTravelerSandwich} from "../../../utils/getMenuItemCategory";
-import  MenuNav  from "../../partials/_menuNav";
 
-const MenuBreakfast = () => {
-  const isMobile = useResponsive();
+
+export const MenuBreakfast = () => {
+const isMobile = useResponsive();
   
   const bagels = getBagels()
 
@@ -28,18 +28,6 @@ const MenuBreakfast = () => {
 
   return (
     <>
-      <ScrollToAnchor/>
-      <Header
-        id="Header"
-        img={"/products/Cheddarsmash_4.webp"}
-        tag={"/icons-logos/Nomad-White-Breakfast.webp"}
-      />
-      {/* Mini Nav */}
-      <MenuNav />
-      <div className="flex justify-center "> 
-        <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
-      </div>
-      
       {/* Menu Items */}
       <section className={`flex flex-col items-center  ${theme.color.text.default}`}>
         {/* Bagels */}
@@ -220,5 +208,3 @@ const MenuBreakfast = () => {
     </>
   );
 };
-
-export default MenuBreakfast;
