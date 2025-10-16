@@ -35,7 +35,7 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", to
             className={`title fade-in z-10 w-auto transition-all duration-500 ${
               isLogoLoaded ? 'opacity-100' : 'opacity-0'
             } ${
-              ' max-w-[50%]'
+              'max-w-[100%] md:max-w-[50%]'
             }`}
             loading="eager"
             decoding="async"
