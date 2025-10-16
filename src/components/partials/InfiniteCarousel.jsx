@@ -5,7 +5,7 @@ const InfiniteGallery = ({ images }) => {
   const controls = useAnimation();
   const itemWidth = 250; // Matches your min-w-[250px]
   const gap = 16; // Matches your gap-4 (assuming 1rem = 16px)
-  const duration = 40; // Seconds for one full loop / Smaller > faster | Large > Slower
+  const duration = 90; // Seconds for one full loop / Smaller > faster | Large > Slower
 
   // Duplicate images for seamless looping
   const duplicatedImages = [...images, ...images.slice(0,3)];

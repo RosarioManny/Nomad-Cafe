@@ -50,13 +50,11 @@ const sweetsItems = [
     "category": "Gelatos",
     "gelatoFlavors": 
     [
-      "Chocolate Hazelnut",
-      "Vanilla Miso",
+      "*Chocolate Hazelnut",
+      "*Vanilla Miso",
       "Cold Brew",
-      "Vegan Matcha Cococnut",
       "Strawberries & Creme",
       "Bees Knees",
-      "Lemon Sorbet",
       "Hazelnut",
       "Chai Salted Caramel",
       "Passion Fruit Sorbet",

@@ -24,9 +24,10 @@ const faqQuestions = [
     que: "Can I make a catering order?", 
     ans: "Yes, we are always available for catering orders. Please call us at (347)-227-8136 or send us an email at nomadcafeandeatery@gmail.com. "
   },
-  // {
-  // que: "Do you do online delivery", 
-  // ans: "Certainly, but it’s limited to pick-up only. We are in high demand. "},
+  {
+  que: "Do you have a rewards program?", 
+  ans: "Certainly! We have a physical punch card. Buy 10 drinks, get 1 free! Sounds sweet to us."
+},
   {
     que: "What beans do you use?", 
     ans: " We proudly serve beans from 'Partners Coffee Roasters'. "

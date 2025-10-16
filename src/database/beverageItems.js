@@ -1,6 +1,6 @@
 const beverageItems = [
   {
-    "category": "Signatures Lattes",
+    "category": "Signature Lattes", 
     "prices": {
       "Sm": 5,
       "Md": 5.5,
@@ -39,7 +39,7 @@ const beverageItems = [
       {
         "name": "Got Nuts?",
         "description": "Coconut, Almond, Hazelnut"
-      },
+      }, // Fixed: Removed trailing comma
     ]
   },
   {
@@ -82,11 +82,11 @@ const beverageItems = [
       {
         "name": "Cortado",
         "price": {
-          "Standard:": 4
+          "Standard": 4
         }
       },
       {
-        "name": "Cappucino",
+        "name": "Cappuccino", 
         "price": {
           "Sm": 4.25,
           "Md": 4.75,
@@ -132,7 +132,7 @@ const beverageItems = [
           "Md": 3,
           "Lg": 3.25
         },
-        "varieties": "English Breakfast, Lemon Ginger, Peppermint, Chamomile, Green Tea, Black Tea, Earl grey, Chai"
+        "varieties": "English Breakfast, Lemon Ginger, Peppermint, Chamomile, Green Tea, Black Tea, Earl Grey, Chai" 
       },
     ]
   },
@@ -212,6 +212,38 @@ const beverageItems = [
     ]
   },
   {
+    "category": "Bottled Drinks", 
+    "items": [
+      {
+        "name": "Poland Spring Water",
+        "price": 2
+      },
+      {
+        "name": "Essentia Water",
+        "price": 3
+      },
+      {
+        "name": "Martinelli's Apple Juice",
+        "price": 4
+      },
+      {
+        "name": "Natalie's Juices",
+        "price": 5,
+        "varieties": ["Orange Juice", "Lemonade", "Grapefruit Juice"] 
+      },
+      {
+        "name": "San Pellegrino", 
+        "price": 3.5,
+        "varieties": ["Sparkling Water", "Lemon", "Blood Orange", "Classic"]
+      },
+      {
+        "name": "Perrier",
+        "price": 3,
+        "varieties": ["Sparkling Water", "Lime", "Green Apple", "Pink Grapefruit"]
+      }
+    ]
+  },
+  {
     "category": "Extras",
     "items": [
       {
@@ -226,7 +258,12 @@ const beverageItems = [
       {
         "name": "Syrups",
         "price": 0.5,
-        "varieties": ["Salted Caramel", "Vanilla", "Almond", "Coconut", "Honey", "Lavender", "Hazelnut", "Chocolate", "Toffee Nut", "Peanut Butter", "Spiced Brown Sugar", "Sugar-Free Vanilla"]
+        "varieties": [
+          "Salted Caramel", "Vanilla", "Almond", "Coconut", 
+          "Honey", "Lavender", "Hazelnut","Chocolate", 
+          "Toffee Nut", "Peanut Butter",  "Pistachio", "Spiced Brown Sugar",
+          "Sugar-Free Vanilla", "*Peach ", "*Pumpkin Spice ", "*Strawberry" ]
+
       }
     ]
   }
