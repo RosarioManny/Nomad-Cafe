@@ -1,3 +1,4 @@
 export { MenuBeverages } from "./MenuBeverages";
 export { MenuBreakfast } from "./MenuBreakfast";
-export { MenuSweets } from "./MenuSweets";
+export { MenuPastries } from "./MenuPastries";
+export { MenuGelatos } from "./MenuGelatos"

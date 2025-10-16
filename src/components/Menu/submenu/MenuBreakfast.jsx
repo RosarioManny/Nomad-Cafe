@@ -1,209 +1,332 @@
-
 import { theme } from "../../../styles/themes";
-import { useResponsive } from "../../../utils/responsoveProvider";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
 import { getBagels, getSandwiches, getSides, getSignatureDishes, getTravelerSandwich} from "../../../utils/getMenuItemCategory";
 
-
 export const MenuBreakfast = () => {
-const isMobile = useResponsive();
-  
   const bagels = getBagels()
-
   const sandwiches = getSandwiches()
   const sandwichAddOns = [ 
     { name: "Bacon", price: 3 },
     { name: "Avocado", price: 2.5 },
-    
   ]
-
   const sides = getSides()
-  
   const signatureDishes = getSignatureDishes()
-
   const travelerSandwich = getTravelerSandwich()
-  const travelerTitle = travelerSandwich.category
   const travelerOptions = travelerSandwich.options[0]
-
 
   return (
     <>
+      <ScrollToAnchor/>
+      {/* Skip link for screen readers */}
+      <a 
+        href="#breakfast-menu" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white p-2 z-50 rounded"
+      >
+        Skip to breakfast menu
+      </a>
+
       {/* Menu Items */}
-      <section className={`flex flex-col items-center  ${theme.color.text.default}`}>
+      <section 
+        id="breakfast-menu"
+        className={`flex flex-col items-start mx-auto px-4 sm:px-6 max-w-6xl w-full ${theme.color.text.default}`}
+        aria-labelledby="breakfast-menu-heading"
+        role="region"
+      >
+        <h1 id="breakfast-menu-heading" className="sr-only">Breakfast Menu</h1>
+        
         {/* Bagels */}
-          <h2 className={`
-            ${theme.color.text.primary} 
-            ${theme.text.underline} 
-            ${theme.text.subheading} 
-            ${theme.layout.text}`}> 
+        <section 
+          className="w-full mb-8"
+          aria-labelledby="bagels-heading"
+        >
+          <h2 
+            id="bagels-heading"
+            className={`
+              ${theme.color.text.primary} 
+              ${theme.text.underline} 
+              ${theme.text.subheading} 
+              ${theme.layout.text} text-left mb-4
+            `}
+          > 
             {bagels.category} - (All Vegan)
           </h2>
-          <ul className="flex items-center">
-            {bagels.variants.map((variant, i )=> (
+          
+          <ul 
+            className="flex flex-wrap gap-3 md:gap-6 my-4"
+            aria-label="Bagel varieties"
+          >
+            {bagels.variants.map((variant, i) => (
               <li 
-              className={`
-                flex flex-col items-center mx-2
-
-                ${isMobile ? `${theme.text.body}` : "space-x-10 bg-blue-500"} 
-                `} 
-              key={i}>
-                {variant} 
+                className={`${theme.text.body}`} 
+                key={i}
+              >
+                {variant}
               </li>
             ))}
           </ul>
-          <h2 className={`${theme.color.text.secondary}`}>Add-Ons</h2>
-          {bagels.addOns.map((addOn, i) => (
-            <p key={i}> {addOn.name} - {addOn.price} </p>
-          ))}
-            <hr className={` ${theme.layout.hr}  ${theme.color.background.primary}`}/>
+          
+          <h3 className={`${theme.color.text.secondary} text-left mb-2`}>Add-Ons</h3>
+          <ul 
+            className="space-y-1"
+            aria-label="Bagel add-ons"
+          >
+            {bagels.addOns.map((addOn, i) => (
+              <li key={i} className="text-left">
+                {addOn.name} - ${addOn.price}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-          {/* Traveler */}
-          <div className="flex flex-col w-full">
-            {/* Traveler title + description */}
-            <div className="flex flex-col items-center">
-              <h2 className={`
+        <hr 
+          className={`${theme.layout.hr} ${theme.color.background.primary} w-full my-6`}
+          aria-hidden="true"
+        />
+
+        {/* Traveler */}
+        <section 
+          className="w-full mb-8"
+          aria-labelledby="traveler-heading"
+        >
+          <div className="flex flex-col">
+            <h2 
+              id="traveler-heading"
+              className={`
                 ${theme.color.text.primary} 
                 ${theme.text.underline} 
                 ${theme.text.subheading} 
-                ${theme.layout.text}`}>
-                  {travelerSandwich.category}
-              </h2>
-              <p>{travelerSandwich.description}</p>
-            </div>
-            {/* Traveler Ingredients */}
+                ${theme.layout.text} text-left mb-2
+              `}
+            >
+              {travelerSandwich.category}
+            </h2>
+            <p className="text-left mb-4">{travelerSandwich.description}</p>
+          </div>
+          
+          {/* Traveler Ingredients */}
+          <div role="list">
             {Object.entries(travelerOptions).map(([category, options]) => (
-              <div key={category} className="flex flex-col items-center">
-                {/* Paid Add-ons */}
+              <div 
+                key={category} 
+                className="flex flex-col items-start mb-6"
+                role="listitem"
+              >
                 {options.price ? (
-                  <div className="flex space-x-2 items-center">
-                    <h3 className={`
-                      ${theme.color.text.secondary} 
-                      ${theme.text.underline}
-                      ${theme.text.menuHeading}
-                      `}>
-                        {category}
+                  <div className="flex flex-col items-start mb-2">
+                    <h3 
+                      className={`
+                        ${theme.color.text.secondary} 
+                        ${theme.text.underline}
+                        ${theme.text.menuHeading} text-left
+                      `}
+                    >
+                      {category}
                     </h3>
-                    <p className="text-xs"> (+{options.price} each) </p>
+                    <p className="text-xs text-left"> (+${options.price} each) </p>
                   </div>
                 ) : (
-                  // Non-paid add-ons
-                  <h3  className={`
+                  <h3 className={`
                     ${theme.color.text.secondary} 
                     ${theme.text.underline}
-                    ${theme.text.menuHeading}
-                    
-                    `}>
-                      {category}
+                    ${theme.text.menuHeading} text-left mb-2
+                  `}>
+                    {category} 
                   </h3>
                 )}
               
-                <div className="base-options">
-                  <ul className="flex flex-wrap justify-center text-center">
+                <div className="base-options w-full">
+                  <ul 
+                    className="flex flex-wrap gap-2 md:gap-4"
+                    aria-label={`${category} options`}
+                  >
                     {options.base.map((item, index) => (
-                      <li className="mx-[4px] " key={`${category}-base-${index}`}>{item} </li>
+                      <li 
+                        className="text-left" 
+                        key={`${category}-base-${index}`}
+                      >
+                        {item} 
+                      </li>
                     ))}
                   </ul> 
                 </div>
 
                 {options.premium && (
-                  <div className="w-max ">
-                    <p>+{options.premium.price} {options.premium.name}  </p>
+                  <div className="w-full text-left mt-2">
+                    <p>
+                      +${options.premium.price} {options.premium.name}  
+                    </p>
                   </div>
                 )}
               </div>
             ))}
           </div>
-          <hr className={`${theme.layout.hr}  ${theme.color.background.accent}`}/>
+        </section>
 
-          {/* Signature Dishes */}
-          <section>
-          <h2 className={`
-            ${theme.color.text.primary} 
-            ${theme.text.underline} 
-            ${theme.text.subheading} 
-            ${theme.layout.text}`}>
-              {signatureDishes.category}
-          </h2>
-            {signatureDishes.items.map((dish, i) => (
-              <div key={i} className="m-2 ">
-                <h1 className={`
-                  ${theme.color.text.primary}
-                  ${theme.text.underline} 
-                  ${theme.text.menuHeading} 
-                  `}>
-                    {dish.name} - {dish.price}
-                </h1>
-                <p> {dish.description}</p>
-                {dish.modifiers ? (
-                  <div>
-                    <p className={`${theme.color.text.secondary}`}>Add-ons:</p>
-                    {dish.modifiers.map((mods, i ) => (
-                      <div key={i}>
-                        <p>{mods.name} + {mods.price}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <></>
-                )
-                }
-              </div>
-            ))}
-          </section>
-            <hr className={`${theme.layout.hr} ${theme.color.background.primary}`}/>
+        <hr 
+          className={`${theme.layout.hr} ${theme.color.background.accent} w-full my-6`}
+          aria-hidden="true"
+        />
 
-          {/* Sandwiches  */}
-          <section>
-            <h2 className={`
+        {/* Signature Dishes */}
+        <section 
+          className="w-full mb-8"
+          aria-labelledby="signature-dishes-heading"
+        >
+          <h2 
+            id="signature-dishes-heading"
+            className={`
               ${theme.color.text.primary} 
               ${theme.text.underline} 
               ${theme.text.subheading} 
-              ${theme.layout.text}`}>
-              {sandwiches.category}
-            </h2>
+              ${theme.layout.text} text-left mb-4
+            `}
+          >
+            {signatureDishes.category}
+          </h2>
+          
+          <div className="space-y-6">
+            {signatureDishes.items.map((dish, i) => (
+              <div 
+                key={i} 
+                className="text-left"
+                role="article"
+                aria-labelledby={`dish-${i}`}
+              >
+                <h3 
+                  id={`dish-${i}`}
+                  className={`
+                    ${theme.color.text.primary}
+                    ${theme.text.underline} 
+                    ${theme.text.menuHeading} mb-1
+                  `}
+                >
+                  {dish.name} - ${dish.price}
+                </h3>
+                <p className="mb-2"> {dish.description}</p>
+                {dish.modifiers && (
+                  <div>
+                    <p className={`${theme.color.text.secondary} mb-1`}>Add-ons:</p>
+                    <ul className="space-y-1">
+                      {dish.modifiers.map((mods, i) => (
+                        <li key={i}>
+                          {mods.name} + ${mods.price}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <hr 
+          className={`${theme.layout.hr} ${theme.color.background.primary} w-full my-6`}
+          aria-hidden="true"
+        />
+
+        {/* Sandwiches */}
+        <section 
+          className="w-full mb-8"
+          aria-labelledby="sandwiches-heading"
+        >
+          <h2 
+            id="sandwiches-heading"
+            className={`
+              ${theme.color.text.primary} 
+              ${theme.text.underline} 
+              ${theme.text.subheading} 
+              ${theme.layout.text} text-left mb-4
+            `}
+          >
+            {sandwiches.category}
+          </h2>
+          
+          <div className="space-y-6 mb-4">
             {sandwiches.items.map((dish, i) => (
-              <div key={i} className="m-2">
-                <h1 className={`
-                  ${theme.color.text.primary} 
-                  ${theme.text.underline}
-                  ${theme.text.menuHeading}`}>
-                    {dish.name} - {dish.price}
-                </h1>
+              <div 
+                key={i} 
+                className="text-left"
+                role="article"
+                aria-labelledby={`sandwich-${i}`}
+              >
+                <h3 
+                  id={`sandwich-${i}`}
+                  className={`
+                    ${theme.color.text.primary} 
+                    ${theme.text.underline}
+                    ${theme.text.menuHeading} mb-1
+                  `}
+                >
+                  {dish.name} - ${dish.price}
+                </h3>
                 <p> {dish.description}</p>
               </div>
             ))}
-            <div className="flex gap-[5px]">
-            <p className={`${theme.color.text.secondary}`}> Add-Ons: </p>
+          </div>
+          
+          <div className="text-left">
+            <p className={`${theme.color.text.secondary} mb-2`}>Add-Ons:</p>
+            <ul 
+              className="flex flex-wrap gap-4"
+              aria-label="Sandwich add-ons"
+            >
               {sandwichAddOns.map((item, i) => (
-                <div className="flex" key={i}>
-                  <h3> {item.name} -</h3>
-                  <p className={`${theme.color.text.primary}`}>{item.price} </p>
-                </div>
+                <li 
+                  className="flex gap-1" 
+                  key={i}
+                >
+                  <span>{item.name} -</span>
+                  <span className={`${theme.color.text.primary}`}>${item.price}</span>
+                </li>
               ))}
-            </div>
-          </section>
+            </ul>
+          </div>
+        </section>
 
-            <hr className={`${theme.layout.hr} ${theme.color.background.accent}`}/>
-          {/* Sides  */}
-          <section className="w-full">
-            <h2 className={`
+        <hr 
+          className={`${theme.layout.hr} ${theme.color.background.accent} w-full my-6`}
+          aria-hidden="true"
+        />
+
+        {/* Sides */}
+        <section 
+          className="w-full"
+          aria-labelledby="sides-heading"
+        >
+          <h2 
+            id="sides-heading"
+            className={`
               ${theme.text.subheading} 
               ${theme.color.text.secondary} 
-              ${theme.layout.text}`}>
-                {sides.category}
-            </h2>
+              ${theme.layout.text} text-left mb-4
+            `}
+          >
+            {sides.category}
+          </h2>
+          
+          <div 
+            className="space-y-2"
+            role="list"
+            aria-label="Side dishes"
+          >
             {sides.items.map((dish, i) => (
-              <section key={i} className="flex justify-between border-b border-gamboge m-2 p-2">
+              <div 
+                key={i} 
+                className="flex justify-between items-center border-b border-gamboge py-3"
+                role="listitem"
+              >
                 <h3 className={`
                   ${theme.color.text.primary} 
                   ${theme.text.body}
-                  `}>
-                    {dish.name} 
+                `}>
+                  {dish.name} 
                 </h3>            
-                <p className={`${theme.color.text.default} text-right`}> {dish.price}</p>
-              </section>
+                <p className={`${theme.color.text.default}`}>${dish.price}</p>
+              </div>
             ))}
-          </section>
+          </div>
+        </section>
       </section>
     </>
   );

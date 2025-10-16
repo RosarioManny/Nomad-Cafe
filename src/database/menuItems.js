@@ -26,11 +26,11 @@ const menuItems = [
           premium: { name: "Vegan cheese", price: 1 }
         },
         Proteins: {
-          base: [ "Bacon", "Ham", "Turkey", ],
+          base: [ "Bacon", "Ham", "Turkey" ],
           price: 3
         },
         Veggies: {
-          base: ["Alfalfa sprouts", "Roasted red peppers", "Spinach", "Onion", "Tomato"],
+          base: ["Alfalfa Sprouts", "Roasted Red Peppers", "Spinach", "Onion", "Tomato"],
           price: .75,
           premium:{ name: "Avocado", price: 3}
         },
@@ -47,7 +47,7 @@ const menuItems = [
       {
         name: "Eggscape from NY",
         price: 14,
-        description: "2 eggs, rosemary parmesan hashbrowns, ham, berries, wheat toast",
+        description: "Two eggs, rosemary parmesan hashbrowns, ham, berries, wheat toast",
         modifiers: [
           { name: "Sub ham for bacon/turkey/avocado", price: 1 }
         ]
@@ -55,12 +55,12 @@ const menuItems = [
       {
         name: "Cheddar Smashbrowns",
         price: 13.5,
-        description: "Over-easy eggs, bacon jam, hashbrowns, cheddar, sriracha, scallions"
+        description: "Two Over-easy eggs, bacon jam, hashbrowns, cheddar, sriracha, scallions"
       },
       {
         name: "Sol Tacos",
         price: 8,
-        description: "2 tortillas, eggs, pico de gallo, avocado, cheddar",
+        description: "Two tortillas, eggs, pico de gallo, avocado, cheddar",
         modifiers: [
           { name: "Add protein: Bacon, Ham or Turkey", price: 3 }
         ]
@@ -68,7 +68,7 @@ const menuItems = [
       {
         name: "Loaded Avocado Toast (v)",
         price: 11,
-        description: "Smashed avocado, pico de gallo, sprouts",
+        description: "Smashed avocado, pico de gallo, sprouts on thick-cut toast",
         modifiers: [
           { name: "Add egg", price: 2 },
           { name: "Sub GF bread", price: 3 }
@@ -77,7 +77,7 @@ const menuItems = [
       {
         name: "Monte Cristo Sliders",
         price: 12,
-        description: "Ham, brie, raspberry jam, French toast croissants"
+        description: "Ham, brie, raspberry jam on French toast croissants"
       }
     ]
   },
@@ -87,27 +87,27 @@ const menuItems = [
       {
         name: "Launchpad",
         price: 12,
-        description: "Turkey, chipotle aioli, spinach, tomato, cheddar, ciabatta"
+        description: "Turkey, chipotle aioli, spinach, tomato, cheddar on ciabatta"
       },
       {
         name: "Runway",
         price: 12,
-        description: "Turkey, pesto, mozzarella, roasted peppers, ciabatta"
+        description: "Turkey, pesto, mozzarella, roasted peppers, olive oil on ciabatta"
       },
       {
         name: "Layover",
         price: 13,
-        description: "6-cheese grilled cheese (asiago, fontina, cheddar, Swiss, mozzarella)"
+        description: "6-cheese grilled cheese (asiago, fontina, cheddar, Swiss, mozzarella) with a rosemary parmesean crust on Panini bread"
       },
       {
         name: "First Class",
         price: 13.5,
-        description: "Roast beef, tomatoes, sprouts, mozzarella, truffle glaze, baguette"
+        description: "Roast beef, tomatoes, sprouts, mozzarella, truffle glaze, olive oil on a baguette"
       },
       {
         name: "Take It Caprese",
         price: 12.5,
-        description: "Tomatoes, basil, mozzarella, balsamic glaze, baguette",
+        description: "Tomatoes, basil, mozzarella, balsamic glaze, olive oil on a baguette",
         note: "Sub avocado for meat (v)"
       }
     ]
@@ -115,7 +115,7 @@ const menuItems = [
   {
     category: "Sides",
     items: [
-      { name: "Greek yogurt + berries + honey", price: 6 },
+      { name: "Greek yogurt with berries & honey", price: 6 },
       { 
         name: "Rosemary parmesan hashbrown", 
         variants: ["Vegan (v)"],

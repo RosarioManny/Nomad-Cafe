@@ -76,14 +76,23 @@ const About = () => {
           className={`${theme.layout.text}`}
           aria-labelledby="visit-us"
         >
-          <div className='mb-10 mt-4'>
+          <div className='mb-10 mt-4 flex flex-col justify-end'>
             <h1 
               id="visit-us"
               className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary}  text-center`}
             >
               Visit Us!
             </h1>
-            <p className={`${theme.text.advisoryText}`}> Don't Forget to pick up your Customer Passport (Punch card)</p>
+            <p className={`
+              text-espresso/80  text-sm
+              mt-4 px-4 py-1 shadow-sm
+              w-fit
+              bg-oatmilk 
+              border-r-firebrick border-r-2
+              rounded-l-lg `}
+            > 
+              Don't forget to pick up your Customer Passport for that Free Drink on your 10th Purchase!
+            </p>
           </div>
           <div className='flex flex-col md:flex-row justify-between  md:gap-8'>
             <div className="max-w-4xl mx-auto">
