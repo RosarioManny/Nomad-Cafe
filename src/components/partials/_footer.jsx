@@ -62,6 +62,9 @@ const Footer = () => {
           alt="Nomad Cafe & Eatery Logo with writing" />
         </Link>
       </div>
+      <div className={`${theme.color.background.primary} border-t-[1px] border-oatmilk/10  p-1`}>
+        <p className="opacity-40"> Site by Emmanuel Rosario</p>
+      </div>
     </footer>
   )
 }

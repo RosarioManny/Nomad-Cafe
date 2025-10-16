@@ -1,107 +1,157 @@
-import {useState } from "react"
-import {Link} from "react-router-dom"
-import { useResponsive } from "../../utils/responsoveProvider"
+import { useState, useEffect } from "react"
+import { Link, useLocation } from "react-router-dom"
 import { theme } from "../../styles/themes"
 
 const Navbar = () => {
-  const [isToggled, setIsToggled] = useState()
-  const isMobile = useResponsive()
+  const [isToggled, setIsToggled] = useState(false)
+  const location = useLocation()
 
-  let handleClick = () => {
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsToggled(false)
+  }, [location])
+
+  // Close mobile menu on escape key
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape' && isToggled) {
+        setIsToggled(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [isToggled])
+
+  const handleClick = () => {
     setIsToggled(!isToggled)
   }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      handleClick()
+    }
+  }
+
+  const navLinks = ["about", "menu", "faq"]
+
   return (
     <>
-      <nav className="
-        bg-black/65 z-20 max-h-[15vh] absolute w-screen
-        p-2 justify-between items-center flex-row-reverse flex 
-        top-0  left-0 transition-all duration-500">
-        <Link className="w-16 md:w-24 " to="/">
+      {/* Skip to main content link */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-oatmilk p-2 z-50 rounded font-semibold text-espresso"
+      >
+        Skip to main content
+      </a>
+
+      <nav 
+        className="bg-black/50 z-20 max-h-[15vh] absolute w-screen p-2 shadow-oatmilk justify-between items-center flex top-0 right-0 left-0 transition-all duration-500"
+        aria-label="Main navigation"
+      >
+        <Link 
+          className="w-24 focus:outline-1 rounded" 
+          to="/"
+          aria-label="Nomad Cafe homepage"
+        >
           <img 
-          className="mr-6 hover:animate-pulse cursor-pointer" 
-          src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
-          alt="Nomad-Compass-Logo" 
-          width={150}
-          height={100}
-          loading="lazy"
+            className="m-2 hover:animate-pulse cursor-pointer" 
+            src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
+            alt="Nomad Cafe Logo" 
+            width={150}
+            height={100}
+            loading="lazy"
           />
         </Link>
-        {isMobile ? 
-        (
-          <>
-          <div className="gap-8 ">
-            {["menu", "about", "faq"].map((link) => (
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex gap-8">
+          {navLinks.map((link) => (
+            <Link 
+              key={link} 
+              to={`/${link}`} 
+              className={`${theme.color.text.nav} relative group text-2xl mx-4 hover:animate-pulse p-2 focus:outline-1 rounded transition-all duration-200`}
+              aria-current={location.pathname === `/${link}` ? 'page' : undefined}
+            >
+              {link.charAt(0).toUpperCase() + link.slice(1)}
+              <span 
+                className={`${theme.animation.hover.underline}`}
+                aria-hidden="true"
+              ></span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={handleClick}
+          onKeyDown={handleKeyDown}
+          className="md:hidden relative w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-30 focus:outline-1 rounded transition-all duration-200"
+          aria-expanded={isToggled}
+          aria-controls="mobile-menu"
+          aria-label={isToggled ? "Close navigation menu" : "Open navigation menu"}
+        >
+          <BurgerLine isToggled={isToggled} index={1} />
+          <BurgerLine isToggled={isToggled} index={2} />
+          <BurgerLine isToggled={isToggled} index={3} />
+        </button>
+
+        {/* Mobile Menu */}
+        <div 
+          id="mobile-menu"
+          className={`
+            md:hidden
+            h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
+            ${isToggled ? 'right-0' : '-right-[800px]'}
+          `}
+          aria-hidden={!isToggled}
+        >
+          <div className="flex flex-col h-fit text-oatmilk space-y-8">
+            {navLinks.map((link) => (
               <Link 
                 key={link} 
                 to={`/${link}`} 
-                className={`
-                  ${theme.color.text.nav} 
-                  text-shadow-2xs text-shadow-sky-300 relative group pointer-cursor text-2xl mx-4 hover:animate-pulse p-2`}
-                >
+                onClick={handleClick}
+                className="hover:animate-pulse p-4 relative group focus:outline-1 focus:ring-offset-2 focus:ring-offset-firebrick rounded transition-all duration-200"
+                tabIndex={isToggled ? 0 : -1}
+                aria-current={location.pathname === `/${link}` ? 'page' : undefined}
+              >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
-                <span className={`${theme.animation.hover.underline}`}></span>
+                <span 
+                  className={`${theme.animation.hover.underline}`}
+                  aria-hidden="true"
+                ></span>
               </Link>
             ))}
           </div>
-          </>
-        ) : (
-        <>
-            {/* Burger Icon */}
-          <button 
-          onClick={handleClick} 
-          className="relative  w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-10"
-          width={50}
-          height={40}
-          aria-label="Mobile navigation menu - Three lined burger icon"
-          >
-            <BurgerLine isToggled={isToggled} index={1} />
-            <BurgerLine isToggled={isToggled} index={2} />
-            <BurgerLine isToggled={isToggled} index={3} />
-          </button>
-          {/* Off-screen Menu */}
-          <div 
-            className={`
-              h-screen w-full fixed top-0 
-              flex items-center justify-center text-center 
-              text-3xl transition-all ease-in-out duration-[1000ms]
-              ${theme.color.background.primary}
-            ${isToggled ? 'right-0' : '-right-[800px]'}`}
-            >
-            <div className="flex flex-col h-fit text-white">
-              {["menu", "about", "faq"].map((link) => (
-                <Link 
-                  key={link} 
-                  to={`/${link}`} 
-                  onClick={handleClick} 
-                  className={`hover:animate-pulse p-2 relative group pointer-cursor `}
-                  >
-                  {link.charAt(0).toUpperCase() + link.slice(1)}
-                  <span className={`${theme.animation.hover.underline}`}></span>
-                </Link>
-              ))}
-            </div>
-            <img 
+          <img 
             className="bottom-10 absolute h-40"
-            src="/icons-logos/Nomad-logo-White-Transparent.png" 
-            alt="Nomad cafe & eatery logo with writing"
+            src="/icons-logos/Nomad-logo-oatmilk-Transparent.png" 
+            alt="Nomad Cafe & Eatery - Community and Coffee since 2018"
             loading="lazy"
-            />
-          </div>
-        </>
-        )}
+            tabIndex={isToggled ? 0 : -1}
+          />
+        </div>
       </nav>
     </>
   )
 }
+
 const BurgerLine = ({ isToggled, index }) => {
-  const lineClass = `rounded bg-white block h-1 w-10 transition-transform duration-300 ease-in-out`;
+  const lineClass = `rounded bg-oatmilk block h-1 w-10 transition-transform duration-300 ease-in-out`;
   const transforms = [
     isToggled ? "rotate-45 translate-y-2" : "",
     isToggled ? "opacity-0" : "opacity-100",
     isToggled ? "-rotate-45 -translate-y-2" : "",
   ];
-  return <span aria-label={`Mobile burger line ${index}`} className={`${lineClass} ${transforms[index - 1]}`} />;
   
+  return (
+    <span 
+      className={`${lineClass} ${transforms[index - 1]}`}
+      aria-hidden="true"
+    />
+  );
 };
 
 export default Navbar

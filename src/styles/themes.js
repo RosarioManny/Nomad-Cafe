@@ -11,10 +11,10 @@ export const theme  = {
   text: {
     heading: "text-[1.6rem] md:text-5xl",
     firstLetter: "text-2xl md:text-4xl",
-    subheading: "text-xl md:text-3xl",
+    subheading: "text-2xl md:text-3xl",
     menuHeading: "text-lg md:text-2xl",
     body: "text-base md:text-xl ",
-    advisoryText: "text-xs italic md:text-base",
+    advisoryText: "text-sm italic md:text-md",
     underline: "underline underline-offset-4",
   },
   layout: {
