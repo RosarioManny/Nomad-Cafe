@@ -21,7 +21,7 @@ export const useMenuNavigation = (menuCategories, defaultCategory = 'breakfast')
     
     // Scroll to top of page
     window.scrollTo({
-      top: 0,
+      top: 5,
       behavior: 'smooth'
     });
     

@@ -5,7 +5,7 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", to
   const [isLogoLoaded, setIsLogoLoaded] = useState(false);
 
   return (
-    <header id="Header" className="h-[70vh]  min-h-[400px] relative mb-8 border-solid border-firebrick border-b-4">     
+    <header id="Header" className="h-[75vh]  min-h-[400px] relative mb-8 border-solid border-firebrick border-b-4">     
       <div className="relative h-full overflow-hidden">
         {/* Hero Image */}
         <img 

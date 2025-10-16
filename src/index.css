@@ -12,7 +12,7 @@ oatmilk - #FFF6E7
   font-family: "DM Serif Text", serif;
   font-weight: 900;
   line-height: 1.5;
-  /* background-color: #EAA000; */
+  background-color: #EAA000;
   background-size: cover;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,19 +20,19 @@ oatmilk - #FFF6E7
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  background-color: #FFF6E7; /* Fallback color */
-  background-image: radial-gradient(
-    circle farthest-side,
-    #FFA000,
-    #FFF6E7
-  );
+
+  background-color: firebrick;
+  background-image:
+    radial-gradient(
+      #EAA000,
+      #FFF6E7
+    );
+    z-index: -2;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  position: relative; /* Required for absolute children */
+  position: relative; 
   min-height: 100vh;
   margin: 0;
   
@@ -41,7 +41,7 @@ body {
 body::before {
   content: ""; 
   position: absolute;
-  inset: 0; /* Shorthand for top/right/bottom/left: 0 */
+  inset: 0; 
   background: rgba(255, 246, 231, .82);
   z-index: -1;
 }
@@ -58,6 +58,7 @@ body::before {
     opacity: 1
   }
 }
+
 
 
 .faq-question {
@@ -80,19 +81,4 @@ body::before {
 
 .title {
   filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 1));
-}
-@keyframes slowPan {
-  0%, 100% {
-    object-position: 50% 0%;
-  }
-  50% {
-    object-position: 0% 50%;
-  }
-  /* 100% {
-    object-position: 0% 50%;
-  } */
-}
-
-.animate-slow-pan {
-  animation: slowPan 20s ease-in-out infinite;
 }

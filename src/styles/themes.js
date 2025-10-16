@@ -9,7 +9,7 @@ Color Pallete:
 */
 export const theme  = {
   text: {
-    heading: "text-3xl md:text-5xl",
+    heading: "text-[1.6rem] md:text-5xl",
     firstLetter: "text-2xl md:text-4xl",
     subheading: "text-2xl md:text-3xl",
     menuHeading: "text-lg md:text-2xl",
@@ -21,7 +21,7 @@ export const theme  = {
     default: "flex justify-center m-4 place-items-center",
     text: "text-center",
     hr: "w-2/3 h-[5px] my-4 rounded",
-    para_spacing: "my-10",
+    para_spacing: "mb-10",
     column: "flex flex-col align-center items-center",
     row: "flex justify-center",
     footer: {

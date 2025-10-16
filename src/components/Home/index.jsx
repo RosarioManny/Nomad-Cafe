@@ -7,11 +7,13 @@ import InfiniteGallery from '../partials/InfiniteCarousel'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
 import sweetsItems from '../../database/sweetsItems'
 
+
 const Home = () => {
   const [yearsInBusiness, setYearsInBusiness] = useState(0)
   const gelatos = sweetsItems[1]['gelatoFlavors']
   const currentYear = new Date().getFullYear()
 
+  console.log(gelatos)
   function gelatoSelection() {
     const selectedGelato = gelatos.slice(0, 4);
   return (

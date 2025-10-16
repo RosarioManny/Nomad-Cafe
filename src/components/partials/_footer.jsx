@@ -25,12 +25,12 @@ const Footer = () => {
         </section>
         <section className={`${theme.layout.footer.section}`}>
           <h2 className={`${theme.text.subheading} ${theme.text.underline}`}> Quick Links </h2>
-          <div className="flex flex-col h-fit ">
-            {["about", "menu", "faq"].map((link) => (
+          <div className="flex flex-col items-center justify-center h-fit ">
+            {["faq", "menu", "about"].map((link) => (
               <Link 
                 key={link} 
                 to={`/${link}#Header`} 
-                className={`text-2xl w-auto hover:animate-pulse my-2 relative group pointer-cursor `}
+                className={`text-2xl w-1/2 hover:animate-pulse my-2 relative group pointer-cursor `}
                 >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
                 <span className={`${theme.animation.hover.underline}`}></span>
