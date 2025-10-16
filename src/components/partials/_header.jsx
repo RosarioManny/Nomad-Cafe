@@ -9,9 +9,10 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", to
       <div className="relative h-full overflow-hidden ">
         {/* Hero Image with responsive variants */}
         <img 
-          className={`w-full h-full object-cover 
-            ${togglePan ? "animate-slow-pan" : ""} 
-            ${imageError ? "object-top" : {position}}`
+          className={`
+            w-full h-full object-cover 
+            ${position}
+            ${togglePan ? "animate-slow-pan" : ""} `
           }
           src={imageError ? "/gallery/Shop_sign.webp" : img}
           srcSet={`
