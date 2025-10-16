@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+firebrick - #BA342C
+espresso - #412419
+gamboge - #EAA000
+oatmilk - #FFF6E7
+*/
 :root {
   font-family: "DM Serif Text", serif;
   font-weight: 900;
   line-height: 1.5;
-  background-color: #FFF6E7;
+  /* background-color: #EAA000; */
   background-size: cover;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,25 +20,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  /* background-image: url("../gallery/grunge-paper-background.jpg"); */
-  /* background-position: center; */
-  /* background-size: contain; */
-  /* width: 200px;
-  height: 200px; */
-  background-color: firebrick;
-  background-image:
-    radial-gradient(
-      #EAA000,
-      #FFF6E7
-    );
-    z-index: -2;
+  background-color: #FFF6E7; /* Fallback color */
+  background-image: radial-gradient(
+    circle farthest-side,
+    #FFA000,
+    #FFF6E7
+  );
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   position: relative; /* Required for absolute children */
   min-height: 100vh;
   margin: 0;
+  
 }
 
 body::before {
@@ -58,7 +61,7 @@ body::before {
 
 
 .faq-question {
-  border-bottom: 2px solid firebrick;
+  border-bottom: 2px solid #BA342C;
   padding: 10px;
   display: flex;
   justify-content: space-between;

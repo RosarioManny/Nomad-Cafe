@@ -5,20 +5,17 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", to
   const [isLogoLoaded, setIsLogoLoaded] = useState(false);
 
   return (
-    <header id="Header" className="h-[70vh] relative mb-8 border-solid border-firebrick border-b-4">     
-      <div className="relative h-full overflow-hidden ">
-        {/* Hero Image with responsive variants */}
+    <header id="Header" className="h-[70vh]  min-h-[400px] relative mb-8 border-solid border-firebrick border-b-4">     
+      <div className="relative h-full overflow-hidden">
+        {/* Hero Image */}
         <img 
           className={`
             w-full h-full object-cover 
-            ${position}
-            ${togglePan ? "animate-slow-pan" : ""} `
-          }
-          src={imageError ? "/gallery/Shop_sign.webp" : img}
-          srcSet={`
-            ${img} 1920w,
-            ${img.replace('.webp', '-mobile.webp')} 800w
+            object-center md:${position} 
+            ${togglePan ? "animate-slow-pan" : ""}
+            ${imageError ? "hidden" : ""}
           `}
+          src={img}
           sizes="100vw"
           alt={img_alt}
           loading="eager"
@@ -27,6 +24,17 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", to
           onError={() => setImageError(true)}
         />
         
+        {/* Fallback Background - Shows when image fails */}
+        <div className={`
+          w-full h-full bg-gradient-to-br from-firebrick/60 to-gamboge/60
+          flex items-center justify-center
+          ${imageError ? "" : "hidden"}
+        `}>
+          <div className="text-center opacity-80 text-espresso/90">
+            <p className="mt-2 text-2xl font-semibold">Nomad Cafe</p>
+            <p className="text-sm  mt-1">Ridgewood, NY</p>
+          </div>
+        </div>
         {/* Logo */}
         <div className="absolute inset-0 flex justify-center items-end z-10 pb-8">
           <img 

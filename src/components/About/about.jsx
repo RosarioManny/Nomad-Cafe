@@ -83,16 +83,17 @@ const About = () => {
             >
               Visit Us!
             </h1>
-            <p className={`
-              text-espresso/80  text-sm
-              mt-4 px-4 py-1 shadow-sm
-              w-fit
-              bg-oatmilk 
-              border-r-firebrick border-r-2
-              rounded-l-lg `}
-            > 
-              Don't forget to pick up your Customer Passport for that Free Drink on your 10th Purchase!
-            </p>
+            <div className='
+                bg-oatmilk text-espresso/80 text-sm
+                mt-4 mx-2 px-4 py-1 w-fit
+                border-r-firebrick border-r-2 shadow-md rounded-l-lg 
+                flex justify-end'>
+              <p className={`
+                `}
+                > 
+                Don't forget to pick up your Customer Passport. 10th Purchase is Free!
+              </p> 
+            </div>
           </div>
           <div className='flex flex-col md:flex-row justify-between  md:gap-8'>
             <div className="max-w-4xl mx-auto">

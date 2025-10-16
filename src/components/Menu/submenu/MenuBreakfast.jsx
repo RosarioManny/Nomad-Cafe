@@ -1,6 +1,6 @@
 import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
-import { getBagels, getSandwiches, getSides, getSignatureDishes, getTravelerSandwich} from "../../../utils/getMenuItemCategory";
+import { getBagels, getSandwiches, getSides, getTravelerSandwich, getSignatureDishes } from "../../../utils/Menu/Menu_Items/getMenuItemCategory";
 
 export const MenuBreakfast = () => {
   const bagels = getBagels()
@@ -28,7 +28,7 @@ export const MenuBreakfast = () => {
       {/* Menu Items */}
       <section 
         id="breakfast-menu"
-        className={`flex flex-col items-start mx-auto px-4 sm:px-6 max-w-6xl w-full ${theme.color.text.default}`}
+        className={`flex flex-col items-start mx-auto px-4 sm:px-6 max-w-3xl w-full ${theme.color.text.default}`}
         aria-labelledby="breakfast-menu-heading"
         role="region"
       >
@@ -52,12 +52,12 @@ export const MenuBreakfast = () => {
           </h2>
           
           <ul 
-            className="flex flex-wrap gap-3 md:gap-6 my-4"
+            className="flex flex-wrap gap-3 justify-center md:gap-6 my-4"
             aria-label="Bagel varieties"
           >
             {bagels.variants.map((variant, i) => (
               <li 
-                className={`${theme.text.body}`} 
+                className={`${theme.text.body} `} 
                 key={i}
               >
                 {variant}
@@ -108,7 +108,7 @@ export const MenuBreakfast = () => {
             {Object.entries(travelerOptions).map(([category, options]) => (
               <div 
                 key={category} 
-                className="flex flex-col items-start mb-6"
+                className="flex flex-col items-start my-3"
                 role="listitem"
               >
                 {options.price ? (

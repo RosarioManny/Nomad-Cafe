@@ -1,41 +1,27 @@
 import Header from "../partials/_header";
-import { useEffect, useState } from 'react';
 import { theme } from "../../styles/themes";
-import { MenuBreakfast, MenuBeverages, MenuPastries } from './submenu/index'
 import ScrollToAnchor from "../../utils/scrollToAnchor";
-import { MenuGelatos } from "./submenu/MenuGelatos";
+import { useMenuNavigation } from "../../utils/Menu/hooks/useMenuNavigation";
+import { menuCategories } from "../../utils/Menu/constants/menuCategories";
 
 const Menu = () => {
-  const [category, setCategory] = useState('breakfast')
+  const {
+    category,
+    handleCategoryChange,
+    handleKeyDown
+  } = useMenuNavigation(menuCategories);
 
-  // useEffect(() => {
-  //   console.log(category)
-  // }, [category])
+  const currentCategory = menuCategories.find(cat => cat.id === category) || menuCategories[0];
+  const ActiveComponent = currentCategory.Component;
 
-  const handleKeyDown = (event, newCategory) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      setCategory(newCategory);
-    }
-  }
-
-  const menuCategories = [
-    { id: 'breakfast', label: 'Breakfast', Component: MenuBreakfast },
-    { id: 'drinks', label: 'Drinks', Component: MenuBeverages },
-    { id: 'sweets', label: 'Sweets', Component: MenuPastries },
-    { id: 'gelato', label: 'Gelato', Component: MenuGelatos }
-  ]
-
-  const ActiveComponent = menuCategories.find(cat => cat.id === category)?.Component
-  
   return (
     <>
       <ScrollToAnchor/>
       <Header
         id="Header"
-        img={"/products/green_traveler.webp"}
-        tag={"/icons-logos/Nomad-White-Cafe.webp"}
-        img_alt="Nomad Cafe's signature Traveler sandwich"
+        img={currentCategory.image}
+        tag={currentCategory.tag}
+        img_alt={currentCategory.img_alt}
       />
       
       {/* Skip link for screen readers */}
@@ -52,29 +38,30 @@ const Menu = () => {
       >
         <div className="
           bg-oatmilk shadow-lg rounded-xl 
-          max-w-6xl mx-auto
+          max-w-2xl mx-auto
           px-4 py-3
-          flex flex-col sm:flex-row sm:items-center sm:justify-between
+          flex flex-col md:flex-row sm:items-center justify-between
           gap-4
         ">
           {/* Menu Category Buttons */}
           <ul 
-            className="flex flex-wrap justify-center gap-2 sm:gap-3 w-full sm:w-auto"
+            className="flex flex-wrap justify-center gap-2 w-full "
             role="tablist"
             aria-label="Select menu category"
           >
             {menuCategories.map((menuCat) => (
               <li key={menuCat.id}>
                 <button 
-                  onClick={() => setCategory(menuCat.id)}
+                  onClick={() => handleCategoryChange(menuCat.id)}
                   onKeyDown={(e) => handleKeyDown(e, menuCat.id)}
                   className={`
-                    px-4 py-2 rounded-lg transition-all duration-300 ease-in-out 
+                    md:px-4 p-2 rounded-lg transition-all duration-300 ease-in-out 
                     focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2
                     whitespace-nowrap
+                    ${theme.color.text.default}
                     ${category === menuCat.id 
-                      ? 'bg-amber-400 text-espresso shadow-md' 
-                      : 'bg-amber-100 text-espresso hover:bg-amber-200 hover:shadow-sm'
+                      ?  `${theme.color.background.accent}  shadow-md`
+                      :  ` hover:bg-amber-200 hover:shadow-sm`
                     }
                   `}
                   role="tab"
@@ -110,17 +97,7 @@ const Menu = () => {
 
       {/* Menu Content */}
       <main id="menu-content">
-        {menuCategories.map((menuCat) => (
-          <div 
-            key={menuCat.id}
-            role="tabpanel"
-            id={`${menuCat.id}-menu`}
-            aria-labelledby={`${menuCat.id}-tab`}
-            hidden={category !== menuCat.id}
-          >
-            {category === menuCat.id && <menuCat.Component />}
-          </div>
-        ))}
+        <ActiveComponent />
       </main>
     </>
   );

@@ -1,4 +1,4 @@
-import sweetsItems from "../database/sweetsItems";
+import sweetsItems from "../../../database/sweetsItems";
 
 export const getMenuByCategory = (category) => {
   return sweetsItems.find(item => item.category === category);

@@ -1,7 +1,6 @@
 import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
-import { hotDrinks, icedDrinks, drinkExtras, signatureLattes, bottledDrinks } from "../../../utils/getBeverageItems";
-
+import { signatureLattes, icedDrinks, hotDrinks, drinkExtras, bottledDrinks } from "../../../utils/Menu/Menu_Items/getBeverageItems";
 export const MenuBeverages = () => {
   const signatures = signatureLattes()
   const icedBevs = icedDrinks()
@@ -24,7 +23,7 @@ export const MenuBeverages = () => {
       {/* Menu Items */}
       <section 
         id="beverages-content"
-        className={`flex flex-col items-start mx-auto px-4 max-w-[50%] w-full ${theme.color.text.default}`}
+        className={`flex flex-col items-start mx-auto px-4  md:max-w-[60%] max-w-[90%] w-full ${theme.color.text.default}`}
         aria-labelledby="beverages-heading"
         role="region"
       >

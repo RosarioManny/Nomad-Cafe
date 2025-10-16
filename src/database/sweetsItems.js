@@ -50,8 +50,8 @@ const sweetsItems = [
     "category": "Gelatos",
     "gelatoFlavors": 
     [
-      "Chocolate Hazelnut",
-      "Vanilla Miso",
+      "*Chocolate Hazelnut",
+      "*Vanilla Miso",
       "Cold Brew",
       "Strawberries & Creme",
       "Bees Knees",

@@ -11,15 +11,19 @@ const Home = () => {
   const [yearsInBusiness, setYearsInBusiness] = useState(0)
   const gelatos = sweetsItems[1]['gelatoFlavors']
   const currentYear = new Date().getFullYear()
-  
+
   function gelatoSelection() {
     const selectedGelato = gelatos.slice(0, 4);
   return (
-      <ul className={`md:grid-cols-2 md:grid flex text-espresso justify-center items-center text-sm`}>
+      <ul className={`
+        md:text-lg
+        flex justify-center items-center
+        divide-x-2 divide-gamboge 
+        text-espresso text-sm`}>
         {selectedGelato.map((flavor, i ) => (
           <li 
-          className='m-[2px] items-center flex justify-center text-center'
-          key={i}>- {flavor}</li>
+          className='px-2 items-center flex justify-center text-center'
+          key={i}> {flavor}</li>
           ))
         }
       </ul>
@@ -113,7 +117,7 @@ const Home = () => {
             <hr className={`${theme.color.background.accent} ${theme.layout.hr}`}/>
             {gelatoSelection()}
             <a 
-            href='/menu/sweets#Gelatos'
+            href='/menu/#gelato'
             className={`
               ${theme.color.background.accent} 
               hover:bg-firebrick hover:text-oatmilk cursor-pointer transition-color duration-300 p-2 my-6 rounded shadow-md

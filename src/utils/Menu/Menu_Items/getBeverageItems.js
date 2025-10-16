@@ -1,4 +1,4 @@
-import beverageItems from "../database/beverageItems";
+import beverageItems from "../../../database/beverageItems";
 
 export const getMenuByCategory = (category) => {
   return beverageItems.find(item => item.category === category);

@@ -1,6 +1,6 @@
 import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
-import { pastrySweets } from "../../../utils/getSweetsItems";
+import { pastrySweets } from "../../../utils/Menu/Menu_Items/getSweetsItems";
 
 export const MenuPastries = () => {
   const pastries = pastrySweets();
@@ -19,7 +19,7 @@ export const MenuPastries = () => {
       {/* Menu Items */}
       <section 
         id="pastries-content"
-        className={`flex flex-col items-start mx-auto px-4 sm:px-6 max-w-[60%] w-full`}
+        className={`flex flex-col items-start mx-auto px-4 sm:px-6 md:max-w-[60%] max-w-[90%] w-full`}
         aria-labelledby="pastries-heading"
         role="region"
       >
@@ -30,7 +30,7 @@ export const MenuPastries = () => {
           className="w-full mb-8"
           aria-labelledby="pastries-category-heading"
         >
-          <div className="mb-6 text-left">
+          <div className="mb-6 flex flex-col  items-center">
             <h2 
               id="pastries-category-heading"
               className={`
@@ -43,7 +43,8 @@ export const MenuPastries = () => {
               {pastries.category}
             </h2>
             <p 
-              className={`${theme.text.advisoryText}
+              className={`
+                ${theme.text.advisoryText}
               text-center text-espresso/80 italic
               mt-4  px-4 py-1 shadow-sm
               w-fit

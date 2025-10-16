@@ -1,6 +1,5 @@
 import { theme } from "../../../styles/themes";
-import { gelatoSweets } from "../../../utils/getSweetsItems";
-
+import { gelatoSweets } from "../../../utils/Menu/Menu_Items/getSweetsItems";
 export const MenuGelatos = () => {
   const gelato = gelatoSweets();
 
@@ -16,7 +15,7 @@ export const MenuGelatos = () => {
 
       <section 
         id="gelato-content"
-        className="mb-8 flex flex-col items-center mx-auto px-4 max-w-4xl w-full"
+        className="mb-8 flex flex-col items-center mx-auto px-4  md:max-w-[60%] max-w-[90%] w-full"
         aria-labelledby="gelato-heading"
       >
         <h2 
@@ -98,19 +97,27 @@ export const MenuGelatos = () => {
         
         {/* Advisory Text - Made more accessible */}
         <div 
-          className=" p-4 mb-6"
+          className="
+            text-espresso text-espresso/80 
+            shadow-sm
+            w-fit
+            bg-oatmilk 
+            border-l-firebrick border-l-2 
+            rounded-r-lg p-4 mb-6"
           role="note"
           aria-label="Important information about permanent flavors"
         >
-          <p className={`${theme.text.advisoryText} text-espresso m-0`}>
-            <strong className="font-semibold">Note:</strong> Vanilla Miso and Chocolate Hazelnut are permanent flavors. 
-            There will always be at least 1 vegan option available.
+          <p className={`
+            ${theme.text.body}
+            `}>
+            <strong className={`${theme.color.text.primary}`}>Note:</strong><br />
+            - There will always be at least 1 vegan option available.
           </p>
         </div>
 
         {/* Flavor List */}
         <div 
-          className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6" 
+          className="text-md grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-2" 
           role="list" 
           aria-label="Previous gelato flavors"
         >
@@ -118,9 +125,11 @@ export const MenuGelatos = () => {
             <span 
               key={`flavor-${index}`}
               className="
+                text-sm 
+                
+                gap-2 mt-2
                 bg-oatmilk px-4 py-2 rounded-lg text-espresso 
-                border border-gamboge shadow-sm
-                transition-all duration-200 hover:shadow-md hover:scale-105
+                border border-gamboge
                 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2
               "
               role="listitem"
@@ -144,6 +153,18 @@ export const MenuGelatos = () => {
           aria-label="Flavor rotation information"
         >
           Flavors rotate weekly - ask about today's selections!
+        </p>
+        <p 
+          className="
+            text-center text-espresso/80 
+            mt-4 mx-3 px-4 py-1 shadow-sm
+            w-fit
+            bg-oatmilk 
+            border-l-firebrick border-l-2 
+            rounded-r-lg "
+          aria-label="Flavor rotation information"
+        >
+          (v) = Vegan | * = Permenant
         </p>
       </section>
       </section>

@@ -1,5 +1,5 @@
 // utils/menuHelpers.js
-import menuItems from "../database/menuItems";
+import menuItems from "../../../database/menuItems";
 
 export const getMenuByCategory = (category) => {
   return menuItems.find(item => item.category === category);
