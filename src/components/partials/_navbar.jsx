@@ -23,32 +23,6 @@ const Navbar = () => {
     return () => document.removeEventListener('keydown', handleEscape)
   }, [isToggled])
 
-  // Trap focus in mobile menu when open
-  useEffect(() => {
-    if (isToggled) {
-      const focusableElements = document.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      )
-      const firstElement = focusableElements[0]
-      const lastElement = focusableElements[focusableElements.length - 1]
-
-      const handleTabKey = (e) => {
-        if (e.key === 'Tab') {
-          if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault()
-            lastElement.focus()
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault()
-            firstElement.focus()
-          }
-        }
-      }
-
-      document.addEventListener('keydown', handleTabKey)
-      return () => document.removeEventListener('keydown', handleTabKey)
-    }
-  }, [isToggled])
-
   const handleClick = () => {
     setIsToggled(!isToggled)
   }
@@ -67,18 +41,17 @@ const Navbar = () => {
       {/* Skip to main content link */}
       <a 
         href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white p-2 z-50 rounded font-semibold"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-oatmilk p-2 z-50 rounded font-semibold text-espresso"
       >
         Skip to main content
       </a>
 
       <nav 
-        className="bg-black/50 z-20 max-h-[15vh] absolute w-full p-2 shadow-white justify-between items-center flex top-0 right-0 left-0 transition-all duration-500"
+        className="bg-black/50 z-20 max-h-[15vh] absolute w-screen p-2 shadow-oatmilk justify-between items-center flex top-0 right-0 left-0 transition-all duration-500"
         aria-label="Main navigation"
-        role="navigation"
       >
         <Link 
-          className="w-24" 
+          className="w-24 focus:outline-1 rounded" 
           to="/"
           aria-label="Nomad Cafe homepage"
         >
@@ -93,17 +66,19 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8" role="menubar" aria-label="Main menu">
+        <div className="hidden md:flex gap-8">
           {navLinks.map((link) => (
             <Link 
               key={link} 
               to={`/${link}`} 
-              className={`${theme.color.text.nav} relative group text-2xl mx-4 hover:animate-pulse p-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded transition-all duration-200`}
-              role="menuitem"
+              className={`${theme.color.text.nav} relative group text-2xl mx-4 hover:animate-pulse p-2 focus:outline-1 rounded transition-all duration-200`}
               aria-current={location.pathname === `/${link}` ? 'page' : undefined}
             >
               {link.charAt(0).toUpperCase() + link.slice(1)}
-              <span className={`${theme.animation.hover.underline}`} aria-hidden="true"></span>
+              <span 
+                className={`${theme.animation.hover.underline}`}
+                aria-hidden="true"
+              ></span>
             </Link>
           ))}
         </div>
@@ -112,7 +87,7 @@ const Navbar = () => {
         <button 
           onClick={handleClick}
           onKeyDown={handleKeyDown}
-          className="md:hidden relative w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded"
+          className="md:hidden relative w-[50px] h-[40px] flex flex-col justify-center items-center space-y-1 p-2 z-30 focus:outline-1 rounded transition-all duration-200"
           aria-expanded={isToggled}
           aria-controls="mobile-menu"
           aria-label={isToggled ? "Close navigation menu" : "Open navigation menu"}
@@ -128,36 +103,31 @@ const Navbar = () => {
           className={`
             md:hidden
             h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
-            ${isToggled ? 'right-0 opacity-100' : '-right-[800px] opacity-0 pointer-events-none'}
+            ${isToggled ? 'right-0' : '-right-[800px]'}
           `}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation menu"
           aria-hidden={!isToggled}
         >
-          <div 
-            className="flex flex-col h-fit text-white space-y-8"
-            role="menubar"
-            aria-label="Mobile menu"
-          >
+          <div className="flex flex-col h-fit text-oatmilk space-y-8">
             {navLinks.map((link) => (
               <Link 
                 key={link} 
                 to={`/${link}`} 
                 onClick={handleClick}
-                className="hover:animate-pulse p-4 relative group focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-firebrick rounded transition-all duration-200"
-                role="menuitem"
+                className="hover:animate-pulse p-4 relative group focus:outline-1 focus:ring-offset-2 focus:ring-offset-firebrick rounded transition-all duration-200"
                 tabIndex={isToggled ? 0 : -1}
                 aria-current={location.pathname === `/${link}` ? 'page' : undefined}
               >
                 {link.charAt(0).toUpperCase() + link.slice(1)}
-                <span className={`${theme.animation.hover.underline}`} aria-hidden="true"></span>
+                <span 
+                  className={`${theme.animation.hover.underline}`}
+                  aria-hidden="true"
+                ></span>
               </Link>
             ))}
           </div>
           <img 
             className="bottom-10 absolute h-40"
-            src="/icons-logos/Nomad-logo-White-Transparent.png" 
+            src="/icons-logos/Nomad-logo-oatmilk-Transparent.png" 
             alt="Nomad Cafe & Eatery - Community and Coffee since 2018"
             loading="lazy"
             tabIndex={isToggled ? 0 : -1}
@@ -169,10 +139,10 @@ const Navbar = () => {
 }
 
 const BurgerLine = ({ isToggled, index }) => {
-  const lineClass = `rounded bg-white block h-1 w-10 transition-all duration-300 ease-in-out`;
+  const lineClass = `rounded bg-oatmilk block h-1 w-10 transition-transform duration-300 ease-in-out`;
   const transforms = [
     isToggled ? "rotate-45 translate-y-2" : "",
-    isToggled ? "opacity-0 scale-0" : "opacity-100 scale-100",
+    isToggled ? "opacity-0" : "opacity-100",
     isToggled ? "-rotate-45 -translate-y-2" : "",
   ];
   

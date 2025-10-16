@@ -108,10 +108,9 @@ export const MenuGelatos = () => {
           aria-label="Important information about permanent flavors"
         >
           <p className={`
-            ${theme.text.body}
+            ${theme.text.advisoryText}
             `}>
-            <strong className={`${theme.color.text.primary}`}>Note:</strong><br />
-            - There will always be at least 1 vegan option available.
+            <strong className={`${theme.color.text.primary}`}>Note:</strong> There will always be at least 1 vegan option available.
           </p>
         </div>
 

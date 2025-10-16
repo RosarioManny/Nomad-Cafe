@@ -69,7 +69,7 @@ const Home = () => {
             <span> <strong className={`${theme.color.text.primary}`}> {yearsInBusiness}+ </strong> years serving Ridgewood!</span>
           </h1>
           
-          <div className={`${theme.layout.text} flex justify-center`}>
+          <div className={`${theme.layout.text} flex mt-6 justify-center`}>
             <p className={`
               ${theme.layout.para_spacing}
               w-full md:w-2/3 lg:w-1/2
