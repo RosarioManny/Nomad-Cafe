@@ -54,11 +54,12 @@ const sweetsItems = [
       "*Vanilla Miso",
       "Cold Brew",
       "Strawberries & Creme",
-      "Bees Knees",
       "Hazelnut",
       "Chai Salted Caramel",
+      "Bees Knees",
       "Cold Brew Rose Chai",
       "Stacciatella",
+      "Almond Taragon",
 
       "Vegan Matcha Coconut (v)",
       "Passion Fruit Sorbet (v)",

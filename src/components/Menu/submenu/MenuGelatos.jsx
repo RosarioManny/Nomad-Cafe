@@ -29,7 +29,18 @@ export const MenuGelatos = () => {
         >
           {gelato.category}
         </h2>
-        
+        <p 
+          className="
+            text-center text-espresso/80 
+            mt-4 mx-3 px-4 py-1 shadow-sm
+            w-fit
+            bg-oatmilk 
+            border-l-firebrick border-l-2 
+            rounded-r-lg "
+          aria-label="Flavor rotation information"
+        >
+          Note: All flavors rotate bi-weekly. Drop by to see what we have!
+        </p>
         {/* Scoop Sizes */}
         <div 
           className="w-full grid gap-6 md:gap-8"
@@ -115,13 +126,13 @@ export const MenuGelatos = () => {
         </div>
 
         {/* Flavor List */}
-        <div 
+        <ul 
           className="text-md grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-2" 
           role="list" 
           aria-label="Previous gelato flavors"
         >
           {gelato.gelatoFlavors?.map((flavor, index) => (
-            <span 
+            <li 
               key={`flavor-${index}`}
               className="
                 text-sm 
@@ -136,9 +147,9 @@ export const MenuGelatos = () => {
               aria-label={`Flavor: ${flavor}`}
             >
               {flavor}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Rotation Notice */}
         <p 

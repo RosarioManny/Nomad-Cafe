@@ -15,7 +15,7 @@ const Home = () => {
 
   console.log(gelatos)
   function gelatoSelection() {
-    const selectedGelato = gelatos.slice(0, 4);
+    const selectedGelato = gelatos.slice(2, 6);
   return (
       <ul className={`
         md:text-lg
@@ -113,8 +113,8 @@ const Home = () => {
           />
           <div className='mx-2 flex flex-col items-center'>
             <div className={`text-center`}>
-              <p className={`${theme.text.firstLetter}  ${theme.text.underline}`}>Try our new Gelatos!</p>
-              <p className='md:text-md'>New flavor(s) every other week. <br/>Some flavors we have...</p>
+              <p className={`${theme.text.firstLetter} ${theme.text.underline}`}>Homemade Gelatos</p>
+              <p className='md:text-md'>Featuring a rotating selection of handcrafted flavors. <br/>Current offerings may include...</p>
             </div>
             <hr className={`${theme.color.background.accent} ${theme.layout.hr}`}/>
             {gelatoSelection()}

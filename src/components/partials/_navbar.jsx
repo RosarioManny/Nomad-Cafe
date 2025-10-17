@@ -6,13 +6,21 @@ const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false)
   const location = useLocation()
 
-  // Close mobile menu when route changes
+   // Close mobile menu when route changes
   useEffect(() => {
     setIsToggled(false)
   }, [location])
 
-  // Close mobile menu on escape key
+  // Handle escape key and scroll locking
   useEffect(() => {
+    // Disable/enable scroll based on menu state
+    if (isToggled) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Handle escape key
     const handleEscape = (event) => {
       if (event.key === 'Escape' && isToggled) {
         setIsToggled(false)
@@ -20,12 +28,18 @@ const Navbar = () => {
     }
 
     document.addEventListener('keydown', handleEscape)
-    return () => document.removeEventListener('keydown', handleEscape)
-  }, [isToggled])
+    
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isToggled]) // Both effects depend on isToggled
 
   const handleClick = () => {
     setIsToggled(!isToggled)
   }
+
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -102,7 +116,11 @@ const Navbar = () => {
           id="mobile-menu"
           className={`
             md:hidden
-            h-screen w-full fixed top-0 flex items-center justify-center text-center text-3xl transition-all ease-in-out duration-[1000ms] bg-firebrick
+            h-screen w-full
+            fixed top-0 
+            flex items-center justify-center text-center 
+            text-3xl 
+            transition-all ease-in-out duration-[1000ms] bg-firebrick
             ${isToggled ? 'right-0' : '-right-[800px]'}
           `}
           aria-hidden={!isToggled}
@@ -127,7 +145,7 @@ const Navbar = () => {
           </div>
           <img 
             className="bottom-10 absolute h-40"
-            src="/icons-logos/Nomad-logo-oatmilk-Transparent.png" 
+            src="/icons-logos/Nomad-logo-White-Transparent.png" 
             alt="Nomad Cafe & Eatery - Community and Coffee since 2018"
             loading="lazy"
             tabIndex={isToggled ? 0 : -1}
