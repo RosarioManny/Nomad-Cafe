@@ -9,7 +9,7 @@ export const useMenuNavigation = (menuCategories, defaultCategory = 'breakfast')
   // Handle URL hash on component mount
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
-    console.log('Hash', hash);
+    
     if (hash && menuCategories.find(cat => cat.id === hash)) {
       setCategory(hash);
     }
@@ -17,7 +17,6 @@ export const useMenuNavigation = (menuCategories, defaultCategory = 'breakfast')
 
   // Scroll to top and update URL when category changes
   useEffect(() => {
-    console.log('Current category:', category);
     
     // Scroll to top of page
     window.scrollTo({

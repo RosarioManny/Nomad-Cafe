@@ -59,9 +59,12 @@ const Navbar = () => {
       >
         Skip to main content
       </a>
-
       <nav 
-        className="bg-black/50 z-20 max-h-[15vh] absolute w-screen p-2 shadow-oatmilk justify-between items-center flex top-0 right-0 left-0 transition-all duration-500"
+        className="bg-obscuro/50 
+        z-20 max-h-[15vh] absolute w-screen p-2 shadow-sm
+        justify-between items-center flex
+        top-0 right-0 left-0 
+        transition-all duration-500"
         aria-label="Main navigation"
       >
         <Link 
@@ -125,7 +128,7 @@ const Navbar = () => {
           `}
           aria-hidden={!isToggled}
         >
-          <div className="flex flex-col h-fit text-oatmilk space-y-8">
+          <div className="flex flex-col h-fit text-oatmilk ">
             {navLinks.map((link) => (
               <Link 
                 key={link} 

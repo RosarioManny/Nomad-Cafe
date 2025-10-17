@@ -99,6 +99,20 @@ const Menu = () => {
       <main id="menu-content">
         <ActiveComponent />
       </main>
+
+      <p className={`
+        opacity-80
+        text-espresso/80
+        shadow-sm
+        ml-auto mr-2 my-6 p-2
+        w-fit
+        bg-oatmilk 
+        border-r-gamboge border-r-2 
+        rounded-l-lg 
+        ${theme.text.advisoryText}`
+        }> 
+          Prices may be different in-store
+        </p>
     </>
   );
 };

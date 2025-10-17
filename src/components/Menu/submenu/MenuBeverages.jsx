@@ -2,13 +2,14 @@ import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
 import { signatureLattes, icedDrinks, hotDrinks, drinkExtras, bottledDrinks } from "../../../utils/Menu/Menu_Items/getBeverageItems";
 export const MenuBeverages = () => {
+
   const signatures = signatureLattes()
   const icedBevs = icedDrinks()
   const hotBevs = hotDrinks()
   const hotBevsItems = hotBevs.items
   const bevExtras = drinkExtras()
   const bottled = bottledDrinks()
-  console.log(hotBevsItems[10])
+  
   return (
     <>
       <ScrollToAnchor/>

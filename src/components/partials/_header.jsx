@@ -1,21 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", togglePan = false, position = 'object-top'}) => {
   const [imageError, setImageError] = useState(false);
   const [isLogoLoaded, setIsLogoLoaded] = useState(false);
+  const [ fade, setFade] = useState(false)
+  const [ currentImg, setCurrentImg ] = useState(img)
 
-  return (
+  useEffect(() => {
+    setFade(true)
+
+    const timer = setTimeout(() => {
+      setCurrentImg(img)
+      setFade(false)
+    }, 300)
+
+    return () => clearTimeout(timer); 
+  }, [img])
+  return ( 
     <header id="Header" className="h-[75vh]  min-h-[400px] relative mb-8 border-solid border-firebrick border-b-4">     
       <div className="relative h-full overflow-hidden">
         {/* Hero Image */}
         <img 
           className={`
             w-full h-full object-cover 
+            transition-all duration-300 ease-in-out
             object-center md:${position} 
             ${togglePan ? "animate-slow-pan" : ""}
             ${imageError ? "hidden" : ""}
+            ${fade ? "opacity-0" : "opacity-100"}
           `}
-          src={img}
+          src={currentImg}
           sizes="100vw"
           alt={img_alt}
           loading="eager"
@@ -29,6 +43,7 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", to
           w-full h-full bg-gradient-to-br from-firebrick/60 to-gamboge/60
           flex items-center justify-center
           ${imageError ? "" : "hidden"}
+        
         `}>
           <div className="text-center opacity-80 text-espresso/90">
             <p className="mt-2 text-2xl font-semibold">Nomad Cafe</p>

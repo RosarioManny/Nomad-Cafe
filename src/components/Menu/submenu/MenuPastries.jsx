@@ -1,9 +1,20 @@
 import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
 import { pastrySweets } from "../../../utils/Menu/Menu_Items/getSweetsItems";
+import { useEffect } from "react";
 
 export const MenuPastries = () => {
   const pastries = pastrySweets();
+  // console.log(pastries)
+  useEffect(() => {
+    pastries.items.forEach(element => {
+      if (element.varients) {
+        console.log("Has Varients", element)
+      } else {
+        console.log("No Varients", element)
+      }
+    });
+  })
 
   return (
     <>
@@ -42,20 +53,22 @@ export const MenuPastries = () => {
             >
               {pastries.category}
             </h2>
-            <p 
-              className={`
-                ${theme.text.advisoryText}
-              text-center text-espresso/80 italic
-              mt-4  px-4 py-1 shadow-sm
-              w-fit
-              bg-oatmilk 
-              border-l-firebrick border-l-2 
-              rounded-r-lg `}
-              role="note"
-              aria-label="Availability notice"
-            >
-              All pastries are 'first-come, first-serve' and may sell out
-            </p>
+            <div className="mr-auto">
+              <p 
+                className={`
+                  ${theme.text.advisoryText}
+                  text-espresso/80 italic
+                  mt-4  px-4 py-1 shadow-sm
+                  w-fit
+                  bg-oatmilk 
+                  border-l-firebrick border-l-2 
+                  rounded-r-lg `}
+                role="note"
+                aria-label="Availability notice"
+              >
+                All pastries are 'first-come, first-serve' and may sell out
+              </p>
+            </div>
           </div>
 
           <div 
@@ -84,22 +97,27 @@ export const MenuPastries = () => {
                     className={`${theme.color.text.default} text-right font-semibold`}
                     aria-labelledby={`pastry-${index}`}
                   >
-                    {item.price}
+                    ${item.price}
                   </span>
                 </div>
                 {/* Description (if exists) */}
-                {item.description && (
-                  <p 
+                <ul className="text-md grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-2">
+                  {item.varieties && item.varieties.map((varient, i) => (
+                    <li
                     className={`
-                      ${theme.color.text.default} 
-                      text-sm italic mt-2 pl-1
-                      text-left
-                    `}
-                    aria-describedby={`pastry-${index}`}
-                  >
-                    {item.description}
-                  </p>
-                )}
+                      ${theme.color.text.default} ${theme.color.background.secondary} ${theme.color.text.default}
+                      text-sm
+                      gap-2
+                      p-2 rounded-lg 
+                      border border-gamboge
+                      focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2
+                      `}
+                      aria-describedby={`pastry-${i}`}
+                      >
+                      {varient}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

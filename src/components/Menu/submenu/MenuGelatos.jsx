@@ -30,13 +30,14 @@ export const MenuGelatos = () => {
           {gelato.category}
         </h2>
         <p 
-          className="
+          className={`
+            ${theme.text.advisoryText}
             text-center text-espresso/80 
             mt-4 mx-3 px-4 py-1 shadow-sm
             w-fit
             bg-oatmilk 
             border-l-firebrick border-l-2 
-            rounded-r-lg "
+            rounded-r-lg `}
           aria-label="Flavor rotation information"
         >
           Note: All flavors rotate bi-weekly. Drop by to see what we have!
@@ -94,89 +95,78 @@ export const MenuGelatos = () => {
         </div>
 
         {/* Optional Flavor List Section - Uncomment if you have flavors */}
-      <section 
-        className="mt-8 w-full" 
-        aria-labelledby="flavors-heading"
-        role="region"
-      >
-        <h3 
-          id="flavors-heading" 
-          className={`${theme.text.menuHeading} ${theme.color.text.secondary} text-center mb-4`}
+        <section 
+          className="mt-8 w-full" 
+          aria-labelledby="flavors-heading"
+          role="region"
         >
-          Previous Flavors
-        </h3>
-        
-        {/* Advisory Text - Made more accessible */}
-        <div 
-          className="
-            text-espresso text-espresso/80 
-            shadow-sm
-            w-fit
-            bg-oatmilk 
-            border-l-firebrick border-l-2 
-            rounded-r-lg p-4 mb-6"
-          role="note"
-          aria-label="Important information about permanent flavors"
-        >
-          <p className={`
-            ${theme.text.advisoryText}
-            `}>
-            <strong className={`${theme.color.text.primary}`}>Note:</strong> There will always be at least 1 vegan option available.
+          <h3 
+            id="flavors-heading" 
+            className={`${theme.text.menuHeading} ${theme.color.text.secondary} text-center mb-4`}
+          >
+            Previous Flavors
+          </h3>
+          
+          {/* Advisory Text - Made more accessible */}
+          <div 
+            className="
+              text-espresso text-espresso/80 
+              shadow-sm
+              w-fit
+              bg-oatmilk 
+              border-l-firebrick border-l-2 
+              rounded-r-lg p-4 mb-6"
+            role="note"
+            aria-label="Important information about permanent flavors"
+          >
+            <p className={`
+              ${theme.text.advisoryText}
+              `}>
+              <strong className={`${theme.color.text.primary}`}>Note:</strong> A vegan option is always available.
+            </p>
+          </div>
+
+          {/* Flavor List */}
+          <ul 
+            className="text-md grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-2" 
+            role="list" 
+            aria-label="Previous gelato flavors"
+          >
+            {gelato.gelatoFlavors?.map((flavor, index) => (
+              <li 
+                key={`flavor-${index}`}
+                className="
+                  text-sm 
+                  gap-2 mt-2
+                  bg-oatmilk px-4 py-2 rounded-lg text-espresso 
+                  border border-gamboge
+                  focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2
+                "
+                role="listitem"
+                tabIndex={0}
+                aria-label={`Flavor: ${flavor}`}
+              >
+                {flavor}
+              </li>
+            ))}
+          </ul>
+
+          {/* Rotation Notice */}
+          <p 
+            className="
+              text-espresso/80 italic
+              mt-4 mx-3 px-4 py-1 shadow-sm
+              w-fit
+              bg-oatmilk 
+              border-l-espresso border-l-2
+              rounded-r-lg "
+            aria-label="Flavor rotation information"
+          >
+            Flavors rotate weekly - ask about today's selections! <br />
+            (v) = Vegan | * = Permenant
           </p>
-        </div>
-
-        {/* Flavor List */}
-        <ul 
-          className="text-md grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-2" 
-          role="list" 
-          aria-label="Previous gelato flavors"
-        >
-          {gelato.gelatoFlavors?.map((flavor, index) => (
-            <li 
-              key={`flavor-${index}`}
-              className="
-                text-sm 
-                
-                gap-2 mt-2
-                bg-oatmilk px-4 py-2 rounded-lg text-espresso 
-                border border-gamboge
-                focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2
-              "
-              role="listitem"
-              tabIndex={0}
-              aria-label={`Flavor: ${flavor}`}
-            >
-              {flavor}
-            </li>
-          ))}
-        </ul>
-
-        {/* Rotation Notice */}
-        <p 
-          className="
-            text-center text-espresso/80 italic
-            mt-4 mx-3 px-4 py-1 shadow-sm
-            w-fit
-            bg-oatmilk 
-            border-l-firebrick border-l-2 
-            rounded-r-lg "
-          aria-label="Flavor rotation information"
-        >
-          Flavors rotate weekly - ask about today's selections!
-        </p>
-        <p 
-          className="
-            text-center text-espresso/80 
-            mt-4 mx-3 px-4 py-1 shadow-sm
-            w-fit
-            bg-oatmilk 
-            border-l-firebrick border-l-2 
-            rounded-r-lg "
-          aria-label="Flavor rotation information"
-        >
-          (v) = Vegan | * = Permenant
-        </p>
-      </section>
+          
+        </section>
       </section>
     </>
   );

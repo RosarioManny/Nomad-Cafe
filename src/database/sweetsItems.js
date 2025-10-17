@@ -22,27 +22,45 @@ const sweetsItems = [
       {
       "name": "Muffins",
       "price": 3,
-      "description": "Banana Walnut, Chocolate chip, Blueberry, Lemon Poppy",
+      "varieties": [
+          "Banana Walnut", 
+          "Chocolate chip", 
+          "Blueberry", 
+          "Lemon Poppy"
+        ]
       },
       {
       "name": "Cookies",
       "price": 2.5,
-      "description": "Chocolate Chip & Oatmeal Raisin",
+      "varieties": [
+          "Chocolate Chip", 
+          "Oatmeal Raisin",
+        ]
       },
       {
-      "name": "Strawberry Financier",
-      "price": 3,
-      "description": "Gluten Free & Vegan",
+      "name": "Gluten-Free Strawberry Financier",
+      "price": 3
       },
       {
       "name": "Danish",
       "price": 3.25,
-      "description": "Blueberry, Cheese, Pear, Apple Cinnamon",
+      "varieties": [
+          "Blueberry", 
+          "Cheese", 
+          "Pear", 
+          "Apple Cinnamon"
+        ]
       },
       {
         "name": "Sans Bakery, Vegan / Gluten-free pastries",
         "price": 5,
-        "description": "Brownies, Banana Bread,  Zucchini Bread, Chai Chocolate Chip Cookies, Blueberry Muffins",
+        "varieties": [
+          "Brownies", 
+          "Banana Bread",  
+          "Zucchini Bread",
+          "Blueberry Muffins",
+          "Chai Chocolate Chip Cookies"
+        ]
       }
     ],
   },

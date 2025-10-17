@@ -13,7 +13,6 @@ const Home = () => {
   const gelatos = sweetsItems[1]['gelatoFlavors']
   const currentYear = new Date().getFullYear()
 
-  console.log(gelatos)
   function gelatoSelection() {
     const selectedGelato = gelatos.slice(2, 6);
   return (
