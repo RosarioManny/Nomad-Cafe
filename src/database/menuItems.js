@@ -19,7 +19,7 @@ const menuItems = [
       {
         Bread: {
           base: ["Bagel (v)", "Ciabatta (v)", "Croissant", "Whole wheat toast"],
-          premium: { name: "Gluten-free bread (v)", price: 3 }
+          premium: { name: "GF bread (v)", price: 3 }
         },
         Cheese: {
           base: ["Cheddar", "Swiss", "Provolone", "Pepperjack"],
@@ -47,7 +47,7 @@ const menuItems = [
       {
         name: "Eggscape from NY",
         price: 14,
-        description: "2 eggs, rosemary parmesan hashbrowns, ham, berries, wheat toast",
+        description: "Two eggs, rosemary parmesan hashbrowns, ham, berries, wheat toast",
         modifiers: [
           { name: "Sub ham for bacon/turkey/avocado", price: 1 }
         ]
@@ -60,7 +60,7 @@ const menuItems = [
       {
         name: "Sol Tacos",
         price: 8,
-        description: "2 tortillas, eggs, pico de gallo, avocado, cheddar",
+        description: "Two tortillas, eggs, pico de gallo, avocado, cheddar",
         modifiers: [
           { name: "Add protein: Bacon, Ham or Turkey", price: 3 }
         ]
@@ -85,29 +85,29 @@ const menuItems = [
     category: "Sandwiches",
     items: [
       {
-        name: "Launchpad",
+        name: "The Launchpad",
         price: 12,
-        description: "Turkey, chipotle aioli, spinach, tomato, cheddar, ciabatta"
+        description: "Turkey, chipotle aioli, spinach, tomato, cheddar, on ciabatta"
       },
       {
-        name: "Runway",
+        name: "The Runway",
         price: 12,
-        description: "Turkey, pesto, mozzarella, roasted peppers, ciabatta"
+        description: "Turkey, pesto, mozzarella, roasted peppers, olive oil on ciabatta"
       },
       {
         name: "Layover",
         price: 13,
-        description: "6-cheese grilled cheese (asiago, fontina, cheddar, Swiss, mozzarella)"
+        description: "6-cheese grilled cheese (asiago, fontina, cheddar, Swiss, mozzarella) on a parmesean, rosemary crusted bread"
       },
       {
         name: "First Class",
         price: 13.5,
-        description: "Roast beef, tomatoes, sprouts, mozzarella, truffle glaze, baguette"
+        description: "Roast beef, tomatoes, sprouts, mozzarella, truffle glaze, olive oil on baguette"
       },
       {
         name: "Take It Caprese",
         price: 12.5,
-        description: "Tomatoes, basil, mozzarella, balsamic glaze, baguette",
+        description: "Tomatoes, basil, mozzarella, balsamic glaze, olive oil on baguette",
         note: "Sub avocado for meat (v)"
       }
     ]
@@ -115,7 +115,7 @@ const menuItems = [
   {
     category: "Sides",
     items: [
-      { name: "Greek yogurt + berries + honey", price: 6 },
+      { name: "Greek yogurt, berries & honey", price: 6 },
       { 
         name: "Rosemary parmesan hashbrown", 
         variants: ["Vegan (v)"],
@@ -133,7 +133,7 @@ const menuItems = [
         price: 5 
       },
       { name: "Egg", 
-        price: 3 
+        price: 2 
       }
     ]
   }

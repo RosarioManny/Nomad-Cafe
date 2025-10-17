@@ -33,7 +33,18 @@ export const MenuBreakfast = () => {
         role="region"
       >
         <h1 id="breakfast-menu-heading" className="sr-only">Breakfast Menu</h1>
-        
+        <p 
+            className="
+              text-espresso/80 italic
+              my-4 px-4 py-1 shadow-sm
+              w-fit
+              bg-oatmilk 
+              border-l-espresso border-l-2
+              rounded-r-lg "
+            aria-label="Vegan & Gluten-Free indicator"
+          >
+            (v) = Vegan | GF = Gluten Free
+          </p>
         {/* Bagels */}
         <section 
           className="w-full mb-8"
@@ -241,6 +252,18 @@ export const MenuBreakfast = () => {
           >
             {sandwiches.category}
           </h2>
+          <p 
+            className="
+              text-espresso/80 italic
+              my-4 px-2 py-1 shadow-sm
+              w-fit
+              bg-oatmilk 
+              border-l-espresso border-l-2
+              rounded-r-lg "
+            aria-label="Sandwich Substitution information"
+          >
+            GF bread or avocado substitutions available (additional charge)
+          </p>
           
           <div className="space-y-6 mb-4">
             {sandwiches.items.map((dish, i) => (
