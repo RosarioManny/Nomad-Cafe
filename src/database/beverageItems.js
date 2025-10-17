@@ -70,7 +70,7 @@ const beverageItems = [
         "price": {
           "Sm": 3.5,
           "Md": 4.5,
-          "Lg": 5.5
+          "Lg": 6
         }
       },
       {
@@ -96,9 +96,9 @@ const beverageItems = [
       {
         "name": "Latte",
         "price": {
-          "Sm": 4.25,
-          "Md": 4.75,
-          "Lg": 5.5
+          "Sm": 4.75,
+          "Md": 5,
+          "Lg": 5.75
         }
       },
       {
@@ -132,7 +132,7 @@ const beverageItems = [
           "Md": 3,
           "Lg": 3.25
         },
-        "varieties": "English Breakfast, Lemon Ginger, Peppermint, Chamomile, Green Tea, Black Tea, Earl Grey, Chai" 
+        "varieties": ["English Breakfast", "Lemon Ginger", "Peppermint", "Chamomile", "Green Tea", "Black Tea", "Earl Grey", "Chai" ]
       },
     ]
   },
@@ -163,17 +163,17 @@ const beverageItems = [
       {
         "name": "Iced Americano",
         "sizes": {
-          "Sm": 4.25,
-          "Md": 5.25,
-          "Lg": 6.25
+          "Sm": 4,
+          "Md": 5,
+          "Lg": 6.50
         }
       },
       {
         "name": "Iced Latte",
         "sizes": {
-          "Sm": 4.75,
-          "Md": 5.25,
-          "Lg": 6
+          "Sm": 5.25,
+          "Md": 5.75,
+          "Lg": 6.25
         }
       },
       {
@@ -207,7 +207,7 @@ const beverageItems = [
           "Md": 4.25,
           "Lg": 4.75
         },
-        "varieties": "Raspberry Hibiscus, Peach, Moroccan Mint, Black"
+        "varieties": ["Raspberry Hibiscus", "Peach", "Moroccan Mint", "Black"]
       }
     ]
   },
@@ -220,27 +220,35 @@ const beverageItems = [
       },
       {
         "name": "Essentia Water",
-        "price": 3
+        "price": 3.67
       },
       {
         "name": "Martinelli's Apple Juice",
-        "price": 4
+        "price": 5.5
+      },
+      {
+        "name": "Guayaki Yerba Mate",
+        "price": 3.75
+      },
+      {
+        "name": "Perrier",
+        "price": 2,
       },
       {
         "name": "Natalie's Juices",
         "price": 5,
-        "varieties": ["Orange Juice", "Lemonade", "Grapefruit Juice"] 
+        "varieties": ["Orange Juice", "Orange & Beet", "Carrot, Ginger, Tumeric & Apple", "Lemonade", "Strawberry Lemonade"] 
+      },
+      {
+        "name": "BKE Kombucha",
+        "price": 6,
+        "varieties": ["Yerba Mate & Lemon", "Pear & Chrysanthemum"] 
       },
       {
         "name": "San Pellegrino", 
-        "price": 3.5,
+        "price": 2.25,
         "varieties": ["Sparkling Water", "Lemon", "Blood Orange", "Classic"]
       },
-      {
-        "name": "Perrier",
-        "price": 3,
-        "varieties": ["Sparkling Water", "Lime", "Green Apple", "Pink Grapefruit"]
-      }
     ]
   },
   {
@@ -258,11 +266,15 @@ const beverageItems = [
       {
         "name": "Syrups",
         "price": 0.5,
-        "varieties": [
-          "Salted Caramel", "Vanilla", "Almond", "Coconut", 
-          "Honey", "Lavender", "Hazelnut","Chocolate", 
-          "Toffee Nut", "Peanut Butter",  "Pistachio", "Spiced Brown Sugar",
-          "Sugar-Free Vanilla", "*Peach ", "*Pumpkin Spice ", "*Strawberry" ]
+        "varieties": 
+        [
+          "Salted Caramel", "Vanilla", "Almond", 
+          "Coconut", "Honey", "Lavender", 
+          "Hazelnut","Chocolate", "Toffee Nut", 
+          "Peanut Butter",  "Pistachio", "Spiced Brown Sugar",
+          "Agave", "Sugar-Free Vanilla", "Sugar-Free Hazelnut", 
+          "*Peach ", "*Pumpkin Spice ", "*Strawberry" 
+        ]
 
       }
     ]

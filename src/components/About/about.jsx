@@ -76,7 +76,7 @@ const About = () => {
           className={`${theme.layout.text}`}
           aria-labelledby="visit-us"
         >
-          <div className='mb-10 mt-4 flex flex-col justify-end'>
+          <div className='mb-10 mt-4 flex flex-col'>
             <h1 
               id="visit-us"
               className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary}  text-center`}
@@ -85,9 +85,10 @@ const About = () => {
             </h1>
             <div className='
                 bg-oatmilk text-espresso/80 text-sm
-                mt-4 mx-2 px-4 py-1 w-fit
+                w-fit mt-4 mx-2 px-4 py-1
                 border-r-firebrick border-r-2 shadow-md rounded-l-lg 
-                flex justify-end'>
+                ml-auto
+                '>
               <p className={`
                 `}
                 > 

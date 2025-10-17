@@ -57,10 +57,13 @@ const sweetsItems = [
       "Bees Knees",
       "Hazelnut",
       "Chai Salted Caramel",
-      "Passion Fruit Sorbet",
-      "Cereal Milk",
-      "Blueberry Ginger Sorbet",
-      "Cookies and Cream",
+      "Cold Brew Rose Chai",
+      "Stacciatella",
+
+      "Vegan Matcha Coconut (v)",
+      "Passion Fruit Sorbet (v)",
+      "Lemon Sorbet (v)",
+      "Blueberry Ginger Sorbet (v)"
     ], 
     "items": [
       {

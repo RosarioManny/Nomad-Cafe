@@ -32,6 +32,6 @@ export const menuCategories = [
     Component: MenuGelatos, 
     image: '/products/Nomad_Choc_Matcha_Gelato.png', 
     img_alt: 'Nomad homemade chocolate hazelnut and matcha gelato',
-    tag: 'public/icons-logos/Nomad-White-Gelato.webp'
+    tag: '/icons-logos/Nomad-White-Gelato.webp'
   }
 ];

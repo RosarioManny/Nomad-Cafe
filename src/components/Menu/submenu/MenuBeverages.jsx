@@ -8,7 +8,7 @@ export const MenuBeverages = () => {
   const hotBevsItems = hotBevs.items
   const bevExtras = drinkExtras()
   const bottled = bottledDrinks()
-  
+  console.log(hotBevsItems[10])
   return (
     <>
       <ScrollToAnchor/>
@@ -176,14 +176,16 @@ export const MenuBeverages = () => {
                   ))}
                 </ul>
                 {/* Render tea varieties if they exist */}
+                <span className="font-semibold ">Tea Flavors: </span> 
                 {item.varieties && (
-                  <div className="text-sm mt-3 text-left">
-                    <span className="font-semibold">Tea Flavors: </span>
-                    <p>{item.varieties}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+                    <ul className="text-sm flex flex-wrap gap-2 mt-1 text-left">
+                      {item.varieties?.map?.(( variant, i) => (
+                        <li className="bg-oatmilk px-2 py-1 rounded text-xs">{variant}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
           </div>
         </section>
 
@@ -260,11 +262,13 @@ export const MenuBeverages = () => {
                 </ul>
                 {/* Render tea varieties if they exist */}
                 {item.varieties && (
-                  <div className="text-sm mt-3 text-left">
-                    <span className="font-semibold">Tea Flavors: </span>
-                    <p>{item.varieties}</p>
-                  </div>
-                )}
+                    <ul className="text-sm flex flex-wrap gap-2 mt-1 text-left">
+                      <span className="font-semibold">Tea Flavors: </span> 
+                      {item.varieties?.map?.(( variant, i) => (
+                        <li className="bg-oatmilk px-2 py-1 rounded text-xs">{variant}</li>
+                      ))}
+                    </ul>
+                  )}
               </div>
             ))}
           </div>
