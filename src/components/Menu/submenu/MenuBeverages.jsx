@@ -9,7 +9,7 @@ export const MenuBeverages = () => {
   const hotBevsItems = hotBevs.items
   const bevExtras = drinkExtras()
   const bottled = bottledDrinks()
-  
+
   return (
     <>
       <ScrollToAnchor/>
@@ -28,7 +28,7 @@ export const MenuBeverages = () => {
         aria-labelledby="beverages-heading"
         role="region"
       >
-        <div className="w-full max-w-3xl mx-auto px-4 mb-6">
+        <div className="max-w-3xl mb-6">
           <p className="
             text-espresso/80 italic
             mt-4 px-4 py-1 shadow-sm

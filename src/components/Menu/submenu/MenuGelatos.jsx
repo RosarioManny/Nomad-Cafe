@@ -155,14 +155,14 @@ export const MenuGelatos = () => {
           <p 
             className="
               text-espresso/80 italic
-              mt-4 mx-3 px-4 py-1 shadow-sm
+              mt-4  px-4 py-1 shadow-sm
               w-fit
               bg-oatmilk 
               border-l-espresso border-l-2
               rounded-r-lg "
             aria-label="Flavor rotation information"
           >
-            Flavors rotate weekly - ask about today's selections! <br />
+          
             (v) = Vegan | * = Permenant
           </p>
           
