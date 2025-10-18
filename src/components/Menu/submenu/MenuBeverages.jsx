@@ -176,14 +176,17 @@ export const MenuBeverages = () => {
                     </li>
                   ))}
                 </ul>
+                  
                 {/* Render tea varieties if they exist */}
-                <span className="font-semibold ">Tea Flavors: </span> 
                 {item.varieties && (
+                  <>
+                    <span className="font-semibold ">Tea Flavors: </span> 
                     <ul className="text-sm flex flex-wrap gap-2 mt-1 text-left">
                       {item.varieties?.map?.(( variant, i) => (
                         <li className="bg-oatmilk px-2 py-1 rounded text-xs">{variant}</li>
                       ))}
                     </ul>
+                  </>
                   )}
                 </div>
               ))}
