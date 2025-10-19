@@ -10,5 +10,6 @@ export const socialMedias = [
     path: "/icons-logos/instagram-logo-svgrepo-com.svg",
     alt_text: "Instagram Logo",
     link: "https://www.instagram.com/nomadcafeandeatery/#"
-  }
+  },
+
 ]

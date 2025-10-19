@@ -121,6 +121,46 @@ export const MenuPastries = () => {
               </div>
             ))}
           </div>
+            <div 
+              className="
+                h-32
+                flex items-center justify-between
+                rounded-lg 
+                
+                p-4 max-w-md mx-auto mt-4 
+                gap-4" 
+              role="region" 
+              aria-label="Too Good To Go Reminder"
+            >
+              <div className="text-left flex-1">
+                <p className="text-espresso">Help us reduce waste and rescue a bag today!</p>
+                <p className="text-espresso/50 text-sm mt-1">Bags contain unsold items from the day. </p>
+              </div>
+              
+              <a 
+                className="
+                  flex-shrink-0
+                  flex items-center justify-center
+                  bg-oatmilk hover:bg-gamboge/40
+                  text-gamboge 
+                  rounded-lg 
+                  transition-colors duration-200 
+                  border border-gamboge 
+                  focus:outline-none focus:ring-2 focus:ring-gamboge focus:ring-offset-2
+                  p-3
+                  w-auto h-24 md:h-28"
+                href="https://www.toogoodtogo.com/en-us/find/newyork/nomadcafeandeatery/bakedgoods/236600"
+                aria-label="Visit Too Good To Go to rescue a bag"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img 
+                  className="h-full w-auto object-contain"  
+                  alt="Too Good To Go logo"  
+                  src="/icons-logos/TGTG_logo_green_RGB.png"
+                />
+              </a>
+            </div>
         </section>
       </section>
     </>

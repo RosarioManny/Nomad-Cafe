@@ -133,7 +133,7 @@ export const MenuBeverages = () => {
             >
               {Object.entries(hotBevs.sizes).map(([size, price]) => (
                 <li key={size}>
-                  <span className="font-semibold">{size}</span> - ${price}
+                  <span className="font-semibold">{size}</span> - {price}
                 </li>
               ))}
             </ul>

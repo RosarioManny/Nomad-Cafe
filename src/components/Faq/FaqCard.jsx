@@ -16,7 +16,7 @@ const FaqCard = ({ question, answer, index }) => {
 
   return (
     <div 
-      className='faq-container p-2 flex flex-col rounded-lg transition-color duration-300 hover:bg-oatmilk'
+      className='text-espresso faq-container p-2 flex flex-col rounded-lg transition-color duration-300 hover:bg-oatmilk'
       role="region"
       aria-labelledby={cardId}
     >

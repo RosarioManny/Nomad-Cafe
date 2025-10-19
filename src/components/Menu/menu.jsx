@@ -85,7 +85,7 @@ const Menu = () => {
                 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded
                 whitespace-nowrap
               " 
-              href="/NomadCafe-Site/public/products/Large-Menu.jpg" 
+              href="/products/Large-Menu.jpg" 
               download="Nomad-Cafe-Menu.jpg"
               aria-label="Download full menu as image"
             >

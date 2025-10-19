@@ -143,7 +143,7 @@ const Footer = () => {
                     className="focus:outline-none focus:ring-2 focus:ring-oatmilk focus:ring-offset-2 rounded-full transition-all duration-200"
                   >
                     <img 
-                      className="w-8 h-8 hover:animate-pulse"
+                      className="size-10 hover:animate-pulse"
                       src={media.path}
                       alt={media.alt_text}
                     />
