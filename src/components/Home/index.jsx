@@ -6,6 +6,7 @@ import Carousol from './Carousel'
 import InfiniteGallery from '../partials/InfiniteCarousel'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
 import sweetsItems from '../../database/sweetsItems'
+import { hoursOfOperation } from '../../database/hoursOfOperation'
 
 
 const Home = () => {
@@ -93,6 +94,39 @@ const Home = () => {
             aria-hidden="true"
           />
         </div>
+        <section className='flex items-center justify-center'>
+          <h1 className={`${theme.text.heading} ${theme.color.text.primary} items-center mx-10`}> Hours :</h1>
+          <div 
+            className={`${theme.text.body} grid grid-cols-1 gap-4 mb-8`}
+            role="table"
+            aria-label="Business hours"
+            >
+            {hoursOfOperation.map((time, index) => (
+              <div 
+              key={index}
+              className="flex justify-between items-center p-2 bg-oatmilk rounded-lg"
+              role="row"
+              >
+                <span 
+                  className="font-semibold pr-6 "
+                  role="cell"
+                  >
+                  {time.days} 
+                </span>
+                <span 
+                  className={`${theme.color.text.primary} font-bold`}
+                  role="cell"
+                  >
+                  {time.hours}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+        <hr 
+          className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent} mx-auto mb-10 w-3/4`}
+          aria-hidden="true"
+        />
         {/* Incoming NEW Section - Gelato  */}
         <section className={`
         my-4 flex flex-col items-center
@@ -102,15 +136,15 @@ const Home = () => {
           ${theme.color.text.primary} 
           ${theme.text.heading}
           `}>
-            Now Serving Gelato
+            What's New?
         </h1>
-        <div className='w-3/4 my-4 flex flex-col md:justify-evenly md:flex-row md:justify-center items-center'>
+        <div className='w-3/4 gap-4 my-4 flex flex-col md:justify-evenly md:flex-row md:justify-center items-center'>
           <img 
             className='w-[300px] rounded-xl object-fill min-w-[250px] shadow-md shadow-black my-4'
             src="products/Nomad_Choc_Matcha_Gelato.png" 
             alt="Customer holding two scoop Matcha Coconut & Chocolate Hazelnut gelato"
           />
-          <div className='mx-2 flex flex-col items-center'>
+          <div className='mx-4 flex flex-col items-center'>
             <div className={`text-center`}>
               <p className={`${theme.text.firstLetter} ${theme.text.underline}`}>Homemade Gelatos</p>
               <p className='md:text-md'>Featuring a rotating selection of handcrafted flavors. <br/>Current offerings may include...</p>

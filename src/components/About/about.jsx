@@ -2,7 +2,7 @@ import Header from '../partials/_header'
 import { theme } from '../../styles/themes'
 import GoogleMaps from './GoogleMaps'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
-import { hours } from '../../database/hoursOfOperation'
+import { hoursOfOperation } from '../../database/hoursOfOperation'
 
 
 const About = () => { 
@@ -103,7 +103,7 @@ const About = () => {
                 role="table"
                 aria-label="Business hours"
                 >
-                {hours.map((time, index) => (
+                {hoursOfOperation.map((time, index) => (
                   <div 
                   key={index}
                   className="flex justify-between items-center p-4 bg-oatmilk rounded-lg"
