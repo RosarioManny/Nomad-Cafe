@@ -158,7 +158,6 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className={`${theme.color.background.primary} border-t-[1px] border-oatmilk/10 p-4 text-center`}>
         <p className="opacity-40" aria-label="Site credits">Site by Emmanuel Rosario</p>
-        <p className="opacity-40" aria-label="Site version">Version 1.2</p>
       </div>
     </footer>
   )

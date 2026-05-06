@@ -2,14 +2,11 @@ import Header from '../partials/_header'
 import { theme } from '../../styles/themes'
 import GoogleMaps from './GoogleMaps'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
+import { hours } from '../../database/hoursOfOperation'
 
-const About = () => {
-  const hours = [
-    { days: 'Mon - Wed', hours: '7:00 AM - 4:00 PM' },
-    { days: 'Thur', hours: '7:00 AM - 7:00 PM' },
-    { days: 'Fri - Sat', hours: '7:00 AM - 8:00 PM' },
-    { days: 'Sun', hours: '8:00 AM - 4:00 PM' }
-  ]
+
+const About = () => { 
+
 
   return (
     <>
@@ -129,11 +126,13 @@ const About = () => {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <GoogleMaps 
-                className="w-full md:w-2/3 lg:w-1/2"
+            <div className="flex justify-center relative">
+              
+              <GoogleMaps
+                className={`w-full md:w-2/3 lg:w-1/2 transition-opacity duration-500 `}
                 aria-label="Nomad Cafe location on Google Maps"
-                />
+                // onLoad={() => setMapsLoaded(true)}
+              />
             </div>
           </div>
         </section>

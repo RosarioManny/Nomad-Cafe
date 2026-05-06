@@ -36,6 +36,7 @@ export const theme  = {
       nav: "text-oatmilk"
     },
     background: {
+      default: "bg-espresso",
       primary: "bg-firebrick",
       secondary: "bg-oatmilk",
       accent: "bg-gamboge"
