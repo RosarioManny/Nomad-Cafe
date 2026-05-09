@@ -45,7 +45,7 @@ const InfiniteGallery = ({ images }) => {
               <img 
                 src={image.path} 
                 alt={image.alt_text || "Nomad Cafe Product"}
-                className='rounded-xl object-fill min-w-[250px] w-[250px] h-[300px] shadow-md shadow-black'
+                className='rounded object-fill min-w-[250px] w-[250px] h-[300px] shadow-md shadow-black'
                 loading={i > 3 ? 'lazy' : 'eager'}
                 width={250}
                 height={300}

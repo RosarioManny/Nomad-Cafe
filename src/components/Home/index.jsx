@@ -94,7 +94,7 @@ const Home = () => {
             aria-hidden="true"
           />
         </div>
-        <section className='flex items-center justify-center'>
+        <section className='flex flex-col sm:flex-row items-center justify-center'>
           <h1 className={`${theme.text.heading} ${theme.color.text.primary} items-center mx-10`}> Hours :</h1>
           <div 
             className={`${theme.text.body} grid grid-cols-1 gap-4 mb-8`}
@@ -140,7 +140,7 @@ const Home = () => {
         </h1>
         <div className='w-3/4 gap-4 my-4 flex flex-col md:justify-evenly md:flex-row md:justify-center items-center'>
           <img 
-            className='w-[300px] rounded-xl object-fill min-w-[250px] shadow-md shadow-black my-4'
+            className='w-[60%] sm:w-[40%]  rounded object-cover  shadow-md shadow-black my-4'
             src="products/Nomad_Choc_Matcha_Gelato.png" 
             alt="Customer holding two scoop Matcha Coconut & Chocolate Hazelnut gelato"
           />
