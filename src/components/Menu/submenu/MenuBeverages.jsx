@@ -37,7 +37,7 @@ export const MenuBeverages = () => {
         {items.map((variant, i) => (
           <li
             key={i}
-            className="bg-oatmilk px-2 py-1 rounded text-xs"
+            className="border border-gamboge border-1 bg-oatmilk px-2 py-1 rounded text-xs"
           >
             {variant}
           </li>
@@ -249,7 +249,7 @@ export const MenuBeverages = () => {
                 className="py-3 border-b border-gamboge last:border-b-0"
                 role="listitem"
               >
-                <div className="flex items-center gap-3 mb-1">
+                <div className="flex justify-between items-center gap-3 mb-1">
                   <h3 className={`${theme.color.text.primary} ${theme.text.menuHeading} text-left`}>
                     {item.name}
                   </h3>
@@ -293,10 +293,10 @@ export const MenuBeverages = () => {
             {bevExtras.items.map((item, i) => (
               <div
                 key={i}
-                className="text-left"
+                className="text-left border-b border-gamboge last:border-b-0"
                 role="listitem"
               >
-                <div className="flex items-center gap-3 mb-2">
+                <div className="flex items-center justify-between gap-3 mb-2">
                   <h3 className={`${theme.color.text.primary} ${theme.text.body}`}>
                     {item.name}
                   </h3>
