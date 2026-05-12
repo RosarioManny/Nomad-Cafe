@@ -12,7 +12,7 @@ export const theme  = {
     heading: "text-[1.6rem] md:text-5xl",
     firstLetter: "text-2xl md:text-4xl",
     subheading: "text-2xl md:text-3xl",
-    menuHeading: "text-lg md:text-2xl",
+    menuHeading: "text-xl md:text-2xl",
     body: "text-base md:text-xl ",
     advisoryText: "text-sm italic md:text-md",
     underline: "underline underline-offset-4",

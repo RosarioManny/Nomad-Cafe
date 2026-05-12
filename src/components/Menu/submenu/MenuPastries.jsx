@@ -5,16 +5,7 @@ import { useEffect } from "react";
 
 export const MenuPastries = () => {
   const pastries = pastrySweets();
-  // console.log(pastries)
-  useEffect(() => {
-    pastries.items.forEach(element => {
-      if (element.varients) {
-        console.log("Has Varients", element)
-      } else {
-        console.log("No Varients", element)
-      }
-    });
-  })
+
 
   return (
     <>
