@@ -1,8 +1,8 @@
 import { theme } from "../../../styles/themes"
 
 // Pill — for options, variants, and modifiers
-export const Pill = ({ children }) => (
-  <li className="border border-gamboge bg-oatmilk px-3 py-1 rounded text-sm">
+export const Pill = ({ className, children }) => (
+  <li className={`border border-gamboge bg-oatmilk px-3 py-1 rounded text-sm ${className || ''}`}>
     {children}
   </li>
 )

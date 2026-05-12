@@ -51,17 +51,17 @@ const sweetsItems = [
           "Apple Cinnamon"
         ]
       },
-      {
-        "name": "Sans Bakery, Vegan / Gluten-free pastries",
-        "price": 5,
-        "varieties": [
-          "Brownies", 
-          "Banana Bread",  
-          "Zucchini Bread",
-          "Blueberry Muffins",
-          "Chai Chocolate Chip Cookies"
-        ]
-      }
+      // {
+      //   "name": "Sans Bakery, Vegan / Gluten-free pastries",
+      //   "price": 5,
+      //   "varieties": [
+      //     "Brownies", 
+      //     "Banana Bread",  
+      //     "Zucchini Bread",
+      //     "Blueberry Muffins",
+      //     "Chai Chocolate Chip Cookies"
+      //   ]
+      // }
     ],
   },
   {

@@ -1,6 +1,7 @@
 import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
 import { signatureLattes, icedDrinks, hotDrinks, drinkExtras, bottledDrinks } from "../../../utils/Menu/Menu_Items/getBeverageItems";
+import { SizePills, VarietyChips, AdvisoryNote, PricePill } from "../components/menu_components";
 
 export const MenuBeverages = () => {
 
@@ -10,50 +11,6 @@ export const MenuBeverages = () => {
   const hotBevsItems = hotBevs.items
   const bevExtras = drinkExtras()
   const bottled = bottledDrinks()
-
-  const SizePills = ({ sizes, ariaLabel }) => (
-    <ul
-      className="flex flex-wrap gap-2 mb-2"
-      aria-label={ariaLabel}
-    >
-      {Object.entries(sizes).map(([size, price]) => (
-        <li
-          key={size}
-          className="bg-oatmilk px-3 py-1 rounded text-sm"
-        >
-          <span className="font-semibold">{size}</span> — {typeof price === 'number' ? `$${price}` : price}
-        </li>
-      ))}
-    </ul>
-  )
-
-  const VarietyChips = ({ label, items, ariaLabel }) => (
-    <div className="mt-2">
-      <p className="text-sm font-semibold mb-1">{label}</p>
-      <ul
-        className="flex flex-wrap gap-2"
-        aria-label={ariaLabel}
-      >
-        {items.map((variant, i) => (
-          <li
-            key={i}
-            className="border border-gamboge border-1 bg-oatmilk px-2 py-1 rounded text-xs"
-          >
-            {variant}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-
-  const AdvisoryNote = ({ children }) => (
-    <p
-      className="italic text-sm text-left"
-      role="note"
-    >
-      {children}
-    </p>
-  )
 
   return (
     <>
@@ -300,13 +257,13 @@ export const MenuBeverages = () => {
                   <h3 className={`${theme.color.text.primary} ${theme.text.body}`}>
                     {item.name}
                   </h3>
-                  <span className="bg-oatmilk px-3 py-1 rounded text-sm font-semibold">
-                    +${item.price.toFixed(2)}
-                  </span>
+                  <PricePill price={`$${item.price.toFixed(2)}`} />
                 </div>
 
                 {item.description && (
-                  <p className="text-sm italic mb-3">{item.description}</p>
+                  // <VarietyChips>
+                      <p className="text-sm  text-espresso/80 mb-1">{item.description} </p>
+                  // </VarietyChips>
                 )}
 
                 {item.varieties && (
@@ -316,12 +273,12 @@ export const MenuBeverages = () => {
                       items={item.varieties}
                       ariaLabel={`${item.name} flavor options`}
                     />
-                    <p
+                    <AdvisoryNote
                       role="note"
                       className="text-sm text-espresso/80 italic mt-4 px-4 py-1 shadow-sm w-fit bg-oatmilk border-l-firebrick border-l-2 rounded-r-lg"
                     >
                       * = Seasonal / Temporary
-                    </p>
+                    </AdvisoryNote>
                   </>
                 )}
               </div>
