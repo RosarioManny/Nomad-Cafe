@@ -2,7 +2,7 @@ import Header from '../partials/_header'
 import { theme } from '../../styles/themes'
 import GoogleMaps from './GoogleMaps'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
-import { hoursOfOperation } from '../../database/hoursOfOperation'
+import { hoursOfOperation } from '../../database/Home/hoursOfOperation'
 
 
 const About = () => { 

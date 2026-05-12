@@ -1,5 +1,6 @@
 import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
+import { ItemRow, PricePill, Pill, AdvisoryNote } from "../components/menu_components";
 import { getBagels, getSandwiches, getSides, getTravelerSandwich, getSignatureDishes } from "../../../utils/Menu/Menu_Items/getMenuItemCategory";
 
 export const MenuBreakfast = () => {
@@ -14,38 +15,6 @@ export const MenuBreakfast = () => {
   const travelerSandwich = getTravelerSandwich()
   const travelerOptions = travelerSandwich.options[0]
 
-  const PricePill = ({ price }) => (
-    <span className="bg-oatmilk border border-espresso px-3 py-1 rounded text-sm font-semibold whitespace-nowrap">
-      ${price}
-    </span>
-  )
-
-  const Pill = ({ children }) => (
-    <li className="border border-gamboge bg-oatmilk px-3 py-1 rounded text-sm">
-      {children}
-    </li>
-  )
-
-  const AdvisoryNote = ({ children, ariaLabel }) => (
-    <p
-      className="text-espresso/80 italic my-4 px-4 py-1 shadow-sm w-fit bg-oatmilk border-l-espresso border-l-2 rounded-r-lg"
-      aria-label={ariaLabel}
-    >
-      {children}
-    </p>
-  )
-
-  const ItemRow = ({ id, name, price }) => (
-    <div className="flex items-center justify-between gap-4 mb-3">
-      <h3
-        id={id}
-        className={`${theme.color.text.primary} ${theme.text.underline} ${theme.text.menuHeading}`}
-      >
-        {name}
-      </h3>
-      <PricePill price={price} />
-    </div>
-  )
 
   return (
     <>
@@ -75,14 +44,9 @@ export const MenuBreakfast = () => {
           className="w-full mb-8"
           aria-labelledby="bagels-heading"
         >
-          <div className="flex items-center justify-between gap-4 mb-2">
-            <h2
-              id="bagels-heading"
-              className={`${theme.color.text.primary} ${theme.text.underline} ${theme.text.subheading} ${theme.layout.text} text-left`}
-            >
-              {bagels.category}
-            </h2>
-            <PricePill price={bagels.price} />
+          <div className="mb-2">
+            <ItemRow id="traveler-sandwich" name={bagels.category} price={bagels.price} />
+          
           </div>
 
           <p className="text-left mb-4 text-sm">{bagels.description}</p>
@@ -116,14 +80,9 @@ export const MenuBreakfast = () => {
           className="w-full mb-8"
           aria-labelledby="traveler-heading"
         >
-            <div className="flex items-center justify-between gap-4 mb-2">
-            <h2
-              id="bagels-heading"
-              className={`${theme.color.text.primary} ${theme.text.underline} ${theme.text.subheading} ${theme.layout.text} text-left`}
-            >
-              {travelerSandwich.category}
-            </h2>
-            <PricePill price={travelerSandwich.price} />
+          <div className=" mb-2">
+            <ItemRow id="traveler-sandwich" name={travelerSandwich.category} price={travelerSandwich.price} />
+          
           </div>
 
           <p className="text-left mb-6 text-sm">{travelerSandwich.description}</p>
@@ -140,7 +99,7 @@ export const MenuBreakfast = () => {
                     {category}
                   </h3>
                   {options.price && (
-                    <PricePill price={`+${options.price} each`} />
+                    <PricePill price={`+$${options.price} each`} />
                   )}
                 </div>
 
@@ -276,7 +235,7 @@ export const MenuBreakfast = () => {
                 <h3 className={`${theme.color.text.primary} ${theme.text.body}`}>
                   {dish.name}
                 </h3>
-                <PricePill price={dish.price} />
+                <PricePill price={`$${dish.price}`}/>
               </div>
             ))}
           </div>

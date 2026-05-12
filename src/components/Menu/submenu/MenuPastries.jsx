@@ -1,7 +1,6 @@
 import { theme } from "../../../styles/themes";
 import ScrollToAnchor from "../../../utils/scrollToAnchor";
 import { pastrySweets } from "../../../utils/Menu/Menu_Items/getSweetsItems";
-import { useEffect } from "react";
 
 export const MenuPastries = () => {
   const pastries = pastrySweets();

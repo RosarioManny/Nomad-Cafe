@@ -1,12 +1,12 @@
 import Header from '../partials/_header'
 import { theme } from '../../styles/themes'
 import { useEffect, useState } from 'react' 
-import { imageGallery }  from '../../database/imageGallery'
-import Carousol from './Carousel'
-import InfiniteGallery from '../partials/InfiniteCarousel'
+import { imageGallery }  from '../../database/Home/imageGallery'
+import InfiniteGallery from './components/InfiniteCarousel'
+import Carousol from './components/Carousel'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
-import sweetsItems from '../../database/sweetsItems'
-import { hoursOfOperation } from '../../database/hoursOfOperation'
+import sweetsItems from '../../database/Menu/sweetsItems'
+import { hoursOfOperation } from '../../database/Home/hoursOfOperation'
 
 
 const Home = () => {

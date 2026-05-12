@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { theme } from "../../styles/themes"
 
-import { socialMedias } from "../../database/socialMedias"
+import { socialMedias } from "../../database/Home/socialMedias"
 
 const Footer = () => {
 

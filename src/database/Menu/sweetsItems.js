@@ -74,7 +74,6 @@ const sweetsItems = [
       "Creme Brulee",
       "Strawberry",
       "Fruity Pebbles",
-
       "Strawberries & Creme",
       "Hazelnut",
       "Chai Salted Caramel",

@@ -1,7 +1,7 @@
 import FaqCard from "./FaqCard"
 import Header from "../partials/_header"
 import { useState } from 'react'
-import faqQuestions from '../../database/faqQuestions'
+import  faqQuestions  from "../../database/Faq/faqQuestions"
 import ScrollToAnchor from "../../utils/scrollToAnchor"
 import { theme } from "../../styles/themes"
 
