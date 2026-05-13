@@ -9,7 +9,7 @@ const Events = () => {
   return (
     <main className={`${theme.color.text.default} ${theme.text.body}`}>
       <ScrollToAnchor />
-
+      
       <a
         href="#events-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white p-2 z-50 rounded"
@@ -18,9 +18,10 @@ const Events = () => {
       </a>
 
       <Header
-        img={"/gallery/Cafe-inside-Redshirt.webp"}
+        img={"/gallery/Event_Packed_House.webp"}
         tag={"/icons-logos/Nomad-White-Events.webp"}
         img_alt="Inside view of Nomad Cafe showing the interior and seating area"
+      
       />
 
       <section
@@ -100,32 +101,41 @@ const Events = () => {
             />
           </div>
         </div>
+        <p className={`text-center ${theme.text.advisoryText} ${theme.color.text.primary} py-3`}>
+          Click on an event to learn more!
+        </p>
 
         <section
           aria-labelledby="host-heading"
-          className="flex flex-col items-center mt-10 w-full"
+          className="relative flex flex-col items-center mt-10 w-full"
         >
+          <img
+            className="absolute inset-x-auto size-72  object-contain z-0 opacity-30"
+            src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp"
+            alt=""
+            aria-hidden="true"
+          />
           <h2
             id="host-heading"
-            className={`${theme.text.subheading} ${theme.color.text.default} text-center mb-3`}
+            className={`relative z-10 ${theme.text.subheading} ${theme.color.text.default} text-center mb-3`}
           >
             Got an idea?
           </h2>
-          <p className={`text-center w-full md:w-2/3 lg:w-1/2 ${theme.text.body} ${theme.color.text.default}`}>
+          <p className={`relative z-10 text-center w-full md:w-2/3 lg:w-1/2 ${theme.text.body} ${theme.color.text.default}`}>
             Want to host a swap party, book club, or something entirely your own? We're always
             looking for fun, community-driven events to add to our calendar. Reach out and
             let's make it happen.
           </p>
+          <address
+            aria-label="Nomad Cafe contact information"
+            className={`relative z-10not-italic text-center mt-6 ${theme.text.body} ${theme.color.text.default} space-y-1`}
+          >
+            <p>Instagram: @nomadcafeandeatery</p>
+            <p>Email: nomadcafeandeatery@gmail.com</p>
+            <p>Phone: (347) 227-8136</p>
+          </address>
         </section>
 
-        <address
-          aria-label="Nomad Cafe contact information"
-          className={`not-italic text-center mt-6 ${theme.text.body} ${theme.color.text.default} space-y-1`}
-        >
-          <p>Instagram: @nomadcafeandeatery</p>
-          <p>Email: nomadcafeandeatery@gmail.com</p>
-          <p>Phone: (347) 227-8136</p>
-        </address>
 
       </section>
     </main>

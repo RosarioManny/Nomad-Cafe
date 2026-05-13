@@ -13,9 +13,10 @@ export const theme  = {
     firstLetter: "text-2xl md:text-4xl",
     subheading: "text-2xl md:text-3xl",
     menuHeading: "text-xl md:text-2xl",
-    body: "text-base md:text-xl ",
+    body: "text-base sm:text-lg tracking-[.01rem]",
     advisoryText: "text-sm italic md:text-md",
     underline: "underline underline-offset-4",
+    footer: "text-sm md:text-base",
   },
   layout: {
     default: "flex justify-center m-4 place-items-center",

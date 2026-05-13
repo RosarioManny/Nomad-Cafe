@@ -69,73 +69,63 @@ const About = () => {
           aria-hidden="true"
         /> 
 
-        <section 
-          className={`${theme.layout.text}`}
-          aria-labelledby="visit-us"
-        >
-          <div className='mb-10 mt-4 flex flex-col'>
-            <h1 
-              id="visit-us"
-              className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary}  text-center`}
-            >
-              Visit Us!
-            </h1>
-            <div className='
-                bg-oatmilk text-espresso/80 text-sm
-                w-fit mt-4 mx-2 px-4 py-1
-                border-r-firebrick border-r-2 shadow-md rounded-l-lg 
-                ml-auto
-                '>
-              <p className={`
-                `}
-                > 
-                Don't forget to pick up your Customer Passport. 10th Purchase is Free!
-              </p> 
-            </div>
-          </div>
-          <div className='flex flex-col md:flex-row justify-between  md:gap-8'>
-            <div className="max-w-4xl mx-auto">
-              <h2 className={`${theme.text.subheading} text-center mb-6`}>Hours:</h2>
-              
-              {/* Hours in column layout */}
-              <div 
-                className={`${theme.text.body} grid grid-cols-1 gap-4 mb-8`}
-                role="table"
-                aria-label="Business hours"
-                >
-                {hoursOfOperation.map((time, index) => (
-                  <div 
-                  key={index}
-                  className="flex justify-between items-center p-4 bg-oatmilk rounded-lg"
-                  role="row"
-                  >
-                    <span 
-                      className="font-semibold pr-6 "
-                      role="cell"
-                      >
-                      {time.days} 
-                    </span>
-                    <span 
-                      className={`${theme.color.text.primary} font-bold`}
-                      role="cell"
-                      >
-                      {time.hours}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <section
+  className={`${theme.layout.text} relative`}
+  aria-labelledby="visit-us"
+>
+  <img
+    className="absolute size-[90vw] object-contain z-0 opacity-25 "
+    src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp"
+    alt=""
+    aria-hidden="true"
+  />
 
-            <div className="flex justify-center relative">
-              
-              <GoogleMaps
-                className={`w-full md:w-2/3 lg:w-1/2 transition-opacity duration-500 `}
-                aria-label="Nomad Cafe location on Google Maps"
-                // onLoad={() => setMapsLoaded(true)}
-              />
-            </div>
+  <div className="relative z-10 mb-10 mt-4 flex flex-col">
+    <h1
+      id="visit-us"
+      className={`${theme.text.underline} ${theme.text.heading} ${theme.color.text.primary} text-center`}
+    >
+      Visit Us!
+    </h1>
+    <div className="bg-oatmilk text-espresso/80 text-sm w-fit mt-4 mx-2 px-4 py-1 border-r-firebrick border-r-2 shadow-md rounded-l-lg ml-auto">
+      <p>Don't forget to pick up your Customer Passport. 10th Purchase is Free!</p>
+    </div>
+  </div>
+
+  <div className="relative z-10 flex flex-col md:flex-row justify-between md:gap-8">
+    <div className="max-w-4xl mx-auto">
+      <h2 className={`${theme.text.subheading} text-center mb-6`}>Hours:</h2>
+
+      <div
+        className={`${theme.text.body} grid grid-cols-1 gap-4 mb-8`}
+        role="table"
+        aria-label="Business hours"
+      >
+        {hoursOfOperation.map((time, index) => (
+          <div
+            key={index}
+            className="flex justify-between items-center p-4 bg-oatmilk rounded-lg"
+            role="row"
+          >
+            <span className="font-semibold pr-6" role="cell">
+              {time.days}
+            </span>
+            <span className={`${theme.color.text.primary} font-bold`} role="cell">
+              {time.hours}
+            </span>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+
+    <div className="flex justify-center relative">
+      <GoogleMaps
+        className="w-full md:w-2/3 lg:w-1/2 transition-opacity duration-500"
+        aria-label="Nomad Cafe location on Google Maps"
+      />
+    </div>
+  </div>
+</section>
       </main>
     </>
   )

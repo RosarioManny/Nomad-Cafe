@@ -28,7 +28,7 @@ export const MenuGelatos = () => {
         </h2>
 
         <AdvisoryNote ariaLabel="Flavor rotation information">
-          Note: All flavors rotate bi-weekly. Drop by to see what we have!
+          Note: All flavors rotate. Drop by to see what we have!
         </AdvisoryNote>
 
         {/* Scoop Sizes — informational, plain layout */}

@@ -30,22 +30,22 @@ const Footer = () => {
             >
               About Nomad Cafe
             </h2>
-            <p className="text-sm text-justify leading-relaxed mb-4">
+            <p className={`${theme.text.footer} mb-4`}>
               Your neighborhood restaurant in Ridgewood, New York serving delicious handmade food,
               from our customizable Traveler sandwich to our popular Cheddar Smashbrowns.
             </p>
 
             <ul
-              className="block my-4 text-sm leading-relaxed"
+              className={`${theme.text.footer} border border-[2px] rounded-lg border-oatmilk bg-espresso/20 p-3 sm:p-5 block my-4 leading-relaxed`}
               aria-label="Highlights"
             >
-              <li>Breakfast served all day</li>
-              <li>Open late</li>
+              <li>Open late weekends</li>
               <li>Rotating seasonal menu</li>
+              <li>Breakfast served all day</li>
               <li>In-store rewards: 10th drink free!</li>
             </ul>
 
-            <p className="text-sm leading-relaxed mb-4">
+            <p className={`${theme.text.footer} mb-4`}>
               Experience our warm atmosphere, friendly staff, and exceptional coffee.
             </p>
 
@@ -115,7 +115,7 @@ const Footer = () => {
       </div>
 
       <div className={`${theme.color.background.primary} p-4`}>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-80">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm sm:text-base gap-4 opacity-80">
           <ul className="flex gap-3 list-none p-0">
             {socialMedias.map((media, i) => (
               <li key={i}>
@@ -129,6 +129,7 @@ const Footer = () => {
             <a href="tel:+13472278136" className="hover:opacity-100 transition-opacity">
               (347) 227-8136
             </a>
+            <p>&#9679;</p>
             <a href="mailto:nomadcafeandeatery@gmail.com" className="hover:opacity-100 transition-opacity">
               nomadcafeandeatery@gmail.com
             </a>

@@ -94,17 +94,23 @@ const Home = () => {
             aria-hidden="true"
           />
         </div>
-        <section className='flex flex-col sm:flex-row items-center justify-center'>
-          <h1 className={`${theme.text.heading} ${theme.color.text.primary} items-center mx-10`}> Hours :</h1>
+        <section className='relative flex flex-col sm:flex-row items-center justify-center'>
+          <img
+            className="absolute inset-auto  size-72 object-contain z-0 opacity-30"
+            src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp"
+            alt=""
+            aria-hidden="true"
+          />
+          <h1 className={`${theme.text.heading} ${theme.color.text.primary} relative z-10 items-center mx-10`}> Hours :</h1>
           <div 
-            className={`${theme.text.body} grid grid-cols-1 gap-4 mb-8`}
+            className={`${theme.text.body} relative z-10  grid grid-cols-1 gap-4 mb-8`}
             role="table"
             aria-label="Business hours"
             >
             {hoursOfOperation.map((time, index) => (
               <div 
               key={index}
-              className="flex justify-between items-center p-2 bg-oatmilk rounded-lg"
+              className="relative z-10 flex justify-between items-center p-2 bg-oatmilk rounded-lg"
               role="row"
               >
                 <span 
@@ -124,7 +130,7 @@ const Home = () => {
           </div>
         </section>
         <hr 
-          className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent} mx-auto mb-10 w-3/4`}
+          className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent} mx-auto my-10 w-3/4`}
           aria-hidden="true"
         />
         {/* Incoming NEW Section - Gelato  */}

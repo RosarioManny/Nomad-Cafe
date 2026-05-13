@@ -45,7 +45,7 @@ export const MenuBreakfast = () => {
           aria-labelledby="bagels-heading"
         >
           <div className="mb-2">
-            <ItemRow id="traveler-sandwich" name={bagels.category} price={bagels.price} />
+            <ItemRow id="bagels" name={bagels.category} price={bagels.price} />
           
           </div>
 
@@ -85,7 +85,7 @@ export const MenuBreakfast = () => {
           
           </div>
 
-          <p className="text-left mb-6 text-sm">{travelerSandwich.description}</p>
+          <p className={`${theme.text.body}`}>{travelerSandwich.description}</p>
 
           <div role="list">
             {Object.entries(travelerOptions).map(([category, options]) => (
