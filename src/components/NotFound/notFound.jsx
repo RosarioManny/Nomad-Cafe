@@ -1,21 +1,10 @@
-import { useState, useEffect} from 'react'
-import { Link, useParams} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { theme } from '../../styles/themes'
-import NomadQuizGame from '../Game/nomadQuizGame'
+
 import Header from '../partials/_header'
 
 const NotFound = () => {
-  const [showGame, setShowGame] = useState(false)
-  const [playGame, setPlayGame ] = useState(false)
-  const { paramsId } = useParams() 
 
-  // User wants to play game on purpose by going to /404/game
-  useEffect(() => {
-    if (paramsId === 'game') {
-      setPlayGame(true)
-      console.log('Starting game directly from URL')
-    }
-  }, [paramsId])
 
   return (
     <main className={`${theme.color.text.default}`} aria-labelledby="not-found-heading">

@@ -7,8 +7,8 @@ import  Faq from '../src/components/Faq/faq.jsx'
 import  About  from '../src/components/About/about.jsx'
 import  Menu  from '../src/components/Menu/menu.jsx'
 import  Events  from '../src/components/Events/events.jsx'
-import NotFound from './components/NotFound/NotFound.jsx'
-import NomadQuizGame from './components/Game/nomadQuizGame.jsx'
+import NotFound from '../src/components/NotFound/notFound.jsx'
+import NomadQuizGame from '../src/components/Game/nomadQuizGame.jsx'
 
 
 
@@ -24,7 +24,7 @@ function App() {
           <Route path="/faq" element={<Faq/>}/>
           <Route path="/events" element={<Events/>}/>
           <Route path="/game" element={<NomadQuizGame/>}/>
-          
+
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
       <Footer />
