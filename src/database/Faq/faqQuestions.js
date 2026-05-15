@@ -30,7 +30,7 @@ const faqQuestions = [
 },
   {
     que: "What beans do you use?", 
-    ans: " We proudly serve beans from 'Partners Coffee Roasters'. "
+    ans: " We proudly serve beans our very own custom blend. Our beans are sourced from sustainable farms in Venezuela and roasted to perfection to bring out their unique flavors. We can't wait for you to try it!"
   },
   {
     que: "Is there a community board?", 
@@ -56,6 +56,14 @@ const faqQuestions = [
     que: "Do you have a seat limit?",
     ans: "No limits, but we kindly ask you to be mindful of others during busy hours (11am–2pm)."
   },
+  {
+    que: "Is it accessible for people with disabilities?",
+    ans: "Yes, we are committed to accessibility. We have a ramp availble for wheelchair patrons, and our staff is trained to assist guests with disabilities. If you have any specific needs, please let us know when you arrive or contact us in advance."
+  },
+  {
+    que: "Do you do events?",
+    ans: "Yes, we have monthly events. Check our events page or social media for upcoming events! Reach out to us if you have an idea for an event you'd like to see at Nomad! We're always open to new ideas and collaborations. (347)-227-8136 : Instagram - @nomadcafeandeatery : Email - nomadcafeandeatery@gmail.com."
+  }
 ]
 
 export default faqQuestions

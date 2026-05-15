@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
 import { theme } from "../../styles/themes"
-import { useResponsive } from "../../utils/responsoveProvider"
-import { socialMedias } from "../../database/socialMedias"
+import { socialMedias } from "../../database/Home/socialMedias"
+import ScrollToAnchor from "../../utils/scrollToAnchor"
 
 const Footer = () => {
-  const isDesktop = useResponsive()
-  
+
+
   return (
-    <footer 
+    <footer
       className="mt-10 bottom-0 w-screen text-white"
       role="contentinfo"
       aria-label="Site footer"
@@ -17,148 +17,128 @@ const Footer = () => {
         md:flex-row
         ${theme.color.background.primary}
       `}>
+        <ScrollToAnchor />
         <div className="md:max-w-[60%] flex flex-col md:flex-row gap-6 w-full">
-          {/* Left Column - About & Logo */}
-          <section 
+
+          {/* About & Logo */}
+          <section
             className="w-full flex-1 rounded-lg p-6 text-center md:text-left"
-            aria-labelledby="about-heading"
+            aria-labelledby="footer-about-heading"
           >
-            <h3 
-              id="about-heading"
+            <h2
+              id="footer-about-heading"
               className={`${theme.text.subheading} ${theme.text.underline} mb-3`}
             >
               About Nomad Cafe
-            </h3>
-            <p className="text-sm text-justify leading-relaxed mb-4">
-              Your neighborhood restaurant in Ridgewood, New York serving delicious handmade food, 
+            </h2>
+            <p className={`${theme.text.footer} mb-4`}>
+              Your neighborhood restaurant in Ridgewood, New York serving delicious handmade food,
               from our customizable Traveler sandwich to our popular Cheddar Smashbrowns.
-              <span className="block my-6 font-semibold">
-                • Breakfast served all day<br/>
-                • Open late<br/>
-                • Rotating seasonal menu<br/>
-                • In-store rewards: 10th drink free!
-              </span>
+            </p>
+
+            <ul
+              className={`${theme.text.footer} border border-[2px] rounded-lg border-oatmilk bg-espresso/20 p-3 sm:p-5 block my-4 leading-relaxed`}
+              aria-label="Highlights"
+            >
+              <li>Open late weekends</li>
+              <li>Rotating seasonal menu</li>
+              <li>Breakfast served all day</li>
+              <li>In-store rewards: 10th drink free!</li>
+            </ul>
+
+            <p className={`${theme.text.footer} mb-4`}>
               Experience our warm atmosphere, friendly staff, and exceptional coffee.
             </p>
-            <Link 
-              className="inline-flex w-full flex-col justify-center items-center focus:outline-none focus:ring-2 focus:ring-oatmilk rounded transition-all duration-200" 
+
+            <Link
+              className="inline-flex w-full flex-col justify-center items-center focus:outline-none focus:ring-2 focus:ring-oatmilk rounded transition-all duration-200"
               to="/"
-              aria-label="Navigate to homepage"
+              aria-label="Nomad Cafe — go to homepage"
             >
-              <img 
-                className="min-w-[166px] object-contain w-fit h-32 hover:animate-pulse" 
-                src="/icons-logos/Nomad-logo-White-Transparent.png" 
-                alt="Nomad Cafe & Eatery - Community and Coffee since 2018" 
+              <img
+                className="min-w-[166px] object-contain w-fit h-32 hover:animate-pulse"
+                src="/icons-logos/Nomad-logo-White-Transparent.png"
+                alt="Nomad Cafe & Eatery logo"
               />
             </Link>
           </section>
         </div>
-        <div className=" md:max-w-[50%] flex flex-col gap-6">
-          {/* Payment Section - Full Width Top */}
-          <section 
+
+        <div className="md:max-w-[50%] flex flex-col gap-6">
+
+          {/* Payment */}
+          <section
             className="w-full rounded-lg p-6 text-center"
-            aria-labelledby="payment-heading"
+            aria-labelledby="footer-payment-heading"
           >
-            <h3 
-              id="payment-heading"
+            <h2
+              id="footer-payment-heading"
               className={`${theme.text.subheading} ${theme.text.underline} mb-4`}
             >
-              We Accept:
-            </h3>
-            <img 
-              className="mx-auto max-w-[90%] md:max-w-[50%] rounded-md" 
-              src="/icons-logos/All-acceptance-Marker-VISA-DISC-AMEX-MC.webp" 
-              alt="Accepted payment methods including Visa, American Express, Discover, Google Pay, Apple Pay and Mastercard"
+              We Accept
+            </h2>
+            <img
+              className="mx-auto max-w-[90%] sm:max-w-[50%] rounded-md"
+              src="/icons-logos/All-acceptance-Marker-VISA-DISC-AMEX-MC.webp"
+              alt="Accepted payment methods: Visa, Mastercard, American Express, Discover, Apple Pay, and Google Pay"
               loading="lazy"
             />
           </section>
 
-          {/* Bottom Row - Quick Links & Contact Side by Side */}
           <div className="flex flex-col md:flex-row gap-6">
-            {/* Quick Links - Left Bottom */}
-            <section 
+            {/* Quick Links */}
+            <section
               className="flex-1 rounded-lg p-6 text-center"
-              aria-labelledby="quick-links-heading"
+              aria-labelledby="footer-links-heading"
             >
-              <h2 
-                id="quick-links-heading"
+              <h2
+                id="footer-links-heading"
                 className={`${theme.text.subheading} ${theme.text.underline} mb-4`}
               >
                 Quick Links
               </h2>
-              <nav aria-label="Footer navigation">
-                <div className="flex flex-col items-center h-fit">
-                  {["faq", "menu", "about"].map((link) => (
-                    <Link 
-                      key={link} 
-                      to={`/${link}#main-content`} 
-                      className={`text-xl w-full hover:animate-pulse my-2 relative group focus:outline-none focus:ring-2 focus:ring-oatmilk focus:ring-offset-2 rounded transition-all duration-200 py-2`}
-                      aria-label={`Navigate to ${link} page`}
+              <nav aria-label="Footer page navigation">
+                <div className="flex flex-col items-center justify-center gap-2">
+                  {["faq", "menu", "about", "events"].map((link) => (
+                    <Link
+                      key={link}
+                      to={`/${link}#Header`}
+                      className="text-sm sm:min-w-[30%] min-w-[50%] border border-oatmilk/30  rounded-lg px-4 py-1 hover:bg-oatmilk hover:text-espresso transition-colors duration-200"
                     >
                       {link.charAt(0).toUpperCase() + link.slice(1)}
-                      <span className={`${theme.animation.hover.underline}`} aria-hidden="true"></span>
                     </Link>
                   ))}
                 </div>
               </nav>
             </section>
-
-            {/* Contact - Right Bottom */}
-            <section 
-              className="flex-1 rounded-lg p-6 text-center"
-              aria-labelledby="contact-heading"
-            >
-              <h2 
-                id="contact-heading"
-                className={`${theme.text.subheading} ${theme.text.underline} mb-4`}
-              >
-                Contact Us
-              </h2>
-              <address className="not-italic mb-4">
-                <p className="mb-2">
-                  <a 
-                    href="tel:+13472278136" 
-                    className="hover:text-oatmilk transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-oatmilk rounded px-2 py-1"
-                    aria-label="Call us at 347-227-8136"
-                  >
-                    (347)-227-8136
-                  </a>
-                </p>
-                <p>
-                  <a 
-                    href="mailto:nomadcafeandeatery@gmail.com" 
-                    className="hover:text-oatmilk transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-oatmilk rounded px-2 py-1"
-                    aria-label="Email us at nomadcafeandeatery@gmail.com"
-                  >
-                    nomadcafeandeatery@gmail.com
-                  </a>
-                </p>
-              </address>
-              <div className="flex justify-center gap-4" aria-label="Social media links">
-                {socialMedias.map((media, i) => (
-                  <Link 
-                    key={i}
-                    to={media.link}
-                    aria-label={`Follow us on ${media.alt_text}`}
-                    className="focus:outline-none focus:ring-2 focus:ring-oatmilk focus:ring-offset-2 rounded-full transition-all duration-200"
-                  >
-                    <img 
-                      className="size-10 hover:animate-pulse"
-                      src={media.path}
-                      alt={media.alt_text}
-                    />
-                  </Link>
-                ))}
-              </div>
-            </section>
           </div>
         </div>
       </div>
 
-      {/* Footer Bottom */}
-      <div className={`${theme.color.background.primary} border-t-[1px] border-oatmilk/10 p-4 text-center`}>
-        <p className="opacity-40" aria-label="Site credits">Site by Emmanuel Rosario</p>
-        <p className="opacity-40" aria-label="Site version">Version 1.2</p>
+      <div className={`${theme.color.background.primary} p-4`}>
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm sm:text-base gap-4 opacity-80">
+          <ul className="flex gap-3 list-none p-0">
+            {socialMedias.map((media, i) => (
+              <li key={i}>
+                <Link to={media.link} aria-label={`Nomad Cafe on ${media.alt_text}`}>
+                  <img className="size-8 hover:animate-pulse" src={media.path} alt={media.alt_text} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <address className="not-italic flex gap-4">
+            <a href="tel:+13472278136" className="hover:opacity-100 transition-opacity">
+              (347) 227-8136
+            </a>
+            <p>&#9679;</p>
+            <a href="mailto:nomadcafeandeatery@gmail.com" className="hover:opacity-100 transition-opacity">
+              nomadcafeandeatery@gmail.com
+            </a>
+          </address>
+          <Link to="/game#Header" aria-label="Play our quiz game - Site by Emmanuel Rosario" className="hover:opacity-100 transition-opacity">
+            <p>Site by Emmanuel Rosario</p>
+          </Link>
+        </div>
       </div>
     </footer>
   )

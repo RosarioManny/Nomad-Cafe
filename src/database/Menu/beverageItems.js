@@ -2,9 +2,9 @@ const beverageItems = [
   {
     "category": "Signature Lattes", 
     "prices": {
-      "Sm": 5,
-      "Md": 5.5,
-      "Lg": 6.25
+      "Sm": 5.25,
+      "Md": 5.75,
+      "Lg": 6.75
     },
     "icedPremium": 0.5,
     "flavors": [
@@ -39,7 +39,7 @@ const beverageItems = [
       {
         "name": "Got Nuts?",
         "description": "Coconut, Almond, Hazelnut"
-      }, // Fixed: Removed trailing comma
+      }
     ]
   },
   {
@@ -53,64 +53,48 @@ const beverageItems = [
       {
         "name": "Drip Coffee",
         "price": {
-          "Sm": 2.75,
-          "Md": 3.25,
-          "Lg": 3.75
+          "Sm": 3,
+          "Md": 3.50,
+          "Lg": 4
         }
       },
       {
         "name": "Espresso",
         "price": {
-          "Single": 2.5,
-          "Double": 3.5
+          "Single": 2.75,
+          "Double": 3.75
         }
       },
       {
         "name": "Americano",
         "price": {
-          "Sm": 3.5,
-          "Md": 4.5,
-          "Lg": 6
+          "Sm": 4,
+          "Md": 5.25,
+          "Lg": 6.5
         }
       },
       {
         "name": "Macchiato",
         "price": {
-          "Standard": 3.75
+          "Standard": 4
         }
       },
       {
         "name": "Cortado",
         "price": {
-          "Standard": 4
+          "Standard": 4.25
         }
       },
       {
         "name": "Cappuccino", 
         "price": {
-          "Sm": 4.25,
-          "Md": 4.75,
-          "Lg": 5.5
+          "Sm": 5,
+          "Md": 5.5,
+          "Lg": 6.5
         }
       },
       {
         "name": "Latte",
-        "price": {
-          "Sm": 4.75,
-          "Md": 5,
-          "Lg": 5.75
-        }
-      },
-      {
-        "name": "Chai Latte",
-        "price": {
-          "Sm": 4.5,
-          "Md": 5,
-          "Lg": 5.5
-        }
-      },
-      {
-        "name": "Mocha Latte",
         "price": {
           "Sm": 5,
           "Md": 5.5,
@@ -118,21 +102,46 @@ const beverageItems = [
         }
       },
       {
+        "name": "Chai Latte",
+        "price": {
+          "Sm": 4.75,
+          "Md": 5.5,
+          "Lg": 6.25
+        }
+      },
+      {
+        "name": "Mocha Latte",
+        "price": {
+          "Sm": 5.25,
+          "Md": 5.75,
+          "Lg": 6.75
+        }
+      },
+      {
         "name": "Matcha Latte",
         "price": {
-          "Sm": 5,
-          "Md": 5.5,
-          "Lg": 6
+          "Sm": 5.25,
+          "Md": 5.75,
+          "Lg": 6.75
         }
       },
       {
         "name": "Tea",
         "price": {
-          "Sm": 2.75,
-          "Md": 3,
-          "Lg": 3.25
+          "Sm": 3,
+          "Md": 3.5,
+          "Lg": 4
         },
-        "varieties": ["English Breakfast", "Lemon Ginger", "Peppermint", "Chamomile", "Green Tea", "Black Tea", "Earl Grey", "Chai" ]
+        "varieties": [
+          "English Breakfast",
+          "Lemon Ginger", 
+          "Peppermint", 
+          "Chamomile", 
+          "Green Tea", 
+          "Black Tea", 
+          "Earl Grey", 
+          "Chai" 
+        ]
       },
     ]
   },
@@ -147,29 +156,13 @@ const beverageItems = [
       {
         "name": "Iced Coffee",
         "sizes": {
-          "Sm": 4.25,
-          "Md": 4.75,
-          "Lg": 5.25
+          "Sm": 4.75,
+          "Md": 5.25,
+          "Lg": 6
         }
       },
       {
         "name": "Cold Brew",
-        "sizes": {
-          "Sm": 4.75,
-          "Md": 5.25,
-          "Lg": 5.75
-        }
-      },
-      {
-        "name": "Iced Americano",
-        "sizes": {
-          "Sm": 4,
-          "Md": 5,
-          "Lg": 6.50
-        }
-      },
-      {
-        "name": "Iced Latte",
         "sizes": {
           "Sm": 5.25,
           "Md": 5.75,
@@ -177,15 +170,15 @@ const beverageItems = [
         }
       },
       {
-        "name": "Iced Chai",
+        "name": "Iced Americano",
         "sizes": {
-          "Sm": 5,
-          "Md": 5.5,
-          "Lg": 6
+          "Sm": 5.25,
+          "Md": 6.5,
+          "Lg": 7
         }
       },
       {
-        "name": "Iced Mocha",
+        "name": "Iced Latte",
         "sizes": {
           "Sm": 5.5,
           "Md": 6,
@@ -193,19 +186,35 @@ const beverageItems = [
         }
       },
       {
+        "name": "Iced Chai",
+        "sizes": {
+          "Sm": 5.25,
+          "Md": 6,
+          "Lg": 6.75
+        }
+      },
+      {
+        "name": "Iced Mocha",
+        "sizes": {
+          "Sm": 5.75,
+          "Md": 6.25,
+          "Lg": 7.25
+        }
+      },
+      {
         "name": "Iced Matcha",
         "sizes": {
-          "Sm": 5.5,
-          "Md": 6,
-          "Lg": 6.5
+          "Sm": 5.75,
+          "Md": 6.25,
+          "Lg": 7.25
         }
       },
       {
         "name": "Iced Tea",
         "price": {
-          "Sm": 3.75,
-          "Md": 4.25,
-          "Lg": 4.75
+          "Sm": 4.75,
+          "Md": 5.25,
+          "Lg": 6
         },
         "varieties": ["Raspberry Hibiscus", "Peach", "Moroccan Mint", "Black"]
       }
@@ -256,12 +265,16 @@ const beverageItems = [
     "items": [
       {
         "name": "Additional Shot",
-        "price": 1
+        "price": 2
+      },
+      {
+        "name": "Mocha Shot or Matcha Shot",
+        "price": 1.5,
       },
       {
         "name": "Milk Alternative",
         "description": "Almond, Soy, Oat",
-        "price": 0.5
+        "price": 0.75
       },
       {
         "name": "Syrups",

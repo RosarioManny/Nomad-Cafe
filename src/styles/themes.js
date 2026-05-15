@@ -12,10 +12,11 @@ export const theme  = {
     heading: "text-[1.6rem] md:text-5xl",
     firstLetter: "text-2xl md:text-4xl",
     subheading: "text-2xl md:text-3xl",
-    menuHeading: "text-lg md:text-2xl",
-    body: "text-base md:text-xl ",
+    menuHeading: "text-xl md:text-2xl",
+    body: "text-base sm:text-lg tracking-[.01rem]",
     advisoryText: "text-sm italic md:text-md",
     underline: "underline underline-offset-4",
+    footer: "text-sm md:text-base",
   },
   layout: {
     default: "flex justify-center m-4 place-items-center",
@@ -36,6 +37,7 @@ export const theme  = {
       nav: "text-oatmilk"
     },
     background: {
+      default: "bg-espresso",
       primary: "bg-firebrick",
       secondary: "bg-oatmilk",
       accent: "bg-gamboge"

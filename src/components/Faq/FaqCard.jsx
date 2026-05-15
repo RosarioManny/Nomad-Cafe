@@ -27,7 +27,7 @@ const FaqCard = ({ question, answer, index }) => {
           ${isToggled ? "expanded" : ""}
           cursor-pointer
         `}
-        role="button"
+
         tabIndex={0}
         aria-expanded={isToggled}
         aria-controls={contentId}

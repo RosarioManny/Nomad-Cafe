@@ -51,17 +51,17 @@ const sweetsItems = [
           "Apple Cinnamon"
         ]
       },
-      {
-        "name": "Sans Bakery, Vegan / Gluten-free pastries",
-        "price": 5,
-        "varieties": [
-          "Brownies", 
-          "Banana Bread",  
-          "Zucchini Bread",
-          "Blueberry Muffins",
-          "Chai Chocolate Chip Cookies"
-        ]
-      }
+      // {
+      //   "name": "Sans Bakery, Vegan / Gluten-free pastries",
+      //   "price": 5,
+      //   "varieties": [
+      //     "Brownies", 
+      //     "Banana Bread",  
+      //     "Zucchini Bread",
+      //     "Blueberry Muffins",
+      //     "Chai Chocolate Chip Cookies"
+      //   ]
+      // }
     ],
   },
   {
@@ -71,12 +71,15 @@ const sweetsItems = [
       "*Chocolate Hazelnut",
       "*Vanilla Miso",
       "Cold Brew",
+      "Creme Brulee",
+      "Strawberry",
+      "Fruity Pebbles",
       "Strawberries & Creme",
       "Hazelnut",
       "Chai Salted Caramel",
       "Bees Knees",
       "Cold Brew Rose Chai",
-      "Stacciatella",
+      "Mint Stracciatella",
       "Almond Taragon",
 
       "Vegan Matcha Coconut (v)",

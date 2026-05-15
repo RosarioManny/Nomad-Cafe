@@ -48,7 +48,7 @@ const Navbar = () => {
     }
   }
 
-  const navLinks = ["about", "menu", "faq"]
+  const navLinks = ["about", "menu", "faq", "events"]
 
   return (
     <>

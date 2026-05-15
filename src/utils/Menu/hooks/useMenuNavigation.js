@@ -24,6 +24,7 @@ export const useMenuNavigation = (menuCategories, defaultCategory = 'breakfast')
       behavior: 'smooth'
     });
     
+    console.log(`Category changed to: ${category}`);
     // Update URL with current category
     if (category && category !== defaultCategory) {
       navigate(`/menu#${category}`, { replace: true });
