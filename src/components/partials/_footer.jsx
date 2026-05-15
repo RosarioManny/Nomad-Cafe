@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { theme } from "../../styles/themes"
-
 import { socialMedias } from "../../database/Home/socialMedias"
+import ScrollToAnchor from "../../utils/scrollToAnchor"
 
 const Footer = () => {
 
@@ -17,6 +17,7 @@ const Footer = () => {
         md:flex-row
         ${theme.color.background.primary}
       `}>
+        <ScrollToAnchor />
         <div className="md:max-w-[60%] flex flex-col md:flex-row gap-6 w-full">
 
           {/* About & Logo */}
@@ -134,7 +135,9 @@ const Footer = () => {
               nomadcafeandeatery@gmail.com
             </a>
           </address>
-          <p>Site by Emmanuel Rosario</p>
+          <Link to="/game#Header" aria-label="Play our quiz game - Site by Emmanuel Rosario" className="hover:opacity-100 transition-opacity">
+            <p>Site by Emmanuel Rosario</p>
+          </Link>
         </div>
       </div>
     </footer>
