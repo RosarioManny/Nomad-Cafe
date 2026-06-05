@@ -207,6 +207,10 @@ export const MenuBreakfast = () => {
           </ul>
         </section>
 
+        <AdvisoryNote ariaLabel="Sandwich salad information">
+          All sandwiches come with a side salad. <br/> Mixed greens, red onions, sprouts, olive oil, and balsamic glaze.
+        </AdvisoryNote>
+
         <hr className={`${theme.layout.hr} ${theme.color.background.accent} w-full my-6`} aria-hidden="true" />
 
         {/* Sides */}

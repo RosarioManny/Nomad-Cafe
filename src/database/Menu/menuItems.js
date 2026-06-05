@@ -44,7 +44,7 @@ const menuItems = [
       {
         name: "Eggscape from NY",
         price: 14,
-        description: "Two eggs, rosemary parmesan hashbrowns, ham, berries, wheat toast",
+        description: "Two eggs, rosemary parmesan hashbrowns, ham, assorted fruits, and wheat toast platter",
         modifiers: [
           { name: "Sub bacon", price: 1 },
           { name: "Sub turkey", price: 1 },
@@ -57,7 +57,7 @@ const menuItems = [
       {
         name: "Cheddar Smashbrowns",
         price: 13.5,
-        description: "Over-easy eggs, bacon jam, hashbrowns, cheddar, sriracha, scallions"
+        description: "Two over-easy eggs smashed between cheddar, bacon jam hashbrowns on sriracha topped with scallions"
       },
       {
         name: "Sol Tacos",
@@ -72,7 +72,7 @@ const menuItems = [
       {
         name: "Loaded Avocado Toast (v)",
         price: 11,
-        description: "Smashed avocado, pico de gallo, sprouts",
+        description: "Smashed avocado on thick cut multigrain toast topped with pico de gallo and sprouts ",
         modifiers: [
           { name: "Add egg", price: 3 },
           { name: "Sub Gluten Free bread", price: 3 }
@@ -81,7 +81,7 @@ const menuItems = [
       {
         name: "Monte Cristo Sliders",
         price: 12,
-        description: "Ham, brie, raspberry jam, French toast croissants"
+        description: "Two French toast croissants sliders with ham, brie and raspberry jam. Sprinkled with powdered sugar"
       }
     ]
   },
@@ -91,17 +91,17 @@ const menuItems = [
       {
         name: "The Launchpad",
         price: 12,
-        description: "Turkey, chipotle aioli, spinach, tomato, cheddar, on ciabatta"
+        description: "Turkey, chipotle aioli, cheddar, red onions, spinach, tomato on ciabatta"
       },
       {
         name: "The Runway",
         price: 12,
-        description: "Turkey, pesto, mozzarella, roasted peppers, olive oil on ciabatta"
+        description: "Turkey, pesto, olive oil, mozzarella, spinach, red onions, roasted peppers on ciabatta"
       },
       {
         name: "Layover",
         price: 13,
-        description: "6-cheese grilled cheese (asiago, fontina, cheddar, Swiss, mozzarella) on a parmesean, rosemary crusted bread"
+        description: "6-cheese grilled cheese (Asiago, Fontina, Cheddar, Swiss, Mozzarella) on a parmesean, rosemary crusted bread"
       },
       {
         name: "First Class",
@@ -112,7 +112,6 @@ const menuItems = [
         name: "Take It Caprese",
         price: 12.5,
         description: "Tomatoes, basil, mozzarella, balsamic glaze, olive oil on baguette",
-        note: "Sub avocado for meat (v)"
       }
     ]
   },
