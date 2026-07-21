@@ -134,7 +134,11 @@ const Navbar = () => {
                 key={link} 
                 to={`/${link}`} 
                 onClick={handleClick}
-                className="hover:animate-pulse p-4 relative group focus:outline-1 focus:ring-offset-2 focus:ring-offset-firebrick rounded transition-all duration-200"
+                className="
+                p-2 relative group 
+                focus:animate-pulse 
+                focus:outline-1 focus:ring-offset-2 focus:ring-offset-firebrick 
+                transition-all duration-200"
                 tabIndex={isToggled ? 0 : -1}
                 aria-current={location.pathname === `/${link}` ? 'page' : undefined}
               >

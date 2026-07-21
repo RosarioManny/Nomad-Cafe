@@ -56,6 +56,7 @@ const Home = () => {
         img_mobile={"/gallery/Inside_gelato.webp"}
         img_alt='Barista preparing espresso at Nomad Cafe'
         togglePan={true}
+        menu={true}
       />
       
       {/* Main content section with ID for skip navigation */}
@@ -74,31 +75,6 @@ const Home = () => {
           />
         </div>
         
-        <section aria-labelledby="intro-heading">
-          <h1 
-            id="intro-heading"
-            className={`flex items-center justify-center ${theme.text.heading} ${theme.color.text.default} text-center px-4`}
-          >
-            <span> <strong className={`${theme.color.text.primary}`}> {yearsInBusiness}+ </strong> years serving Ridgewood!</span>
-          </h1>
-          
-          <div className={`${theme.layout.text} flex mt-6 justify-center`}>
-            <p className={`
-              ${theme.layout.para_spacing}
-              w-full md:w-2/3 lg:w-1/2
-              ${theme.text.body} ${theme.color.text.default}
-              text-center px-6
-            `}>
-              Nomad cafe is a neighborhood restaurant in Ridgewood, New York. We provide delicious handmade food. 
-              From our customizable Traveler sandwich to our popular Cheddar Smashbrowns.
-              We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
-            </p>
-          </div>
-        </section>
-        <hr 
-          className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent} mx-auto my-10 w-3/4`}
-          aria-hidden="true"
-        />
         {/* Incoming NEW Section - Gelato  */}
         <section className={`
         my-4 flex flex-col items-center
@@ -135,6 +111,32 @@ const Home = () => {
         </div>
         
       </section>
+      {/* Intro Section */}
+        <section aria-labelledby="intro-heading">
+          <h1 
+            id="intro-heading"
+            className={`flex items-center justify-center ${theme.text.heading} ${theme.color.text.default} text-center px-4`}
+          >
+            <span> <strong className={`${theme.color.text.primary}`}> {yearsInBusiness}+ </strong> years serving Ridgewood!</span>
+          </h1>
+          
+          <div className={`${theme.layout.text} flex mt-6 justify-center`}>
+            <p className={`
+              ${theme.layout.para_spacing}
+              w-full md:w-2/3 lg:w-1/2
+              ${theme.text.body} ${theme.color.text.default}
+              text-center px-6
+            `}>
+              Nomad cafe is a neighborhood restaurant in Ridgewood, New York. We provide delicious handmade food. 
+              From our customizable Traveler sandwich to our popular Cheddar Smashbrowns.
+              We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
+            </p>
+          </div>
+        </section>
+        <hr 
+          className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent} mx-auto my-10 w-3/4`}
+          aria-hidden="true"
+        />
         {/* Customer Reviews */}
         <section aria-labelledby="reviews-heading">
           <h2 

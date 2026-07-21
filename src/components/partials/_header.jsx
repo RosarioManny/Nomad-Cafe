@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { theme } from "../../styles/themes";
 
-const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", togglePan = false, position = 'object-top'}) => {
+const Header = ({ tag, img, menu=false, img_alt = "Header image", tag_alt = "Nomad Logo", togglePan = false, position = 'object-top'}) => {
   const [imageError, setImageError] = useState(false);
   const [isLogoLoaded, setIsLogoLoaded] = useState(false);
   const [ fade, setFade] = useState(false)
@@ -52,23 +53,40 @@ const Header = ({ tag, img, img_alt = "Header image", tag_alt = "Nomad Logo", to
         </div>
         {/* Logo */}
         <div className="absolute inset-0 flex justify-center items-end z-10 pb-8">
-          <img 
-            src={tag} 
-            alt={tag_alt} 
-            className={`title fade-in z-10 w-auto transition-all duration-500 ${
-              isLogoLoaded ? 'opacity-100' : 'opacity-0'
-            } ${
-              'max-w-[100%] md:max-w-[50%]'
-            }`}
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-            onLoad={() => setIsLogoLoaded(true)}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
+          <div className="flex flex-col items-center justify-center">
+            <img 
+              src={tag} 
+              alt={tag_alt} 
+              className={`title fade-in z-10 w-auto transition-all duration-500 max-w-[100%] md:max-w-[70%]
+                ${ isLogoLoaded ? 'opacity-100' : 'opacity-0' } 
+                
+              `}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              onLoad={() => setIsLogoLoaded(true)}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+      
+            />
+          {menu && (
+            <a href="/menu" className={`
+              ${theme.color.background.accent} 
+              max-w-[50%] w-full
+              flex justify-center items-center text-center
+              py-2
+              hover:bg-firebrick hover:text-oatmilk 
+              cursor-pointer 
+              transition-color duration-300 rounded-md shadow-md
+              `}>
+              Menu
+            </a>
+            )
+          }
+          </div>
         </div>
+      
       </div>
     </header>
   );
