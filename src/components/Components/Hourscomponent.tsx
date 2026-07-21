@@ -9,16 +9,14 @@ const hoursOfOperation = [
 
 export const HoursComponent = () => {
   return ( 
-  <section className='relative flex flex-col gap-4 items-center justify-center'>
-    {/* <img
-      className="absolute inset-auto  size-72 object-contain z-0 opacity-30"
-      src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp"
-      alt=""
-      aria-hidden="true"
-    /> */}
-    <h1 className={`${theme.text.heading} ${theme.color.text.default} relative z-10 items-center mx-10`}> Hours </h1>
+  <section className='relative flex flex-col gap-4 items-center justify-center my-4'>
+    <h1 className={`${theme.text.subheading} ${theme.color.text.default} relative items-center mx-8`}> Hours :</h1>
     <div 
-      className={`${theme.text.body} relative z-10  grid grid-cols-2 gap-2 mx-2`}
+      className={`
+        ${theme.text.body} 
+        relative z-10 
+        grid grid-cols-2 sm:grid-cols-4
+        gap-2 mx-2`}
       role="table"
       aria-label="Business hours"
       >

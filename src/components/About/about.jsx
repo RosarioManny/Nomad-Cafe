@@ -87,7 +87,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="relative z-10 flex flex-col md:flex-row justify-between md:gap-8">
+          <div className="relative z-10 justify-between md:gap-8">
             <HoursComponent />
 
             <div className="flex justify-center relative">

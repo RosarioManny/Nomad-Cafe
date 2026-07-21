@@ -60,7 +60,7 @@ const Navbar = () => {
         Skip to main content
       </a>
       <nav 
-        className="bg-obscuro/50 
+        className="bg-espresso/40 
         z-20 max-h-[15vh] absolute w-screen p-2 shadow-sm
         justify-between items-center flex
         top-0 right-0 left-0 
@@ -83,15 +83,15 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex gap-4 mr-4">
           {navLinks.map((link) => (
             <Link 
               key={link} 
               to={`/${link}`} 
-              className={`${theme.color.text.nav} relative group text-2xl mx-4 hover:animate-pulse p-2 focus:outline-1 rounded transition-all duration-200`}
+              className={`${theme.color.text.nav} relative group text-2xl  hover:animate-pulse p-2 focus:outline-1 rounded transition-all duration-200`}
               aria-current={location.pathname === `/${link}` ? 'page' : undefined}
             >
-              {link.charAt(0).toUpperCase() + link.slice(1)}
+              {link.charAt(0).toUpperCase() + link.slice(1)} 
               <span 
                 className={`${theme.animation.hover.underline}`}
                 aria-hidden="true"
