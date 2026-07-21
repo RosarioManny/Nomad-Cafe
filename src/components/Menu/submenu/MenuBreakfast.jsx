@@ -237,7 +237,7 @@ export const MenuBreakfast = () => {
                 role="listitem"
               >
                 <h3 className={`${theme.color.text.primary} ${theme.text.body}`}>
-                  {dish.name}
+                  {dish.name} 
                 </h3>
                 <PricePill price={`$${dish.price}`}/>
               </div>

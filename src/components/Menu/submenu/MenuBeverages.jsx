@@ -208,11 +208,10 @@ export const MenuBeverages = () => {
               >
                 <div className="flex justify-between items-center gap-3 mb-1">
                   <h3 className={`${theme.color.text.primary} ${theme.text.menuHeading} text-left`}>
-                    {item.name}
+                    {item.name} 
                   </h3>
-                  <span className="bg-oatmilk px-3 py-1 rounded text-sm font-semibold">
-                    ${item.price}
-                  </span>
+                  <PricePill price={item.price} />
+
                 </div>
                 {item.varieties && (
                   <VarietyChips
@@ -257,7 +256,8 @@ export const MenuBeverages = () => {
                   <h3 className={`${theme.color.text.primary} ${theme.text.body}`}>
                     {item.name}
                   </h3>
-                  <PricePill price={`$${item.price.toFixed(2)}`} />
+                  <PricePill price={`${item.price}`} />
+                  
                 </div>
 
                 {item.description && (

@@ -9,7 +9,7 @@ export const Pill = ({ className, children }) => (
 
 // PricePill — for standalone prices
 export const PricePill = ({ price }) => (
-  <span className={`px-3 py-1 rounded text- font-semibold whitespace-nowrap`}>
+  <span className={`px-3 py-1 rounded bg-oatmilk font-semibold whitespace-nowrap`}>
     {price}
   </span>
 )
@@ -71,8 +71,8 @@ export const ItemRow = ({ id, name, price }) => (
     >
       {name}
     </h2>
-    <p className={`${theme.color.text.primary} font-black`}>
-      ${price}
+    <p className={` bg-oatmilk px-3 py-1 rounded whitespace-nowrap`}>
+      ${price} 
     </p>
   </div>
 )
