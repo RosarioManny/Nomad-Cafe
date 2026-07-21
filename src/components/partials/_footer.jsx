@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="mt-10 bottom-0 w-screen text-white"
+      className="mt-10 z-90 bottom-0 w-screen text-white"
       role="contentinfo"
       aria-label="Site footer"
     >

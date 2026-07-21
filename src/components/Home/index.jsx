@@ -6,7 +6,7 @@ import InfiniteGallery from './components/InfiniteCarousel'
 import Carousol from './components/Carousel'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
 import sweetsItems from '../../database/Menu/sweetsItems'
-import { hoursOfOperation } from '../../database/Home/hoursOfOperation'
+import { HoursComponent } from '../Components/Hourscomponent'
 
 
 const Home = () => {
@@ -61,6 +61,19 @@ const Home = () => {
       {/* Main content section with ID for skip navigation */}
       <section id="main-content">
         {/* Intro Section */}
+        <HoursComponent />
+          <InfiniteGallery 
+            images={imageGallery}
+            aria-label="Gallery of Nomad Cafe images"
+          /> 
+
+        <div className='flex justify-center m-4 md:m-6'>
+          <hr 
+            className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent} w-3/4`}
+            aria-hidden="true"
+          />
+        </div>
+        
         <section aria-labelledby="intro-heading">
           <h1 
             id="intro-heading"
@@ -80,53 +93,6 @@ const Home = () => {
               From our customizable Traveler sandwich to our popular Cheddar Smashbrowns.
               We strive to provide the best atmosphere with a warm staff, lovely coffee, great food and more!
             </p>
-          </div>
-        </section>
-          
-          <InfiniteGallery 
-            images={imageGallery}
-            aria-label="Gallery of Nomad Cafe images"
-          /> 
-
-        <div className='flex justify-center m-4 md:m-6'>
-          <hr 
-            className={`${theme.layout.default} ${theme.layout.hr} ${theme.color.background.accent} w-3/4`}
-            aria-hidden="true"
-          />
-        </div>
-        <section className='relative flex flex-col sm:flex-row items-center justify-center'>
-          <img
-            className="absolute inset-auto  size-72 object-contain z-0 opacity-30"
-            src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp"
-            alt=""
-            aria-hidden="true"
-          />
-          <h1 className={`${theme.text.heading} ${theme.color.text.primary} relative z-10 items-center mx-10`}> Hours :</h1>
-          <div 
-            className={`${theme.text.body} relative z-10  grid grid-cols-1 gap-4 mb-8`}
-            role="table"
-            aria-label="Business hours"
-            >
-            {hoursOfOperation.map((time, index) => (
-              <div 
-              key={index}
-              className="relative z-10 flex justify-between items-center p-2 bg-oatmilk rounded-lg"
-              role="row"
-              >
-                <span 
-                  className="font-semibold pr-6 "
-                  role="cell"
-                  >
-                  {time.days} 
-                </span>
-                <span 
-                  className={`${theme.color.text.primary} font-bold`}
-                  role="cell"
-                  >
-                  {time.hours}
-                </span>
-              </div>
-            ))}
           </div>
         </section>
         <hr 

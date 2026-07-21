@@ -51,7 +51,7 @@ export const MenuBeverages = () => {
               id="signature-heading"
               className={`${theme.color.text.primary} ${theme.text.underline} ${theme.text.subheading} ${theme.layout.text} mb-3 text-left`}
             >
-              {signatures.category}
+              {signatures.category} 
             </h2>
             <SizePills sizes={signatures.prices} ariaLabel="Signature latte sizes and prices" />
             <AdvisoryNote>
@@ -60,14 +60,14 @@ export const MenuBeverages = () => {
           </div>
 
           <div
-            className="space-y-6"
+            className=" grid grid-cols-1 sm:grid-cols-2 sm:gap-8 gap-4 "
             role="list"
             aria-label="Signature latte flavors"
           >
             {signatures.flavors.map((flavor, i) => (
               <div
                 key={i}
-                className="py-4 border-b-2 border-gamboge last:border-b-0"
+                className=" border-l border-l-[3px] border-l-gamboge bg-oatmilk px-3 py-1 rounded text-sm"
                 role="listitem"
               >
                 <h3 className={`${theme.color.text.primary} ${theme.text.menuHeading} ${theme.text.underline} mb-2 text-left`}>
