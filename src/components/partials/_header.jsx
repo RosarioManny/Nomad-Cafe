@@ -73,10 +73,12 @@ const Header = ({ tag, img, menu=false, img_alt = "Header image", tag_alt = "Nom
           {menu && (
             <a href="/menu" className={`
               ${theme.color.background.accent} 
-              max-w-[50%] w-full
+              ${theme.color.text.nav} 
+              ${theme.text.body}
+              max-w-[40%] w-full font-black
               flex justify-center items-center text-center
               py-2
-              hover:bg-firebrick hover:text-oatmilk 
+              hover:bg-firebrick
               cursor-pointer 
               transition-color duration-300 rounded-md shadow-md
               `}>

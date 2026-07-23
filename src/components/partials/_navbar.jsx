@@ -68,18 +68,19 @@ const Navbar = () => {
         aria-label="Main navigation"
       >
         <Link 
-          className="w-24 focus:outline-1 rounded" 
+          className="w-20 flex m-2 focus:outline-1 rounded" 
           to="/"
           aria-label="Nomad Cafe homepage"
         >
           <img 
-            className="m-2 hover:animate-pulse cursor-pointer" 
+            className="hover:animate-pulse cursor-pointer" 
             src="/icons-logos/Nomad-Logo-Simple-Transparent-White.webp" 
             alt="Nomad Cafe Logo" 
             width={150}
             height={100}
             loading="lazy"
           />
+         
         </Link>
 
         {/* Desktop Navigation */}

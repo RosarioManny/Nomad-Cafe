@@ -9,6 +9,8 @@ import  Menu  from '../src/components/Menu/menu.jsx'
 import  Events  from '../src/components/Events/events.jsx'
 import NotFound from '../src/components/NotFound/notFound.jsx'
 import NomadQuizGame from '../src/components/Game/nomadQuizGame.jsx'
+import  {ReturnToTop}  from './components/Components/ReturnToTop.jsx'
+
 
 
 
@@ -27,6 +29,7 @@ function App() {
 
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
+        <ReturnToTop />
       <Footer />
     </>
   )

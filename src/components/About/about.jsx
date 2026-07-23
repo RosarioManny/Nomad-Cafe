@@ -3,7 +3,7 @@ import { theme } from '../../styles/themes'
 import GoogleMaps from './GoogleMaps'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
 import { hoursOfOperation } from '../../database/Home/hoursOfOperation'
-import { HoursComponent } from '../Components/Hourscomponent'
+import { HoursComponent } from '../Components/Hourscomponent.jsx'
 
 
 const About = () => { 
@@ -82,8 +82,8 @@ const About = () => {
             >
               Visit Us!
             </h1>
-            <div className="bg-oatmilk text-espresso/80 text-sm w-fit mt-4 mx-2 px-4 py-1 border-r-firebrick border-r-2 shadow-md rounded-l-lg ml-auto">
-              <p>Don't forget to pick up your Customer Passport. 10th Purchase is Free!</p>
+            <div className="bg-oatmilk text-espresso/80 text-sm w-fit mt-4 mx-4 p-2 border-r-firebrick border-r-2 shadow-md rounded-l-lg">
+              <p>Pick up your Customer Passport. 10th Purchase is Free!</p>
             </div>
           </div>
 

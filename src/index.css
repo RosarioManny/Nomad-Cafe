@@ -20,11 +20,10 @@ oatmilk - #FFF6E7
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  background-color: firebrick;
   background-image:
     radial-gradient(
       #EAA000,
-      #FFF6E7
+      #FFF6E7,
     );
   width: 100vw
 }

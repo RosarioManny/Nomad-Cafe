@@ -81,11 +81,13 @@ const sweetsItems = [
       "Cold Brew Rose Chai",
       "Mint Stracciatella",
       "Almond Taragon",
+      "Salted Honey & Orange Blossom",
 
       "Vegan Matcha Coconut (v)",
       "Passion Fruit Sorbet (v)",
       "Lemon Sorbet (v)",
-      "Blueberry Ginger Sorbet (v)"
+      "Blueberry Ginger Sorbet (v)",
+      "Watermelon Hibiscus (v)",
     ], 
     "items": [
       {

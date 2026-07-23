@@ -6,7 +6,7 @@ import InfiniteGallery from './components/InfiniteCarousel'
 import Carousol from './components/Carousel'
 import ScrollToAnchor from '../../utils/scrollToAnchor'
 import sweetsItems from '../../database/Menu/sweetsItems'
-import { HoursComponent } from '../Components/Hourscomponent'
+import { HoursComponent } from '../Components/Hourscomponent.jsx'
 
 
 const Home = () => {

@@ -11,7 +11,7 @@ const GoogleMaps = () => {
 
   return (
     
-    <div className="flex flex-col justify-center mx-2">
+    <div className="flex flex-col justify-center ">
     
       <iframe 
       

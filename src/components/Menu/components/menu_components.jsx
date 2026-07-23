@@ -63,11 +63,14 @@ export const AdvisoryNote = ({ children, ariaLabel }) => (
 )
 
 // ItemRow — name + price pill in a justified row, for menu items with descriptions
-export const ItemRow = ({ id, name, price }) => (
+export const ItemRow = ({ underline=true, id, name, price }) => (
   <div className="flex items-center justify-between gap-4 mb-1">
     <h2
       id={id}
-      className={`${theme.color.text.primary} ${theme.text.underline} ${theme.text.menuHeading}`}
+      className={`
+        ${theme.color.text.primary} 
+        ${underline ? theme.text.underline : ''} 
+        ${theme.text.menuHeading}`}
     >
       {name}
     </h2>
