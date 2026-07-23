@@ -18,7 +18,7 @@ const Header = ({ tag, img, menu=false, img_alt = "Header image", tag_alt = "Nom
     return () => clearTimeout(timer); 
   }, [img])
   return ( 
-    <header id="Header" className="h-[65vh]  min-h-[400px] relative mb-8 border-solid border-firebrick border-b-4">     
+    <header id="Header" className="h-[45vh]  min-h-[400px] relative mb-8 border-solid border-firebrick border-b-4">     
       <div className="relative h-full overflow-hidden">
         {/* Hero Image */}
         <img 
@@ -41,15 +41,15 @@ const Header = ({ tag, img, menu=false, img_alt = "Header image", tag_alt = "Nom
         
         {/* Fallback Background - Shows when image fails */}
         <div className={`
-          w-full h-full bg-gradient-to-br from-firebrick/60 to-gamboge/60
+          w-full h-full bg-gradient-to-br from-gamboge/20 via-gamboge/90 to-firebrick/80
           flex items-center justify-center
           ${imageError ? "" : "hidden"}
         
         `}>
-          <div className="text-center opacity-80 text-espresso/90">
+          {/* <div className="text-center opacity-80 text-espresso/90">
             <p className="mt-2 text-2xl font-semibold">Nomad Cafe</p>
             <p className="text-sm  mt-1">Ridgewood, NY</p>
-          </div>
+          </div> */}
         </div>
         {/* Logo */}
         <div className="absolute inset-0 flex justify-center items-end z-10 pb-8">
@@ -72,13 +72,13 @@ const Header = ({ tag, img, menu=false, img_alt = "Header image", tag_alt = "Nom
             />
           {menu && (
             <a href="/menu" className={`
-              ${theme.color.background.accent} 
+              ${theme.color.background.default} 
               ${theme.color.text.nav} 
               ${theme.text.body}
               max-w-[40%] w-full font-black
               flex justify-center items-center text-center
               py-2
-              hover:bg-firebrick
+              hover:bg-gamboge
               cursor-pointer 
               transition-color duration-300 rounded-md shadow-md
               `}>

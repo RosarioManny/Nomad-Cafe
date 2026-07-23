@@ -61,7 +61,7 @@ const Navbar = () => {
       </a>
       <nav 
         className="bg-espresso/40 
-        z-20 max-h-[15vh] absolute w-screen p-2 shadow-sm
+        z-20 max-h-[12vh] absolute w-screen p-2 shadow-sm
         justify-between items-center flex
         top-0 right-0 left-0 
         transition-all duration-500"
@@ -80,7 +80,7 @@ const Navbar = () => {
             height={100}
             loading="lazy"
           />
-         
+        
         </Link>
 
         {/* Desktop Navigation */}

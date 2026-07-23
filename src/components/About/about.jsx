@@ -19,7 +19,7 @@ const About = () => {
         position='md:object-[60%_40%]'
       />
       
-      <main className={`${theme.layout.column}`}>
+      <main className={`${theme.layout.column} ${theme.color.text.default}`}>
         {/* Skip link for screen readers */}
         <a 
           href="#about-content" 
@@ -82,7 +82,7 @@ const About = () => {
             >
               Visit Us!
             </h1>
-            <div className="bg-oatmilk text-espresso/80 text-sm w-fit mt-4 mx-4 p-2 border-r-firebrick border-r-2 shadow-md rounded-l-lg">
+            <div className={`bg-oatmilk  text-sm w-fit mt-4 mx-4 p-2 border-r-firebrick border-r-2 shadow-md rounded-l-lg ${theme.color.text.default}`}>
               <p>Pick up your Customer Passport. 10th Purchase is Free!</p>
             </div>
           </div>

@@ -16,7 +16,7 @@ function FlavorList({ flavors, featured = FEATURED_FLAVORS }) {
   const [expanded, setExpanded] = useState(false);
   const shown = expanded ? flavors : flavors.filter((f) => featured.includes(f));
   const hiddenCount = flavors.length - shown.length;
-  const toggleClass = `${theme.color.text.primary} block mx-auto mt-3 text-sm underline underline-offset-2`;
+  const toggleClass = `${theme.color.text.default} block mx-auto mt-3 underline underline-offset-2`;
 
   return (
     <div className="mt-2">
@@ -27,7 +27,7 @@ function FlavorList({ flavors, featured = FEATURED_FLAVORS }) {
       >
         {shown.map((flavor, index) => (
           <Pill
-            className="text-center items-center flex justify-center h-full min-h-[3rem]"
+            className={`${theme.color.text.default} text-center items-center flex justify-center h-full min-h-[3rem]`}
             key={`flavor-${flavor}-${index}`}
           >
             {flavor}

@@ -18,10 +18,12 @@ const Home = () => {
     const selectedGelato = gelatos.slice(2, 6);
   return (
       <ul className={`
+        ${theme.color.text.default}
+        ${theme.text.body}
         md:text-lg
         flex justify-center items-center
         divide-x-2 divide-gamboge 
-        text-espresso text-sm`}>
+        `}>
         {selectedGelato.map((flavor, i ) => (
           <li 
           className='px-2 items-center flex justify-center text-center'
@@ -97,13 +99,14 @@ const Home = () => {
               <p className={`${theme.text.firstLetter} ${theme.text.underline}`}>Homemade Gelatos</p>
               <p className='md:text-md'>Featuring a rotating selection of handcrafted flavors. <br/>Current offerings may include...</p>
             </div>
-            <hr className={`${theme.color.background.accent} ${theme.layout.hr}`}/>
+            <hr className={`${theme.color.background.accent}  ${theme.layout.hr}`}/>
             {gelatoSelection()}
             <a 
             href='/menu/#gelato'
             className={`
-              ${theme.color.background.accent} 
-              hover:bg-firebrick hover:text-oatmilk cursor-pointer transition-color duration-300 p-2 my-6 rounded shadow-md
+              ${theme.color.background.default} 
+              ${theme.color.text.nav}
+              hover:bg-gamboge cursor-pointer transition-color duration-300 p-2 my-6 rounded shadow-md
               `}>
                 View Price & Past Flavors
             </a>
